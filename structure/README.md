@@ -9,7 +9,7 @@ This tutorial is split into several chapters.
 
 Chapter 1 - Quick [Installation](installation.md)
 
-Chapter 2 - First Steps
+Chapter 2 - [First Steps](firststeps.md)
 
 Chapter 3 - The [data model](structure-data-model.md) for the representation of macromolecular structures.
 
