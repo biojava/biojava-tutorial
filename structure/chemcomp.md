@@ -7,18 +7,6 @@ The [Chemical Components Dictionary](http://www.wwpdb.org/ccd.html) is an extern
 
 BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct representation of each group. To make it clear how this can work, let's take a look at how [Selenomethionine](http://en.wikipedia.org/wiki/Selenomethionine) and water is dealt with:
 
-<table>
-    <tr><td>
-
-![Selenomethionine is a naturally occurring amino acid containing selenium](img/143px-Selenomethionine-from-xtal-3D-balls.png?raw=true "Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia")
-
-</td>
-    <td>Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia
-        </td>
-    </tr>
-</table>
-
-
 <pre>
             Structure structure = StructureIO.getStructure("1A62");
                     
@@ -44,6 +32,22 @@ HOH is a group of type hetatm
 </pre>
 
 As you can see, although MSE is flaged as HETATM in the PDB file, BioJava still represents it correctly as an amino acid. They key is that the [definition file for MSE](http://www.rcsb.org/pdb/files/ligand/MSE.cif) flags it as "L-PEPTIDE LINKING", which is being used by BioJava.
+
+<table>
+    <tr><td>
+
+<img src="img/143px-Selenomethionine-from-xtal-3D-balls.png?raw=true" alt="Selenomethionine is a naturally occurring amino acid containing selenium" />
+
+
+</td>
+    <td>
+
+        Selenomethionine is a naturally occurring amino acid containing selenium. It has the ID <a href="http://www.rcsb.org/pdb/files/ligand/MSE.cif">MSE</a> in the Chemical Component Dictionary. (image source: <a href="http://en.wikipedia.org/wiki/File:Selenomethionine-from-xtal-3D-balls.png">wikipedia</a>)
+
+
+        </td>
+    </tr>
+</table>
 
 
 ### How to access Chemical Component definitions

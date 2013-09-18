@@ -14,40 +14,6 @@ The mmCIF file format has been around for some time (see [Westbrook 2000][] and 
 
 BioJava provides you with both a mmCIF parser and a data model that reads PDB and mmCIF files into a biological and chemically  meaningful data model (BioJava supports the [Chemical Components Dictionary](http://www.wwpdb.org/ccd.html)). If you don't want to use that data model, you can still use BioJava's file parsers, and more on that later, let's start first with the most basic way of loading a protein structure.
 
-## Quick Installation
-
-Before we start, just one quick paragraph of how to get access to BioJava.
-
-BioJava is open source and you can get the code from [Github](https://github.com/biojava/biojava), however it might be easier this way:
-
-BioJava uses [Maven](http://maven.apache.org/) as a build and distribution system. If you are new to Maven, take a look at the [Getting Started with Maven](http://maven.apache.org/guides/getting-started/index.html)  guide.
-
-We are providing a BioJava specific Maven repository at (http://biojava.org/download/maven/) .
-
-You can add the BioJava repository by adding the following XML to your project pom.xml file:
-```xml
-        <repositories>
-            ...
-            <repository>
-                <id>biojava-maven-repo</id>
-                <name>BioJava repository</name>
-                <url>http://www.biojava.org/download/maven/</url>           
-            </repository>
-        </repositories>
-        <dependencies>
-                ...
-                <dependency>
-                        <!-- This imports the latest SNAPSHOT builds from the protein structure modules of BioJava
-                        -->                        
-                        <groupId>org.biojava</groupId>
-                        <artifactId>biojava3-structure</artifactId>
-                        <version>3.0.7-SNAPSHOT</version>
-                </dependency>
-                <!-- other biojava jars as needed -->
-        </dependencies> 
-```
-
-If you run 'mvn package' on your project, the BioJava dependencies will be automatically downloaded and installed for you.
 
 ## First steps
 
