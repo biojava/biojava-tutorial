@@ -1,0 +1,80 @@
+The Chemical Component Dictionary
+=================================
+
+The [Chemical Components Dictionary](http://www.wwpdb.org/ccd.html) is an external reference file describing all residue and small molecule components found in PDB entries. This dictionary contains detailed chemical descriptions for standard and modified amino acids/nucleotides, small molecule ligands, and solvent molecules. 
+
+### How does BioJava decide what groups are amino acids?
+
+<table>
+    <tr><td>
+
+![Selenomethionine is a naturally occurring amino acid containing selenium](img/143px-Selenomethionine-from-xtal-3D-balls.png "Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia")
+
+</td>
+    <td>Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia
+        </td>
+    </tr>
+</table>
+BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct representation of each group. To make it clear how this can work, let's take a look at how [Selenomethionine](http://en.wikipedia.org/wiki/Selenomethionine) and water is dealt with:
+
+
+
+
+<pre>
+            Structure structure = StructureIO.getStructure("1A62");
+                    
+            for (Chain chain : structure.getChains()){
+                for (Group group : chain.getAtomGroups()){
+                    if ( group.getPDBName().equals("MSE") || group.getPDBName().equals("HOH")){
+                        System.out.println(group.getPDBName() + " is a group of type " + group.getType());
+                    }
+                }
+            }
+</pre>
+
+This should give this output:
+
+<pre>
+MSE is a group of type amino
+MSE is a group of type amino
+MSE is a group of type amino
+HOH is a group of type hetatm
+HOH is a group of type hetatm
+HOH is a group of type hetatm
+...
+</pre>
+
+As you can see, although MSE is flaged as HETATM in the PDB file, BioJava still represents it correctly as an amino acid. They key is that the [definition file for MSE](http://www.rcsb.org/pdb/files/ligand/MSE.cif) flags it as "L-PEPTIDE LINKING", which is being used by BioJava.
+
+
+### How to access Chemical Component definitions
+Bye default BioJava ships with a minimal representation of standard amino acids, however if you want to parse the whole PDB archive, it is good to tell the library to either
+
+1. fetch missing Chemical Component definitions on the fly (small download and parsing delays every time a new chemical compound is found), or
+2. Load all definitions at startup (slow startup, but then no further delays later on, requires more memory)
+
+You can enable the first behaviour by doing using the [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/FileParsingParameters.html) class:
+
+<pre>
+            AtomCache cache = new AtomCache();
+            
+             // by default all files are stored at a temporary location.
+            // you can set this either via at startup with -DPDB_DIR=/path/to/files/
+            // or hard code it this way:
+            cache.setPath("/tmp/");
+            
+            FileParsingParameters params = new FileParsingParameters();
+            
+            params.setLoadChemCompInfo(true);
+            cache.setFileParsingParams(params);
+            
+            StructureIO.setAtomCache(cache);
+            
+            Structure structure = StructureIO.getStructure(...);
+</pre>
+
+If you want to enable the second behaviour (slow loading of all chem comps at startup, but no further small delays later on) you can use the same code but change the behaviour by switching the [ChemCompProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/ChemCompProvider.html) implementation in the [ChemCompGroupFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/ChemCompGroupFactory.html)
+
+<pre>    
+     ChemCompGroupFactory.setChemCompProvider(new AllChemCompProvider());
+</pre>
