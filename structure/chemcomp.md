@@ -5,19 +5,18 @@ The [Chemical Components Dictionary](http://www.wwpdb.org/ccd.html) is an extern
 
 ### How does BioJava decide what groups are amino acids?
 
+BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct representation of each group. To make it clear how this can work, let's take a look at how [Selenomethionine](http://en.wikipedia.org/wiki/Selenomethionine) and water is dealt with:
+
 <table>
     <tr><td>
 
-![Selenomethionine is a naturally occurring amino acid containing selenium](img/143px-Selenomethionine-from-xtal-3D-balls.png "Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia")
+![Selenomethionine is a naturally occurring amino acid containing selenium](img/143px-Selenomethionine-from-xtal-3D-balls.png?raw=true "Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia")
 
 </td>
     <td>Selenomethionine is a naturally occurring amino acid containing selenium source: wikipedia
         </td>
     </tr>
 </table>
-BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct representation of each group. To make it clear how this can work, let's take a look at how [Selenomethionine](http://en.wikipedia.org/wiki/Selenomethionine) and water is dealt with:
-
-
 
 
 <pre>
