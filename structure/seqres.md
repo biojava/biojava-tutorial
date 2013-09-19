@@ -37,7 +37,7 @@ The *mmCIF/PDBx* file format contains the information how the Seqres and atom re
 
 ## Mapping from Uniprot to Atom records 
 
-The mapping between PDB and UniProt changes over time. The [PDBe](http://www.pdbe.org) has a project that provides up-to-date mappings between the two databases, the [SIFTs](http://www.ebi.ac.uk/pdbe/docs/sifts/) project. 
+The mapping between PDB and UniProt changes over time, due to the dynamic nature of biological data. The [PDBe](http://www.pdbe.org) has a project that provides up-to-date mappings between the two databases, the [SIFTs](http://www.ebi.ac.uk/pdbe/docs/sifts/) project. 
 
 BioJava contains a parser for the SIFTs XML files. The [SiftsMappingProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/sifts/SiftsMappingProvider.html) also acts similar to the AtomCache class, that we [discussed earlier](caching.md) and can automatically download and locally install SIFTs files.
 
