@@ -49,7 +49,7 @@ Chapter 10 - Protein Symmetry
 
 Chapter 11 - Bonds
 
-Chapter 12 - External Databases like SCOP &amp; CATH
+Chapter 12 - [External Databases](externaldb.md) like SCOP &amp; CATH
 
 
 ### Author: 
