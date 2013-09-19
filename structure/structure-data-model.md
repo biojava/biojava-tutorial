@@ -62,6 +62,20 @@ and beta. Each of the entities has two copies (= chains) in the structure. IN 4H
 has the two chains with the IDs A, and C and beta the chains B, and D. In total, hemoglobin is 
 built up out of four chains.
 
+This prints all the compounds/entities in a structure
+<pre>
+			Structure structure = StructureIO.getStructure("4hhb");			
+
+			System.out.println(structure);
+						
+			System.out.println(" # of compounds (entities) " + structure.getCompounds().size());
+
+			for ( Compound entity: structure.getCompounds()) {
+				System.out.println("   " + entity);
+			}
+</pre>
+
+
 ## Loop over all the data
 
 Here an example that loops over the whole data model and prints out the HEM groups of hemoglobin:
@@ -69,62 +83,29 @@ Here an example that loops over the whole data model and prints out the HEM grou
 <pre>
 			Structure structure = StructureIO.getStructure("4hhb");			
 
-			System.out.println(" # of compounds (entities) " + structure.getCompounds().size());
-
-			for ( Compound entity: structure.getCompounds()) {
-				System.out.println("   " + entity);
-			}
 			List<Chain> chains = structure.getChains();
 
 			System.out.println(" # chains: " + chains.size());
 
 			for (Chain c : chains) {
-				System.out.println("   Chain: " + c.getChainID());
+				
+				System.out.println("   Chain: " + c.getChainID() + " # groups with atoms: " + c.getAtomGroups().size());
+
 				for (Group g: c.getAtomGroups()){
 
 					if ( g.getPDBName().equalsIgnoreCase("HEM")) {
 
-						System.out.println(g);
+						System.out.println("   " + g);
 
 						for (Atom a: g.getAtoms()) {
 
-							System.out.println(a);
+							System.out.println("    " + a);
 
 						}
 					}
 				}
 			}
 </pre>
-
-This will display
-
-<pre>
- # of compounds (entities) 2
-   Compound: 1 HEMOGLOBIN (DEOXY) (ALPHA CHAIN) Engineered: YES OrganismScientific: HOMO SAPIENS OrganismTaxId: 9606 OrganismCommon: HUMAN Chains: ChainId: A C 
-   Compound: 2 HEMOGLOBIN (DEOXY) (BETA CHAIN) Engineered: YES OrganismScientific: HOMO SAPIENS OrganismTaxId: 9606 OrganismCommon: HUMAN Chains: ChainId: B D 
- # chains: 4
-   Chain: A
-Hetatom 142 HEM true atoms: 43
- CHA (CHA) C 4389 8.585 7.902 -18.282
- CHB (CHB) C 4390 10.355 9.805 -14.208
- ...
-   Chain: B
-Hetatom 148 HEM true atoms: 43
- CHA (CHA) C 4433 9.659 -10.155 20.773
- CHB (CHB) C 4434 11.121 -12.19 16.575
- ...
-  Chain: C
-Hetatom 142 HEM true atoms: 43
- CHA (CHA) C 4476 -8.63 7.776 18.352
- CHB (CHB) C 4477 -10.32 10.048 14.384
- ...
-  Chain: D
-Hetatom 148 HEM true atoms: 43
- CHA (CHA) C 4520 -9.813 -9.884 -20.599
- CHB (CHB) C 4521 -11.252 -11.989 -16.61
- ...
- </pre>
-
 
 ## Working with groups
 
