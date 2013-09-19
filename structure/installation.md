@@ -31,5 +31,11 @@ You can add the BioJava repository by adding the following XML to your project p
         </dependencies> 
 ```
 
-If you run 'mvn package' on your project, the BioJava dependencies will be automatically downloaded and installed for you.
+If you run 
+
+<pre>
+    mvn package
+</pre>
+
+ on your project, the BioJava dependencies will be automatically downloaded and installed for you.
 
