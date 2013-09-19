@@ -33,7 +33,7 @@ Chapter 2 - [First Steps](firststeps.md)
 
 Chapter 3 - The [data model](structure-data-model.md) for the representation of macromolecular structures.
 
-Chapter 4 - Local installations of PDB
+Chapter 4 - [Local installations](caching.md) of PDB
 
 Chapter 5 - The [Chemical Component Dictionary](chemcomp.md)
 
