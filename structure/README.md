@@ -56,6 +56,17 @@ Chapter 12 - External Databases like SCOP &amp; CATH
 
 [Andreas Prli&#263;](https://github.com/andreasprlic)
 
+## Please cite
 
+**BioJava: an open-source framework for bioinformatics in 2012**
+*Andreas Prlic; Andrew Yates; Spencer E. Bliven; Peter W. Rose; Julius Jacobsen; Peter V. Troshin; Mark Chapman; Jianjiong Gao; Chuan Hock Koh; Sylvain Foisy; Richard Holland; Gediminas Rimsa; Michael L. Heuer; H. Brandstatter-Muller; Philip E. Bourne; Scooter Willis*
+[Bioinformatics (2012) 28 (20): 2693-2695.](http://bioinformatics.oxfordjournals.org/content/28/20/2693.abstract)
+doi: 10.1093/bioinformatics/bts494
+
+## License
+
+The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license.
+
+[view license](license.md)
 
 
