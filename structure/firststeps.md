@@ -30,8 +30,6 @@ BioJava  automatically downloads the PDB file for hemoglobin [4HHB](http://www.r
     </tr>
 </table>
 
-
-
 This demonstrates two things:
 
 + BioJava can automatically download and install files locally (more on this in Chapter 4)
@@ -41,6 +39,14 @@ If you already have a local PDB installation, you can configure where BioJava sh
 
 <pre>
     -DPDB_DIR=/wherever/you/want/
+</pre>
+
+## Memory consumption
+
+Talking about startup properties, it is also good to mention the fact that many PDB entries are large molecules and the default 64k memory allowance for Java applications is not sufficient in many cases.  BioJava contains several built-in caches which automatically adjust to the available memory. As such, the more memory you grant your Java applicaiton, the better it can utilize the caches and the better the performance will be. Change the maximum heap space of your Java VM with this startup parameter:
+
+<pre>
+    -Xmx1G
 </pre>
 
 ## A Quick 3D View
