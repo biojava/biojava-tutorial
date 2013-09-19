@@ -10,13 +10,15 @@ A tutorial for the protein structure modules of BioJava
             <img src="img/4hhb_jmol.png"/>
         </td>
         <td>
-            The BioJava protein structure modules provide an API that allows to 
+            The <i>protein structure modules</i>of BioJava provide an API that allows to 
             <ul>
                 <li>Maintain local installations of PDB</li>
                 <li>Load structures and manipulate them</li>
                 <li>Perform standard analysis such as sequence and structure alignments</li>
                 <li>Visualize structures</li>
+            </ul>
 
+            This tutorial provides an overview of the most important functionalities.
         </td>
     </tr>
 </table>   
