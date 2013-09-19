@@ -39,7 +39,7 @@ Chapter 5 - The [Chemical Component Dictionary](chemcomp.md)
 
 Chapter 6 - How to [work with mmCIF/PDBx files](mmcif.md)
 
-Chapter 7 - SEQRES and ATOM records, mapping to Uniprot (SIFTs)
+Chapter 7 - [SEQRES and ATOM records](seqres.md), mapping to Uniprot (SIFTs)
 
 Chapter 8 - Protein Structure Alignments
 
@@ -49,7 +49,7 @@ Chapter 10 - Protein Symmetry
 
 Chapter 11 - Bonds
 
-Chapter 12 - External Databases like SCOP & CATH
+Chapter 12 - External Databases like SCOP &amp; CATH
 
 
 ### Author: 
