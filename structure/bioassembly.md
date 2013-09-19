@@ -53,7 +53,6 @@ Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/
     }
 </pre>
 
-
 <table>
     <tr>
         <td>
@@ -74,6 +73,28 @@ Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/
 </table>
 
 As we can see, the two representations are quite different! When investigating protein interfaces, ligand binding and for many other applications, you always want to work with the biological assemblies!
+
+Here another example, the bacteriophave GA protein capsid PDB ID [1GAV](http://www.rcsb.org/pdb/explore.do?structureId=1gav)
+
+<table>
+    <tr>
+        <td>
+            The asymmetric unit of bacteriophave GA protein capsid PDB ID  <a href="http://www.rcsb.org/pdb/explore.do?structureId=1gav">1GAV</a>
+        </td>
+        <td>
+            The biological assembly of bacteriophave GA protein capsid PDB ID  <a href="http://www.rcsb.org/pdb/explore.do?structureId=1gav">1GAV</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="img/1gav_asym.png"/>
+        </td>
+        <td>
+            <img src="img/1gav_biounit.png"/>
+        </td>
+    </tr>
+</table>
+
 
 ## Further Reading
 
