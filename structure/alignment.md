@@ -11,12 +11,39 @@ For more info see the Wikipedia article on [protein structure alignment](http://
 
 ## Alignment Algorithms supported by BioJava
 
-BioJava comes with implementations of the Combinatorial Extension (CE) and FATCAT algorithms. Both algorithms come in two variations, as such one can say that BioJava supports the following four algorithms
+BioJava comes with implementations of the Combinatorial Extension (CE) and FATCAT algorithms. Both algorithms come in two variations, as such one can say that BioJava supports the following four algorithms.
+
+1. Combinatorial Extension (CE)
+2. Combinatorial Extension with Circular Permutation (CE-CP)
+3. FATCAT - rigid
+4. FATCAT - flexible.
+
+## Alignment User Interface
+
+Before going the details how to use the algorithms programmatically, let's take a look at the user interface that cames with the *biojava-structure-gui* module.
+
+<pre>
+        AlignmentGui.getInstance();
+</pre>    
+
+shows this user interface:
+
+![Alignment GUI](img/alignment_gui.png)
+
+
+
 
 ## Combinatorial Extension (CE)
+
+The Combinatorial Extension (CE) algorithm was originally developed by [Shindyalov and Bourne in 1998](http://peds.oxfordjournals.org/content/11/9/739.short). 
 
 ## Combinatorial Extension with Circular Permutation (CE-CP)
 
 ## FATCAT - rigid
 
-# FATCAR - flexible
+## FATCAR - flexible
+
+
+## Acknowledgements
+
+Thanks to P. Bourne, Yuzhen Ye and A. Godzik for granting permission to freely use and redistribute their algorithms.
