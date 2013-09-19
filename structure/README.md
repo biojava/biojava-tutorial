@@ -29,9 +29,9 @@ Chapter 10 - Protein Symmetry
 
 Chapter 11 - Bonds
 
-###
+### Author: 
 
-Author: [Andreas Prlic](https://github.com/andreasprlic)
+[Andreas Prli&#263;](https://github.com/andreasprlic)
 
 
 

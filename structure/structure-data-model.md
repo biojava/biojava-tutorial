@@ -4,7 +4,7 @@ A biologically and chemically meaningful data representation of PDB/mmCIF.
 
 ## The basics   
 
-BioJava at its core is a collection of file parsers and (in some cases) data models to represent frequently used biological data.  The protein-structure modules represent macromolecular data in a way that should make it easy to work with. The representation is essentially independ of the underlying file format and the user can chose to work with either PDB or mmCIF files and still get an almost identical data representation.
+BioJava at its core is a collection of file parsers and (in some cases) data models to represent frequently used biological data.  The protein-structure modules represent macromolecular data in a way that should make it easy to work with. The representation is essentially independ of the underlying file format and the user can chose to work with either PDB or mmCIF files and still get an almost identical data representation. (There can be subtile differences between PDB and mmCIF data, for example the atom indices in a few entries are not 100% identical)
 
 ## The main hierarchy
 
@@ -25,7 +25,7 @@ Structure
                  Atom(s)
 </pre>
 
-All structure objects contain one or more "models". That means also X-ray structures contain an "virtual" model which serves as a container for the chains. The most common way to access chains will be via
+All structure objects contain one or more "models". That means also X-ray structures contain a "virtual" model which serves as a container for the chains. The most common way to access chains will be via
 
 <pre>
         List < Chain > chains = structure.getChains();
@@ -46,6 +46,10 @@ If you want to directly access an array of [Atoms](http://www.biojava.org/docs/a
 </pre>
 
 Alternatively you can access atoms also by their parent-group.
+
+## Loop over all the data
+
+//TODO
 
 ## Working with groups
 

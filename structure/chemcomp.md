@@ -51,7 +51,7 @@ As you can see, although MSE is flaged as HETATM in the PDB file, BioJava still 
 
 
 ### How to access Chemical Component definitions
-Bye default BioJava ships with a minimal representation of standard amino acids, however if you want to parse the whole PDB archive, it is good to tell the library to either
+By default BioJava ships with a minimal representation of standard amino acids, which is useful when you just want to work with atoms and a basic data representation. However if you want to work with a  correct representation (e.g. distinguish ligands from the polypeptide chain, correctly resolve chemically modified residues), it is good to tell the library to either
 
 1. fetch missing Chemical Component definitions on the fly (small download and parsing delays every time a new chemical compound is found), or
 2. Load all definitions at startup (slow startup, but then no further delays later on, requires more memory)
