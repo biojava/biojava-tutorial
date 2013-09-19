@@ -23,7 +23,7 @@ Chapter 7 - SEQRES and ATOM records
 
 Chapter 8 - Protein Structure Alignments
 
-Chapter 9 - Biological Assemblies
+Chapter 9 - Biological Assemblies 
 
 Chapter 10 - Protein Symmetry
 

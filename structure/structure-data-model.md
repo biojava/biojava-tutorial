@@ -96,7 +96,9 @@ Since all 3 types of groups are implementing the Group interface, you can also i
             }
 </pre>
 
+## A Note
 
+The detection of the groups works really well in connection with the [Chemical Component Dictionary](checmcomp.md), as we will discuss in the next section. Without this dictionary, there can be inconsistencies in particular with chemically modified residues.
 
 
 

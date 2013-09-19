@@ -81,3 +81,34 @@ This will result in the following view:
         </td>
     </tr>
 </table>   
+
+## Asymmetric unit and Biological Assembly
+
+By default many people work with the *asymmetric unit* of a protein. However for many studies the correct representation to look at is the *biological assembly* of a protein. You can request it by calling
+
+<pre>
+     public static void main(String[] args){
+
+        try {
+                Structure structure = StructureIO.getBiologicalAssembly("4HHB");
+                // and let's print out how many atoms are in this structure
+                System.out.println(StructureTools.getNrAtoms(structure));
+            } catch (Exception e){
+                e.printStackTrace();
+        }
+    }   
+</pre>
+
+This topic is important, so we dedicated a [whole chapter](bioassembly.md) to it.
+
+## I loaded a Structure object, what now?
+
+BioJava provides a number of algorithms and visualisation tools that you can use to further analyse the structure, or look at it. Here a couple of suggestions for further reads:
+
++ [The BioJava Cookbook for protein structures](http://biojava.org/wiki/BioJava:CookBook#Protein_Structure)
++ How does BioJava [represent the content](structure-data-model.md) of a PDB/mmCIF file?
++ [How to calculate a protein structure alignment using BioJava](http://biojava.org/wiki/BioJava:CookBook:PDB:align)
++ [How to work with Groups (AminoAcid, Nucleotide, Hetatom)](http://biojava.org/wiki/BioJava:CookBook:PDB:groups)
+
+
+
