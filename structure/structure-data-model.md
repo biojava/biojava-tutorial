@@ -14,7 +14,7 @@ BioJava provides a flexible data structure for managing protein structural data.
 A Structure has a hierarchy of sub-objects:
 
 <pre>
-Structure
+Structure 
    |
    Model(s)
         |
@@ -47,9 +47,17 @@ If you want to directly access an array of [Atoms](http://www.biojava.org/docs/a
 
 Alternatively you can access atoms also by their parent-group.
 
-## Compounds (Entities) and Chains
+## Entities and Chains
 
-//TODO
+Entities (sometimes also called compounds) are the distinct chemical components of structures in the PDB. 
+Unlike chains, entities do not include duplicate copies and each entity is different from every other 
+entity in the structure. There are different types of entities. Polymer entities include Protein, DNA, 
+and RNA. Ligands are smaller chemical components that are not part of a polymer entity. 
+
+To explain this with an example, hemoglobin (e.g. PDB ID 4HHB) has two components, alpha 
+and beta. Each of the entities has two copies (= chains) in the structure. IN 4HHB, alpha 
+has the two chains with the IDs A, and C and beta the chains B, and D. In total, hemoglobin is 
+built up out of four chains.
 
 ## Loop over all the data
 
