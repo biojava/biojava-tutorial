@@ -26,22 +26,31 @@ Before going the details how to use the algorithms programmatically, let's take 
         AlignmentGui.getInstance();
 </pre>    
 
-shows this user interface:
+shows the following user interface. 
 
 ![Alignment GUI](img/alignment_gui.png)
 
+You can manually select protein chains, domains, or custom files to be aligned. Try to align 2hyn vs. 1zll. This will show the results in a graphical way, in 3D:
 
+![3D Alignment of PDB IDs 2hyn and 1zll](img/2hyn_1zll.png)
 
+and also a 2D display, that interacts with the 3D display
 
-## Combinatorial Extension (CE)
+![2D Alignment of PDB IDs 2hyn and 1zll](img/alignmentpanel.png)
+
+The functionality to perform and visualize these alignments can of course be used also from your own code. Let's first have a look at the alignment algorithms:
+
+## The Alignment Algorithms
+
+### Combinatorial Extension (CE)
 
 The Combinatorial Extension (CE) algorithm was originally developed by [Shindyalov and Bourne in 1998](http://peds.oxfordjournals.org/content/11/9/739.short). 
 
-## Combinatorial Extension with Circular Permutation (CE-CP)
+### Combinatorial Extension with Circular Permutation (CE-CP)
 
-## FATCAT - rigid
+### FATCAT - rigid
 
-## FATCAR - flexible
+### FATCAR - flexible
 
 
 ## Acknowledgements
