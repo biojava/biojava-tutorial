@@ -56,10 +56,10 @@ Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/
 <table>
     <tr>
         <td>
-            The asymmetric unit of hemoglobin PDB ID <a href="http://www.rcsb.org/pdb/explore.do?structureId=1hho">1HHO</a>
+            The <b>asymmetric unit</b> of hemoglobin PDB ID <a href="http://www.rcsb.org/pdb/explore.do?structureId=1hho">1HHO</a>
         </td>
         <td>
-            The biological assembly of hemoglobin PDB ID <a href="http://www.rcsb.org/pdb/explore.do?structureId=1hho">1HHO</a>
+            The <b>biological assembly</b> of hemoglobin PDB ID <a href="http://www.rcsb.org/pdb/explore.do?structureId=1hho">1HHO</a>
         </td>
     </tr>
     <tr>
@@ -79,10 +79,10 @@ Here another example, the bacteriophave GA protein capsid PDB ID [1GAV](http://w
 <table>
     <tr>
         <td>
-            The asymmetric unit of bacteriophave GA protein capsid PDB ID  <a href="http://www.rcsb.org/pdb/explore.do?structureId=1gav">1GAV</a>
+            The <b>asymmetric unit</b> of bacteriophave GA protein capsid PDB ID  <a href="http://www.rcsb.org/pdb/explore.do?structureId=1gav">1GAV</a>
         </td>
         <td>
-            The biological assembly of bacteriophave GA protein capsid PDB ID  <a href="http://www.rcsb.org/pdb/explore.do?structureId=1gav">1GAV</a>
+            The <b>biological assembly</b> of bacteriophave GA protein capsid PDB ID  <a href="http://www.rcsb.org/pdb/explore.do?structureId=1gav">1GAV</a>
         </td>
     </tr>
     <tr>
@@ -98,4 +98,4 @@ Here another example, the bacteriophave GA protein capsid PDB ID [1GAV](http://w
 
 ## Further Reading
 
-The RCSB PDB web site has a great [tutorial on Biological Assemblies](http://www.rcsb.org/pdb/101/static101.do?p=education_discussion/Looking-at-Structures/bioassembly_tutorial.html)
+The RCSB PDB web site has a great [tutorial on Biological Assemblies](http://www.rcsb.org/pdb/101/static101.do?p=education_discussion/Looking-at-Structures/bioassembly_tutorial.html).
