@@ -10,7 +10,7 @@ A tutorial for the protein structure modules of BioJava
             <img src="img/4hhb_jmol.png"/>
         </td>
         <td>
-            The <i>protein structure modules</i>of BioJava provide an API that allows to 
+            The <i>protein structure modules</i> of BioJava provide an API that allows to 
             <ul>
                 <li>Maintain local installations of PDB</li>
                 <li>Load structures and manipulate them</li>
