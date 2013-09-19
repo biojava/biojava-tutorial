@@ -47,9 +47,46 @@ If you want to directly access an array of [Atoms](http://www.biojava.org/docs/a
 
 Alternatively you can access atoms also by their parent-group.
 
-## Loop over all the data
+## Compounds (Entities) and Chains
 
 //TODO
+
+## Loop over all the data
+
+Here an example that loops over the whole data model and prints out the HEM groups of hemoglobin:
+
+<pre>
+			Structure structure = StructureIO.getStructure("4hhb");			
+
+			System.out.println(" # of compounds (entities) " + structure.getCompounds().size());
+
+			for ( Compound entity: structure.getCompounds()) {
+				System.out.println("   " + entity);
+			}
+			List<Chain> chains = structure.getChains();
+
+			System.out.println(" # chains: " + chains.size());
+
+			for (Chain c : chains) {
+				System.out.println("   Chain: " + c.getChainID());
+				for (Group g: c.getAtomGroups()){
+
+					if ( g.getPDBName().equalsIgnoreCase("HEM")) {
+
+						System.out.println(g);
+
+						for (Atom a: g.getAtoms()) {
+
+							System.out.println(a);
+
+						}
+
+					}
+
+				}
+			}
+</pre>
+
 
 ## Working with groups
 
