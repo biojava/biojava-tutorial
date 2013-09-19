@@ -27,9 +27,11 @@ Chapter 9 - Biological Assemblies
 
 Chapter 10 - Protein Symmetry
 
+Chapter 11 - Bonds
+
 ###
 
-Author: Andreas Prlic - @andreasprlic 
+Author: [Andreas Prlic](https://github.com/andreasprlic)
 
 
 

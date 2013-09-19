@@ -1,7 +1,7 @@
 The Chemical Component Dictionary
 =================================
 
-The [Chemical Components Dictionary](http://www.wwpdb.org/ccd.html) is an external reference file describing all residue and small molecule components found in PDB entries. This dictionary contains detailed chemical descriptions for standard and modified amino acids/nucleotides, small molecule ligands, and solvent molecules. 
+The [Chemical Component Dictionary](http://www.wwpdb.org/ccd.html) is an external reference file describing all residue and small molecule components found in PDB entries. This dictionary contains detailed chemical descriptions for standard and modified amino acids/nucleotides, small molecule ligands, and solvent molecules. 
 
 ### How does BioJava decide what groups are amino acids?
 
@@ -19,7 +19,7 @@ BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct repr
             }
 </pre>
 
-This should give this output:
+This will give this output:
 
 <pre>
 MSE is a group of type amino
