@@ -43,7 +43,7 @@ Chapter 7 - [SEQRES and ATOM records](seqres.md), mapping to Uniprot (SIFTs)
 
 Chapter 8 - Protein [Structure Alignments](alignment.md)
 
-Chapter 9 - Biological Assemblies 
+Chapter 9 - [Biological Assemblies](bioassembly.md) 
 
 Chapter 10 - Protein Symmetry
 
