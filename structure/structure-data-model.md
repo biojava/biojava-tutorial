@@ -46,36 +46,6 @@ If you want to directly access an array of [Atoms](http://www.biojava.org/docs/a
 
 Alternatively you can access atoms also by their parent-group.
 
-## Entities and Chains
-
-Entities (in the BioJava API called compounds) are the distinct chemical components of structures in the PDB. 
-Unlike chains, entities do not include duplicate copies and each entity is different from every other 
-entity in the structure. There are different types of entities. Polymer entities include Protein, DNA, 
-and RNA. Ligands are smaller chemical components that are not part of a polymer entity. 
-
-<pre>
-	Structure -> Entity -> Chain
-</pre>
-
-To explain this with an example, hemoglobin (e.g. PDB ID 4HHB) has two components, alpha 
-and beta. Each of the entities has two copies (= chains) in the structure. IN 4HHB, alpha 
-has the two chains with the IDs A, and C and beta the chains B, and D. In total, hemoglobin is 
-built up out of four chains.
-
-This prints all the compounds/entities in a structure
-<pre>
-			Structure structure = StructureIO.getStructure("4hhb");			
-
-			System.out.println(structure);
-						
-			System.out.println(" # of compounds (entities) " + structure.getCompounds().size());
-
-			for ( Compound entity: structure.getCompounds()) {
-				System.out.println("   " + entity);
-			}
-</pre>
-
-
 ## Loop over all the data
 
 Here an example that loops over the whole data model and prints out the HEM groups of hemoglobin:
@@ -156,6 +126,34 @@ Since all 3 types of groups are implementing the Group interface, you can also i
 
 The detection of the groups works really well in connection with the [Chemical Component Dictionary](checmcomp.md), as we will discuss in the next section. Without this dictionary, there can be inconsistencies in particular with chemically modified residues.
 
+## Entities and Chains
+
+Entities (in the BioJava API called compounds) are the distinct chemical components of structures in the PDB. 
+Unlike chains, entities do not include duplicate copies and each entity is different from every other 
+entity in the structure. There are different types of entities. Polymer entities include Protein, DNA, 
+and RNA. Ligands are smaller chemical components that are not part of a polymer entity. 
+
+<pre>
+	Structure -> Entity -> Chain
+</pre>
+
+To explain this with an example, hemoglobin (e.g. PDB ID 4HHB) has two components, alpha 
+and beta. Each of the entities has two copies (= chains) in the structure. IN 4HHB, alpha 
+has the two chains with the IDs A, and C and beta the chains B, and D. In total, hemoglobin is 
+built up out of four chains.
+
+This prints all the compounds/entities in a structure
+<pre>
+			Structure structure = StructureIO.getStructure("4hhb");			
+
+			System.out.println(structure);
+						
+			System.out.println(" # of compounds (entities) " + structure.getCompounds().size());
+
+			for ( Compound entity: structure.getCompounds()) {
+				System.out.println("   " + entity);
+			}
+</pre>
 
 
 
