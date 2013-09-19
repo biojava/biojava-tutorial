@@ -90,7 +90,7 @@ By default many people work with the *asymmetric unit* of a protein. However for
      public static void main(String[] args){
 
         try {
-                Structure structure = StructureIO.getBiologicalAssembly("4HHB");
+                Structure structure = StructureIO.getBiologicalAssembly("1GAV");
                 // and let's print out how many atoms are in this structure
                 System.out.println(StructureTools.getNrAtoms(structure));
             } catch (Exception e){
