@@ -40,7 +40,6 @@ Different ways are provided how to access the data contained in a [Structure](ht
 If you want to directly access an array of [Atoms](http://www.biojava.org/docs/api/org/biojava/bio/structure/Atom.html) you can use the utility class called [StructureTools](http://www.biojava.org/docs/api/org/biojava/bio/structure/StructureTools.html)
 
 <pre>
-
     // get all C-alpha atoms in the structure
     Atom[] caAtoms = StructureTools.getAtomCAArray(structure);
 </pre>
@@ -49,10 +48,14 @@ Alternatively you can access atoms also by their parent-group.
 
 ## Entities and Chains
 
-Entities (sometimes also called compounds) are the distinct chemical components of structures in the PDB. 
+Entities (in the BioJava API called compounds) are the distinct chemical components of structures in the PDB. 
 Unlike chains, entities do not include duplicate copies and each entity is different from every other 
 entity in the structure. There are different types of entities. Polymer entities include Protein, DNA, 
 and RNA. Ligands are smaller chemical components that are not part of a polymer entity. 
+
+<pre>
+	Structure -> Entity -> Chain
+</pre>
 
 To explain this with an example, hemoglobin (e.g. PDB ID 4HHB) has two components, alpha 
 and beta. Each of the entities has two copies (= chains) in the structure. IN 4HHB, alpha 
@@ -88,12 +91,39 @@ Here an example that loops over the whole data model and prints out the HEM grou
 							System.out.println(a);
 
 						}
-
 					}
-
 				}
 			}
 </pre>
+
+This will display
+
+<pre>
+ # of compounds (entities) 2
+   Compound: 1 HEMOGLOBIN (DEOXY) (ALPHA CHAIN) Engineered: YES OrganismScientific: HOMO SAPIENS OrganismTaxId: 9606 OrganismCommon: HUMAN Chains: ChainId: A C 
+   Compound: 2 HEMOGLOBIN (DEOXY) (BETA CHAIN) Engineered: YES OrganismScientific: HOMO SAPIENS OrganismTaxId: 9606 OrganismCommon: HUMAN Chains: ChainId: B D 
+ # chains: 4
+   Chain: A
+Hetatom 142 HEM true atoms: 43
+ CHA (CHA) C 4389 8.585 7.902 -18.282
+ CHB (CHB) C 4390 10.355 9.805 -14.208
+ ...
+   Chain: B
+Hetatom 148 HEM true atoms: 43
+ CHA (CHA) C 4433 9.659 -10.155 20.773
+ CHB (CHB) C 4434 11.121 -12.19 16.575
+ ...
+  Chain: C
+Hetatom 142 HEM true atoms: 43
+ CHA (CHA) C 4476 -8.63 7.776 18.352
+ CHB (CHB) C 4477 -10.32 10.048 14.384
+ ...
+  Chain: D
+Hetatom 148 HEM true atoms: 43
+ CHA (CHA) C 4520 -9.813 -9.884 -20.599
+ CHB (CHB) C 4521 -11.252 -11.989 -16.61
+ ...
+ </pre>
 
 
 ## Working with groups
