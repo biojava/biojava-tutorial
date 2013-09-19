@@ -21,7 +21,7 @@ You can add the BioJava repository by adding the following XML to your project p
         <dependencies>
                 ...
                 <dependency>
-                        <!-- This imports the latest SNAPSHOT builds from the protein structure modules of BioJava
+                        <!-- This imports the latest SNAPSHOT builds from the protein structure modules of BioJava.
                         -->                        
                         <groupId>org.biojava</groupId>
                         <artifactId>biojava3-structure</artifactId>
@@ -29,10 +29,7 @@ You can add the BioJava repository by adding the following XML to your project p
                 </dependency>
 
                 <!-- if you want to use the visualisation tools you need also this one: -->
-
-                <dependency>
-                        <!-- This imports the latest SNAPSHOT builds from the protein structure modules of BioJava
-                        -->                        
+                <dependency>                                         
                         <groupId>org.biojava</groupId>
                         <artifactId>biojava3-structure-gui</artifactId>
                         <version>3.0.7-SNAPSHOT</version>
