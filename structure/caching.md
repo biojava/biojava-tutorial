@@ -9,14 +9,14 @@ The main class that provides this functionality is the [AtomCache](http://www.bi
 It is hidden inside the StructureIO class, that we already encountered earlier.
 
 <pre>
-  Structure structure = StructureIO.getStructure("4hhb");			
+	Structure structure = StructureIO.getStructure("4hhb");			
 </pre>
 
 is the same as
 
 <pre>
-  AtomCache cache = new AtomCache();
-  cache.getStructure("4hhb");
+	AtomCache cache = new AtomCache();
+	cache.getStructure("4hhb");
 </pre>
 
 
@@ -31,12 +31,12 @@ you can configure the AtomCache by setting the PDB_DIR system property
     -DPDB_DIR=/wherever/you/want/
 </pre>
 
-An alternative is to hard-code the path in this way:
+An alternative is to hard-code the path in this way (but setting it as a property is better style)
 
 <pre>
-			AtomCache cache = new AtomCache();
+	AtomCache cache = new AtomCache();
 
-			cache.setPath("/path/to/pdb/files/");
+	cache.setPath("/path/to/pdb/files/");
 </pre>
 
 ## File Parsing Parameters
