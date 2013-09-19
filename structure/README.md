@@ -29,7 +29,7 @@ Chapter 10 - Protein Symmetry
 
 ###
 
-Author: Andreas Prlic (@andreasprlic)
+Author: Andreas Prlic - @andreasprlic 
 
 
 
