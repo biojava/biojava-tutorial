@@ -35,5 +35,46 @@ The *mmCIF/PDBx* file format contains the information how the Seqres and atom re
             
 </pre>
 
+## Mapping from Uniprot to Atom records 
+
+The mapping between PDB and UniProt changes over time. The [PDBe](http://www.pdbe.org) has a project that provides up-to-date mappings between the two databases, the [SIFTs](http://www.ebi.ac.uk/pdbe/docs/sifts/) project. 
+
+BioJava contains a parser for the SIFTs XML files. The [SiftsMappingProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/sifts/SiftsMappingProvider.html) also acts similar to the AtomCache class, that we [discussed earlier](caching.md) and can automatically download and locally install SIFTs files.
+
+Here, how to request the mapping for one particular PDB ID.
+
+<pre>
+    List<SiftsEntity> entities = SiftsMappingProvider.getSiftsMapping("1gc1");
+            
+    for (SiftsEntity e : entities){
+        System.out.println(e.getEntityId() + " " +e.getType());
+        
+        for ( SiftsSegment seg: e.getSegments()) {
+            System.out.println(" Segment: " + seg.getSegId() + " " + seg.getStart() + " " + seg.getEnd()) ;
+            
+            for ( SiftsResidue res: seg.getResidues() ) {
+                System.out.println("  " + res);
+            }
+        }
+        
+    }
+</pre>
+
+This gives the following output:
+
+<pre>
+    C protein
+ Segment: 1gc1_C_1_181 1 181
+  SiftsResidue [pdbResNum=1, pdbResName=LYS, chainId=C, uniProtResName=K, uniProtPos=26, naturalPos=1, seqResName=LYS, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  SiftsResidue [pdbResNum=2, pdbResName=LYS, chainId=C, uniProtResName=K, uniProtPos=27, naturalPos=2, seqResName=LYS, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  SiftsResidue [pdbResNum=3, pdbResName=VAL, chainId=C, uniProtResName=V, uniProtPos=28, naturalPos=3, seqResName=VAL, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  SiftsResidue [pdbResNum=4, pdbResName=VAL, chainId=C, uniProtResName=V, uniProtPos=29, naturalPos=4, seqResName=VAL, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  SiftsResidue [pdbResNum=5, pdbResName=LEU, chainId=C, uniProtResName=L, uniProtPos=30, naturalPos=5, seqResName=LEU, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  SiftsResidue [pdbResNum=6, pdbResName=GLY, chainId=C, uniProtResName=G, uniProtPos=31, naturalPos=6, seqResName=GLY, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  SiftsResidue [pdbResNum=7, pdbResName=LYS, chainId=C, uniProtResName=K, uniProtPos=32, naturalPos=7, seqResName=LYS, pdbId=1gc1, uniProtAccessionId=P01730, notObserved=false]
+  ...
+ </pre>   
+
+ As you can see for each residue in the Uniprot / PDB sequence the matching counterpart is provided (if there is one).
 
 
