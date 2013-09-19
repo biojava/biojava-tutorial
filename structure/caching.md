@@ -48,21 +48,35 @@ class is the main place to influence the level of detail and as a consequence th
 This example turns on the use of chemical components when loading a structure. (See also the [next chapter](chemcomp.md))
 
 <pre>
-		AtomCache cache = new AtomCache();
+	AtomCache cache = new AtomCache();
 
-		cache.setPath("/tmp/");
+	cache.setPath("/tmp/");
 			
-		FileParsingParameters params = cache.getFileParsingParams();
+	FileParsingParameters params = cache.getFileParsingParams();
 	
-		params.setLoadChemCompInfo(true);
+	params.setLoadChemCompInfo(true);
 
-		StructureIO.setAtomCache(cache);
+	StructureIO.setAtomCache(cache);
 
-		Structure structure = StructureIO.getStructure("4hhb");			
+	Structure structure = StructureIO.getStructure("4hhb");			
 
 </pre>
 
+## Caching of other SCOP, CATH
 
+The AtomCache not only provides access to PDB, it can also fetch Structure representations of protein domains, as defined by SCOP and CATH.
+
+<pre>
+	// uses a SCOP domain definition
+	Structure domain1 = StructureIO.getStructure("d4hhba_");
+	
+	// Get a specific protein chain, note: chain IDs are case sensitive, PDB IDs are not.
+	Structure chain1 = StructureIO.getStructure("4HHB.A");
+	
+</pre>
+
+There are quite a number of external database IDs that are supported here. See the 
+<a href="http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html#getStructure(java.lang.String)">AtomCache documentation</a> for more details on the supported options.
 
 
 
