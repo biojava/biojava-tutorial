@@ -102,6 +102,10 @@ BioJava provides a number of algorithms and visualisation tools that you can use
 + [How to calculate a protein structure alignment using BioJava](http://biojava.org/wiki/BioJava:CookBook:PDB:align)
 + [How to work with Groups (AminoAcid, Nucleotide, Hetatom)](http://biojava.org/wiki/BioJava:CookBook:PDB:groups)
 
+## Further reading
+
+See the [http://mmcif.rcsb.org/](http://mmcif.rcsb.org/) site for more documentation on mmcif.
+
 
 
 <!-- References -->

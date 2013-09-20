@@ -69,6 +69,6 @@ doi: 10.1093/bioinformatics/bts494
 
 The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license.
 
-[view license](license.md)
+[view license](../license.md)
 
 
