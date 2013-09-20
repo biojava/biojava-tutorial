@@ -45,11 +45,13 @@ Chapter 8 - Protein [Structure Alignments](alignment.md)
 
 Chapter 9 - [Biological Assemblies](bioassembly.md) 
 
-Chapter 10 - Protein Symmetry
+Chapter 10 - External Databases like SCOP &amp; CATH
 
-Chapter 11 - Bonds
+Chapter 11 - Protein Symmetry
 
-Chapter 12 - External Databases like SCOP &amp; CATH
+Chapter 12 - Bonds
+
+
 
 
 ### Author: 
