@@ -39,10 +39,10 @@ This works for both NMR and X-ray based structures and by default the first mode
 Different ways are provided how to access the data contained in a [Structure](http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html).
 If you want to directly access an array of [Atoms](http://www.biojava.org/docs/api/org/biojava/bio/structure/Atom.html) you can use the utility class called [StructureTools](http://www.biojava.org/docs/api/org/biojava/bio/structure/StructureTools.html)
 
-<pre>
+```java
     // get all C-alpha atoms in the structure
     Atom[] caAtoms = StructureTools.getAtomCAArray(structure);
-</pre>
+```
 
 Alternatively you can access atoms also by their parent-group.
 
@@ -50,7 +50,7 @@ Alternatively you can access atoms also by their parent-group.
 
 Here an example that loops over the whole data model and prints out the HEM groups of hemoglobin:
 
-<pre>
+```java
 			Structure structure = StructureIO.getStructure("4hhb");			
 
 			List<Chain> chains = structure.getChains();
@@ -75,7 +75,7 @@ Here an example that loops over the whole data model and prints out the HEM grou
 					}
 				}
 			}
-</pre>
+```
 
 ## Working with groups
 
@@ -87,7 +87,7 @@ The [Group](http://www.biojava.org/docs/api/org/biojava/bio/structure/Group.html
 
 In order to get all amino acids that have been observed in a PDB chain, you can use the following utility method:
 
-<pre>
+```java
             Chain chain = s.getChainByPDB("A");
             List<Group> groups = chain.getAtomGroups("amino");
             for (Group group : groups) {
@@ -96,23 +96,23 @@ In order to get all amino acids that have been observed in a PDB chain, you can 
                 // do something amino acid specific, e.g. print the secondary structure assignment
                 System.out.println(aa + " " + aa.getSecStruc());
             }
-</pre>
+```
 
 
 In a similar way you can access all nucleotide groups by
-<pre>
+```java
             chain.getAtomGroups("nucleotide");
-</pre>
+```
 
 The Hetatom groups are access in a similar fashion:
-<pre>
+```java
             chain.getAtomGroups("hetatm");
-</pre>
+```
 
 
 Since all 3 types of groups are implementing the Group interface, you can also iterate over all groups and check for the instance type:
 
-<pre>
+```java
             List<Group> allgroups = chain.getAtomGroups();
             for (Group group : groups) {
                 if ( group instanceof AminoAcid) {
@@ -120,7 +120,7 @@ Since all 3 types of groups are implementing the Group interface, you can also i
                     System.out.println(aa.getSecStruc());
                 }
             }
-</pre>
+```
 
 ## A Note
 
@@ -143,7 +143,7 @@ has the two chains with the IDs A, and C and beta the chains B, and D. In total,
 built up out of four chains.
 
 This prints all the compounds/entities in a structure
-<pre>
+```java
 			Structure structure = StructureIO.getStructure("4hhb");			
 
 			System.out.println(structure);
@@ -153,7 +153,7 @@ This prints all the compounds/entities in a structure
 			for ( Compound entity: structure.getCompounds()) {
 				System.out.println("   " + entity);
 			}
-</pre>
+```
 
 
 
