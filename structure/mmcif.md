@@ -19,11 +19,11 @@ BioJava provides you with both a mmCIF parser and a data model that reads PDB an
 
 The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html) class.
 
-<pre>
+```java
     Structure structure = StructureIO.getStructure("4HHB");
     // and let's print out how many atoms are in this structure
     System.out.println(StructureTools.getNrAtoms(structure));
-</pre>
+```
 
 
 
@@ -42,7 +42,7 @@ If you already have a local PDB installation, you can configure where BioJava sh
 
 By default BioJava is using the PDB file format for parsing data. In order to switch it to use mmCIF, we can take control over the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html) which manages your PDB (and btw. also SCOP, CATH) installations.
 
-<pre>
+```java
         AtomCache cache = new AtomCache();
             
         cache.setUseMmCif(true);
@@ -57,7 +57,7 @@ By default BioJava is using the PDB file format for parsing data. In order to sw
                     
         // and let's count how many chains are in this structure.
         System.out.println(structure.getChains().size());
-</pre>
+```
 
 As you can see, the AtomCache will again download the missing mmCIF file for 4HHB in the background. 
 
@@ -65,7 +65,7 @@ As you can see, the AtomCache will again download the missing mmCIF file for 4HH
 
 If you want to learn how to use the BioJava mmCIF parser to populate your own data structure, let's first take a look this lower-level code:
 
-<pre>
+```java
         InputStream inStream =  new FileInputStream(fileName);
  
         MMcifParser parser = new SimpleMMcifParser();
@@ -84,7 +84,7 @@ If you want to learn how to use the BioJava mmCIF parser to populate your own da
  
         // now get the protein structure.
         Structure cifStructure = consumer.getStructure();
-</pre>
+```
 
 The parser operates similar to a XML parser by triggering "events". The [SimpleMMcifConsumer](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/SimpleMMcifConsumer.html) listens to new categories being read from the file and then builds up the BioJava data model.
 
