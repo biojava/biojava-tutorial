@@ -21,7 +21,7 @@ The [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/Structu
 
 Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/pdb/explore.do?structureId=1hho) and visualize it:
 
-<pre>
+```java
     public static void main(String[] args){
 
         try {
@@ -51,7 +51,7 @@ Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/
         jmolPanel.evalString("select ligands; cartoon off; wireframe 0.3; spacefill 0.5; color cpk;");
 
     }
-</pre>
+```
 
 <table>
     <tr>
