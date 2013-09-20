@@ -7,7 +7,6 @@ The simplest way to load a PDB file is by using the [StructureIO](http://www.bio
 
 ```java
      public static void main(String[] args){
-
         try {
                 Structure structure = StructureIO.getStructure("4HHB");
                 // and let's print out how many atoms are in this structure
@@ -55,7 +54,6 @@ If you have the *biojava-structure-gui* module installed, you can quickly visual
 
 ```java
     public static void main(String[] args){
-    
         try {
             
             Structure struc = StructureIO.getStructure("4hhb");
@@ -99,10 +97,10 @@ By default many people work with the *asymmetric unit* of a protein. However for
                 Structure structure = StructureIO.getBiologicalAssembly("1GAV");
                 // and let's print out how many atoms are in this structure
                 System.out.println(StructureTools.getNrAtoms(structure));
-            } catch (Exception e){
+        } catch (Exception e){
                 e.printStackTrace();
         }
-    }   
+    }
 ```
 
 This topic is important, so we dedicated a [whole chapter](bioassembly.md) to it.

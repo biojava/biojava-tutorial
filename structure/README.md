@@ -1,7 +1,7 @@
 The Protein Structure Modules of BioJava
 =====================================================
 
-A tutorial for the protein structure modules of BioJava
+A tutorial for the protein structure modules of [BioJava](http://www.biojava.org)
 
 ## About
 <table>
