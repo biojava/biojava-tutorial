@@ -111,10 +111,11 @@ Take a look at the method getBiologicalAssembly() in [StructureIO](http://www.bi
 
 ## Memory consumption
 
-This next example loads the structure of the PBCV-1 virus capsid (PDB ID [1M4X](http://www.rcsb.org/pdb/explore.do?structureId=1m4x)). It has one of the largest, if not the largest biological assembly that is currently available in the PDB. It consists of 16 million atoms! Needless to say it is important to change the maximum heap size parameter. It requires a minimum of 9GB RAM (on OSX) to load. You can change the heap size by providing this startup parameter:
+This example in the next section loads the structure of the PBCV-1 virus capsid (PDB ID [1M4X](http://www.rcsb.org/pdb/explore.do?structureId=1m4x)). It consists of 16 million atoms and has one of the largest, if not the largest biological assembly that is currently available in the PDB. Needless to say it is important to change the maximum heap size parameter, otherwise there is no successfully load this. It requires a minimum of 9GB RAM to load (measured on Java 1.7 on OSX). You can change the heap size by providing the following startup parameter (and assuming you have 10G or more of RAM available on your system)
 <pre>
-    -Xmx10G (assuming you have 10G or more of RAM available on your system)
+    -Xmx10G 
 </pre>
+
 Note: when loading this structure with 9GB of memory, the Java VM spends a significant amount of time in garbage collection (GC). If you provide more RAM than the minimum requirement, then GC is triggered less often and the biological assembly loads faster.
 
 <table>
@@ -129,6 +130,8 @@ Note: when loading this structure with 9GB of memory, the Java VM spends a signi
         </td>
     </tr>
 </table>
+
+## Low level access to parsing pre-assembled biological asssembly files
 
 To load the pre-assembled biological assembly file directly, one can tweak the low-level PDB file parser like this
 
