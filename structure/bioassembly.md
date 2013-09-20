@@ -111,7 +111,11 @@ Take a look at the method getBiologicalAssembly() in [StructureIO](http://www.bi
 
 ## Memory consumption
 
-This next example loads the structure of the PBCV-1 virus capsid (PDB ID [1M4X](http://www.rcsb.org/pdb/explore.do?structureId=1m4x)). It has one of the largest, if not the largest biological assembly that is currently available in the PDB. It consists of 16 million atoms!
+This next example loads the structure of the PBCV-1 virus capsid (PDB ID [1M4X](http://www.rcsb.org/pdb/explore.do?structureId=1m4x)). It has one of the largest, if not the largest biological assembly that is currently available in the PDB. It consists of 16 million atoms! Needless to say it is important to change the maximum heap size parameter. It requires a minimum of 9GB RAM (on OSX) to load. You can change the heap size by providing this startup parameter:
+<pre>
+    -Xmx10G (assuming you have 10G or more of RAM available on your system)
+</pre>
+Note: when loading this structure with 9GB of memory, the Java VM spends a significant amount of time in garbage collection (GC). If you provide more RAM than the minimum requirement, then GC is triggered less often and the biological assembly loads faster.
 
 <table>
     <tr>
@@ -135,7 +139,7 @@ public static void main(String[] args){
 
         // This loads the PBCV-1 virus capsid, one of, if not the biggest biological assembly in terms on nr. of atoms.
         // The 1m4x.pdb1.gz file has 313 MB (compressed)
-        // This Structure requires about 8 GB of memory to be loaded in memory. 
+        // This Structure requires a minimum of 9 GB of memory to be loaded in memory. 
 
         String pdbId = "1M4X";
 
