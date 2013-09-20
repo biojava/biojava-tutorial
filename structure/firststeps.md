@@ -5,7 +5,7 @@ First Steps
 
 The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html) class.
 
-<pre>
+```java
      public static void main(String[] args){
 
         try {
@@ -16,7 +16,7 @@ The simplest way to load a PDB file is by using the [StructureIO](http://www.bio
                 e.printStackTrace();
         }
     }   
-</pre>
+```
 
 BioJava  automatically downloads the PDB file for hemoglobin [4HHB](http://www.rcsb.org/pdb/explore.do?structureId=4HHB) and copies it into a temporary location. Then the PDB file parser loads the data into a [Structure](http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html) object, that provides access to the content in the file. (If you call this a second time, BioJava will automatically re-use the local file.)
 
@@ -53,7 +53,7 @@ Talking about startup properties, it is also good to mention the fact that many 
 
 If you have the *biojava-structure-gui* module installed, you can quickly visualise a [Structure](http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html) via this:
 
-<pre>
+```java
     public static void main(String[] args){
     
         try {
@@ -73,7 +73,7 @@ If you have the *biojava-structure-gui* module installed, you can quickly visual
             e.printStackTrace();
         }
     }
-</pre>
+```
 
 This will result in the following view:
 
@@ -92,7 +92,7 @@ This will result in the following view:
 
 By default many people work with the *asymmetric unit* of a protein. However for many studies the correct representation to look at is the *biological assembly* of a protein. You can request it by calling
 
-<pre>
+```java
      public static void main(String[] args){
 
         try {
@@ -103,7 +103,7 @@ By default many people work with the *asymmetric unit* of a protein. However for
                 e.printStackTrace();
         }
     }   
-</pre>
+```
 
 This topic is important, so we dedicated a [whole chapter](bioassembly.md) to it.
 
