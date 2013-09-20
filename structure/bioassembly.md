@@ -17,7 +17,7 @@ A crystal asymmetric unit may contain:
 
 The biological assembly (also sometimes referred to as the biological unit) is the macromolecular assembly that has either been shown to be or is believed to be the functional form of the molecule For example, the functional form of hemoglobin has four chains.
 
-The [StructureIO](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/StructureIO.html) and [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html) classes in Biojava provide access methods to work with either asymmetric unit or biological assembly.
+The [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html) and [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html) classes in Biojava provide access methods to work with either asymmetric unit or biological assembly.
 
 Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/pdb/explore.do?structureId=1hho) and visualize it:
 
