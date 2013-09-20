@@ -24,7 +24,7 @@ The **Atom** records provide coordinates where it was possible to observe them.
 
 The *mmCIF/PDBx* file format contains the information how the Seqres and atom records are mapped onto each other. However the *PDB format* does not clearly specify how to resolve this mapping. BioJava contains a utility class that maps the Seqres to the Atom records when parsing PDB files. This class performs an alignment using dynamic programming, which can slow down the parsing process. If you do not require the precise Seqres to Atom mapping, you can turn it off like this:
 
-<pre>
+```java
     AtomCache cache = new AtomCache();
             
     FileParsingParameters params = cache.getFileParsingParams();
@@ -33,7 +33,7 @@ The *mmCIF/PDBx* file format contains the information how the Seqres and atom re
             
     Structure structure = StructureIO.getStructure(...);
             
-</pre>
+```
 
 ## Mapping from Uniprot to Atom records 
 
@@ -43,7 +43,7 @@ BioJava contains a parser for the SIFTs XML files. The [SiftsMappingProvider](ht
 
 Here, how to request the mapping for one particular PDB ID.
 
-<pre>
+```java
     List<SiftsEntity> entities = SiftsMappingProvider.getSiftsMapping("1gc1");
             
     for (SiftsEntity e : entities){
@@ -58,7 +58,7 @@ Here, how to request the mapping for one particular PDB ID.
         }
         
     }
-</pre>
+```
 
 This gives the following output:
 
