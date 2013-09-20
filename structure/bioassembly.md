@@ -135,7 +135,8 @@ Note: when loading this structure with 9GB of memory, the Java VM spends a signi
 
 To load the pre-assembled biological assembly file directly, one can tweak the low-level PDB file parser like this
 
-<pre>
+```java
+
 public static void main(String[] args){
 
         public static void main(String[] args){
@@ -219,7 +220,7 @@ public static void main(String[] args){
         }
         return structure;
     }
- </pre>
+ ```
 
 
 ## Further Reading
