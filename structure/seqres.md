@@ -22,9 +22,14 @@ The sequence that has been used in the experiment is stored in the **Seqres** re
 
 The **Atom** records provide coordinates where it was possible to observe them.
 
+<pre>
+    Seqres groups -> sequence that has been used in the experiment
+    Atom groups   -> subset of Seqres groups for which coordinates could be obtained
+</pre>    
+
 The *mmCIF/PDBx* file format contains the information how the Seqres and atom records are mapped onto each other. However the *PDB format* does not clearly specify how to resolve this mapping. BioJava contains a utility class that maps the Seqres to the Atom records when parsing PDB files. This class performs an alignment using dynamic programming, which can slow down the parsing process. If you do not require the precise Seqres to Atom mapping, you can turn it off like this:
 
-<pre>
+```java
     AtomCache cache = new AtomCache();
             
     FileParsingParameters params = cache.getFileParsingParams();
@@ -33,7 +38,22 @@ The *mmCIF/PDBx* file format contains the information how the Seqres and atom re
             
     Structure structure = StructureIO.getStructure(...);
             
+```
+
+## Accessing Seqres and Atom groups
+
+By default BioJava loads both the Seqres and Atom groups into the [Chain](http://www.biojava.org/docs/api/org/biojava/bio/structure/Chain.html) 
+objects.
+
+<pre>
+    Chain   -> Seqres groups
+            -> Atom groups
 </pre>
+
+Groups that are part of the Seqres sequence as well as of the Atom records are mapped onto each other. This means you
+can iterate over all Seqres groups in a chain and check, if they have observed atoms.
+
+
 
 ## Mapping from Uniprot to Atom records 
 
@@ -43,7 +63,7 @@ BioJava contains a parser for the SIFTs XML files. The [SiftsMappingProvider](ht
 
 Here, how to request the mapping for one particular PDB ID.
 
-<pre>
+```java
     List<SiftsEntity> entities = SiftsMappingProvider.getSiftsMapping("1gc1");
             
     for (SiftsEntity e : entities){
@@ -58,7 +78,7 @@ Here, how to request the mapping for one particular PDB ID.
         }
         
     }
-</pre>
+```
 
 This gives the following output:
 

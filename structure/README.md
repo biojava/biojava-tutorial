@@ -1,7 +1,7 @@
 The Protein Structure Modules of BioJava
 =====================================================
 
-A tutorial for the protein structure modules of BioJava
+A tutorial for the protein structure modules of [BioJava](http://www.biojava.org)
 
 ## About
 <table>
@@ -43,13 +43,15 @@ Chapter 7 - [SEQRES and ATOM records](seqres.md), mapping to Uniprot (SIFTs)
 
 Chapter 8 - Protein [Structure Alignments](alignment.md)
 
-Chapter 9 - Biological Assemblies 
+Chapter 9 - [Biological Assemblies](bioassembly.md) 
 
-Chapter 10 - Protein Symmetry
+Chapter 10 - [External Databases](externaldb.md) like SCOP &amp; CATH
 
-Chapter 11 - Bonds
+Chapter 11 - Protein Symmetry
 
-Chapter 12 - [External Databases](externaldb.md) like SCOP &amp; CATH
+Chapter 12 - Bonds
+
+
 
 
 ### Author: 
@@ -67,6 +69,6 @@ doi: 10.1093/bioinformatics/bts494
 
 The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license.
 
-[view license](license.md)
+[view license](../license.md)
 
 

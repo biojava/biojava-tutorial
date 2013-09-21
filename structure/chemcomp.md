@@ -7,7 +7,7 @@ The [Chemical Component Dictionary](http://www.wwpdb.org/ccd.html) is an externa
 
 BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct representation of each group. To make it clear how this can work, let's take a look at how [Selenomethionine](http://en.wikipedia.org/wiki/Selenomethionine) and water is dealt with:
 
-<pre>
+```java
             Structure structure = StructureIO.getStructure("1A62");
                     
             for (Chain chain : structure.getChains()){
@@ -17,7 +17,7 @@ BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct repr
                     }
                 }
             }
-</pre>
+```
 
 This will give this output:
 
@@ -58,7 +58,7 @@ By default BioJava ships with a minimal representation of standard amino acids, 
 
 You can enable the first behaviour by doing using the [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/FileParsingParameters.html) class:
 
-<pre>
+```java
             AtomCache cache = new AtomCache();
             
              // by default all files are stored at a temporary location.
@@ -74,10 +74,10 @@ You can enable the first behaviour by doing using the [FileParsingParameters](ht
             StructureIO.setAtomCache(cache);
             
             Structure structure = StructureIO.getStructure(...);
-</pre>
+```
 
 If you want to enable the second behaviour (slow loading of all chem comps at startup, but no further small delays later on) you can use the same code but change the behaviour by switching the [ChemCompProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/ChemCompProvider.html) implementation in the [ChemCompGroupFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/ChemCompGroupFactory.html)
 
-<pre>    
+```java
      ChemCompGroupFactory.setChemCompProvider(new AllChemCompProvider());
-</pre>
+```
