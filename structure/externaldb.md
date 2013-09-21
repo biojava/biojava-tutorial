@@ -16,10 +16,57 @@ The Structural Classification of Proteins (SCOP) is a manually curated classific
 * The breakdown of a protein into structural domains
 * A classification of domains according to their structure.
 
-Domains are referred to by a 7-letter identifier consisting of the letter 'd', the pdb id of the structure, the chain identifier (or '.' for multichain domains), and a alphanumeric domain identifier (or '_' for single-domain chains). Domains are classified into a heirarchy according to their structural similarity. From least similar to most similar, the levels are:
+The structure for a known SCOP domain can be fetched via its 7-letter domain ID (eg 'd2bq6a1') via ```StructureIO.getStructure()```, as described in [Local PDB Installations](caching.md#Caching of other SCOP, CATH).
 
-1. __Class__ Similar secondary structure composition
-2. __Fold__ Major structural similarity
-3. __Superfamily__ Probably evolutionarily related
-4. __Family__ Clearly evolutionarily related
-5. __Domain__ Unique domain
+The SCOP classification can be accessed through the [```ScopDatabase```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopDatabase.html) class.
+
+    ScopDatabase scop = ScopFactory.getSCOP();
+
+### Inspecting SCOP domains
+
+A list of domains can be retrieved for a given protein.
+
+    List<ScopDomain> domains = scop.getDomainsForPDB("4HHB");
+
+You can get lots of useful information from the [```ScopDomain```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopDomain.html) object. 
+
+    ScopDomain domain = domains.get(0);
+    String scopID = domain.getScopId(); // d4hhba_
+    String classification = domain.getClassificationId(); // a.1.1.2
+    int sunId = domain.getSunId(); // 15251
+
+### Viewing the SCOP hierarchy
+
+The full hierarchy is available as a tree of [```ScopNode```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopNode.html)s, which can be easily traversed using their ```getParentSunid()``` and ```getChildren()``` methods.
+
+    ScopNode node = scop.getScopNode(sunId);
+    while (node != null){
+        System.out.println(scop.getScopDescriptionBySunid(node.getSunid()));
+        node = scop.getScopNode(node.getParentSunid());
+    }
+
+ScopDatabase also provides access to all nodes at a particular level.
+
+    List<ScopDescription> superfams = scop.getByCategory(ScopCategory.Superfamily);
+    System.out.println("Total nr. of superfamilies:" + superfams.size());
+
+### Types of ScopDatabase
+
+Several types of ```ScopDatabase``` are available. These can be instantiated manually when more control is needed.
+
+* __RemoteScopInstallation__ (default) Fetches data one node at a time from the internet. Useful when perfoming a small number of operations.
+* __ScopeInstallation__ Downloads all SCOP data as a batch and caches it for later use. Much faster when performing many operations.
+
+Several internal BioJava classes use ```ScopFactory.getSCOP()``` when they encounter references to SCOP domains, so it is always a good idea to notify the ```ScopFactory``` when using a custom ```ScopDatabase``` instance.
+
+    ScopDatabase scop = new ScopInstallation();
+    ScopFactory.setScopDatabase(scop);
+
+Several versions of SCOP are available.
+
+    // Use Steven Brenner's updated version of SCOP
+    scop = ScopFactory.getSCOP(ScopFactory.VERSION_1_75B);
+    // Use an old version globally, perhaps for an older benchmark
+    ScopFactory.setScopDatabase(ScopFactory.VERSION_1_69);
+
+
