@@ -1,7 +1,7 @@
 BioJava 3 tutorial
 =================
 
-A brief introduction into BioJava 3.
+A brief introduction into [BioJava 3](https://github.com/biojava/biojava).
 
 == 
 
