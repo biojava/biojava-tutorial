@@ -107,7 +107,7 @@ B) There is also a pre-computed file available that contains an assembled versio
 
 BioJava contains utility classes to re-create biological assemblies for both PDB and mmCIF, as well as to parse the pre-computed file. The [BioUnitDataProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/quaternary/io/BioUnitDataProvider.html) interface defines what is required to re-build an assembly. The [BioUnitDataProviderFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/quaternary/io/BioUnitDataProviderFactory.html) allows to specify which of the BioUnitDataProviders is getting used.
 
-Take a look at the method getBiologicalAssembly() in [StructureIO](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/StructureIO.html)  to see how the BioUnitDataProviders are used by the *BiologicalAssemblyBuilder*.
+Take a look at the method getBiologicalAssembly() in [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html)  to see how the BioUnitDataProviders are used by the *BiologicalAssemblyBuilder*.
 
 ## Memory consumption
 
