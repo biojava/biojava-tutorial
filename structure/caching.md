@@ -64,7 +64,7 @@ This example turns on the use of chemical components when loading a structure. (
 
 ## Caching of other SCOP, CATH
 
-The AtomCache not only provides access to PDB, it can also fetch Structure representations of protein domains, as defined by SCOP and CATH.
+The AtomCache not only provides access to PDB, it can also fetch Structure representations of protein domains, as defined by SCOP and CATH, and the algorithms Protein Domain Parser (PDP) and Domain Parser (DP).
 
 ```java
 	// uses a SCOP domain definition
