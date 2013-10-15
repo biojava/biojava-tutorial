@@ -144,4 +144,37 @@ Cath can be accessed in a very similar fashion to SCOP. In parallel to the ScopI
     }
  ```       
 
+This will show the following
+<img src="img/cath_1dan.png" width=300 />
+
+and the text:
+```            
+got 4 domains
+ * domain 1danH01 has # segments: 2 color: red
+   * CathSegment [segmentId=1, start=16, stop=27, length=12, sequenceHeader=null, sequence=null]
+   * CathSegment [segmentId=2, start=121, stop=232, length=112, sequenceHeader=null, sequence=null]
+ * domain 1danH02 has # segments: 2 color: green
+   * CathSegment [segmentId=1, start=28, stop=120, length=93, sequenceHeader=null, sequence=null]
+   * CathSegment [segmentId=2, start=233, stop=246, length=14, sequenceHeader=null, sequence=null]
+ * domain 1danU00 has # segments: 1 color: blue
+   * CathSegment [segmentId=1, start=91, stop=210, length=120, sequenceHeader=null, sequence=null]
+ * domain 1danT00 has # segments: 1 color: yellow
+   * CathSegment [segmentId=1, start=6, stop=80, length=75, sequenceHeader=null, sequence=null]
+```
+
+<table>
+    <tr>
+        <td>
+
+        </td>
+        <td>
+            <pre>
+
+
+            </pre>
+        </td>
+    </tr>
+    <tr></tr>
+</table>
+
    
