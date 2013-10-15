@@ -65,8 +65,82 @@ Several internal BioJava classes use ```ScopFactory.getSCOP()``` when they encou
 Several versions of SCOP are available.
 
     // Use Steven Brenner's updated version of SCOP
-    scop = ScopFactory.getSCOP(ScopFactory.VERSION_1_75B);
+    scop = ScopFactory.getSCOP(ScopFactory.VERSION_1_75C);
     // Use an old version globally, perhaps for an older benchmark
     ScopFactory.setScopDatabase(ScopFactory.VERSION_1_69);
 
+CATH
+----
 
+Cath can be accessed in a very similar fashion to SCOP. In parallel to the ScopInstallation class, there is a CathInstallation. Also, the StructureIO class allows to request by CATH ID. 
+
+```java
+
+        private static final String DEFAULT_SCRIPT ="select * ; cartoon on; spacefill off; wireframe off; select ligands; wireframe on; spacefill on;";
+    private static final String[] colors = new String[]{"red","green","blue","yellow"};
+    
+    public static void main(String args[]){
+        
+        UserConfiguration config = new UserConfiguration();
+        config.setPdbFilePath("/tmp/");
+
+        String pdbID = "1DAN";
+        
+        CathDatabase cath = new CathInstallation(config.getPdbFilePath());
+        
+        List<CathDomain> domains = cath.getDomainsForPdb(pdbID);
+        
+        try {
+            
+            // show the structure in 3D
+            BiojavaJmol jmol = new BiojavaJmol();           
+            jmol.setStructure(StructureIO.getStructure(pdbID));         
+            jmol.evalString(DEFAULT_SCRIPT);
+            
+            System.out.println("got " + domains.size() + " domains");
+            
+            // now color the domains on the structure
+            int colorpos = -1;
+            
+            for ( CathDomain domain : domains){             
+
+                colorpos++;
+                
+                showDomain(jmol, domain,colorpos);
+            }
+                
+            
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
+        
+    }
+
+    
+    
+    private static void showDomain(BiojavaJmol jmol, CathDomain domain, int colorpos) {
+        List<CathSegment> segments = domain.getSegments();
+        
+        StructureName key = new StructureName(domain.getDomainName());
+        String chainId = key.getChainId();
+        
+        String color = colors[colorpos];
+        
+        System.out.println(" * domain " + domain.getDomainName() + " has # segments: " + domain.getSegments().size() + " color: " + color);
+        
+        for ( CathSegment segment : segments){
+            System.out.println("   * " + segment);
+            String start = segment.getStart();
+            
+            String stop = segment.getStop();
+                        
+            String script = "select " + start + "-" + stop+":"+chainId + "; color " + color +";";
+            
+            jmol.evalString(script );
+        }
+        
+    }
+ ```       
+
+   
