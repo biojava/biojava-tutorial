@@ -48,10 +48,15 @@ The Combinatorial Extension (CE) algorithm was originally developed by [Shindyal
 
 ### Combinatorial Extension with Circular Permutation (CE-CP)
 
+This is a new variation of CE that can detect circular permutations in proteins.
+
 ### FATCAT - rigid
 
-### FATCAR - flexible
+This is a Java implementation of the original FATCAT algorithm. [Yuzhen Ye &amp; Adam Godzik in 2003] (http://bioinformatics.oxfordjournals.org/content/19/suppl_2/ii246.abstract)
 
+### FATCAT - flexible
+
+Just as FATCAT - rigid, a Java implementation of the original FATCAT algorithm.
 
 ## Acknowledgements
 
