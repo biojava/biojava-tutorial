@@ -11,7 +11,9 @@ SCOP
 	   <img src="img/1dan_scop.png" width=300 />
     </td>
 <td>
-	(Top) The structure 1DAN contains four chains. (Bottom) These chains are broken up into six SCOP domains. The green chain L becomes 3 domains, while a combination of chains U (red) and T (orange) go to form the central purpal domain.</p>
+	(Top) The structure [1DAN](http://www.rcsb.org/pdb/explore.do?structureId=1dan) contains four chains. <br/>
+
+    (Bottom) These chains are broken up into six SCOP domains. The green chain L becomes 3 domains, while a combination of chains U (red) and T (orange) go to form the central purpal domain.
 </td>
 </tr>
 </table>
