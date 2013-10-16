@@ -48,7 +48,7 @@ The Combinatorial Extension (CE) algorithm was originally developed by [Shindyal
 
 ### Combinatorial Extension with Circular Permutation (CE-CP)
 
-This is a new variation of CE that can detect circular permutations in proteins. (@sbliven &amp; @andreasprlic , unpublished)
+This is a new variation of CE that can detect circular permutations in proteins. #sbliven &amp; #andreasprlic , unpublished
 
 ### FATCAT - rigid
 
