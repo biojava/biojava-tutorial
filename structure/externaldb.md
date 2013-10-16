@@ -27,13 +27,17 @@ The structure for a known SCOP domain can be fetched via its 7-letter domain ID 
 
 The SCOP classification can be accessed through the [```ScopDatabase```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopDatabase.html) class.
 
+```java
     ScopDatabase scop = ScopFactory.getSCOP();
+```
 
 ### Inspecting SCOP domains
 
 A list of domains can be retrieved for a given protein.
 
+```java
     List<ScopDomain> domains = scop.getDomainsForPDB("4HHB");
+```
 
 You can get lots of useful information from the [```ScopDomain```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopDomain.html) object. 
 
@@ -46,16 +50,20 @@ You can get lots of useful information from the [```ScopDomain```](http://www.bi
 
 The full hierarchy is available as a tree of [```ScopNode```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopNode.html)s, which can be easily traversed using their ```getParentSunid()``` and ```getChildren()``` methods.
 
+```java
     ScopNode node = scop.getScopNode(sunId);
     while (node != null){
         System.out.println(scop.getScopDescriptionBySunid(node.getSunid()));
         node = scop.getScopNode(node.getParentSunid());
     }
+```
 
 ScopDatabase also provides access to all nodes at a particular level.
 
+```java
     List<ScopDescription> superfams = scop.getByCategory(ScopCategory.Superfamily);
     System.out.println("Total nr. of superfamilies:" + superfams.size());
+```
 
 ### Types of ScopDatabase
 
@@ -66,15 +74,18 @@ Several types of ```ScopDatabase``` are available. These can be instantiated man
 
 Several internal BioJava classes use ```ScopFactory.getSCOP()``` when they encounter references to SCOP domains, so it is always a good idea to notify the ```ScopFactory``` when using a custom ```ScopDatabase``` instance.
 
+```java
     ScopDatabase scop = new ScopInstallation();
     ScopFactory.setScopDatabase(scop);
-
+```
 Several versions of SCOP are available.
 
+```java
     // Use Steven Brenner's updated version of SCOP
     scop = ScopFactory.getSCOP(ScopFactory.VERSION_1_75C);
     // Use an old version globally, perhaps for an older benchmark
     ScopFactory.setScopDatabase(ScopFactory.VERSION_1_69);
+```
 
 CATH
 ----
