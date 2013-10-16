@@ -28,7 +28,7 @@ Structure
 All structure objects contain one or more "models". That means also X-ray structures contain a "virtual" model which serves as a container for the chains. The most common way to access chains will be via
 
 ```java
-        List < Chain > chains = structure.getChains();
+        List <Chain> chains = structure.getChains();
 ```
 
 This works for both NMR and X-ray based structures and by default the first model is getting accessed.

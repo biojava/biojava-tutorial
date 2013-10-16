@@ -40,7 +40,7 @@ If you already have a local PDB installation, you can configure where BioJava sh
 
 ## From PDB to mmCIF
 
-By default BioJava is using the PDB file format for parsing data. In order to switch it to use mmCIF, we can take control over the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html) which manages your PDB (and btw. also SCOP, CATH) installations.
+By default BioJava is using the PDB file format for parsing data. In order to switch it to use mmCIF, we can take control over the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html) which manages your PDB ([and btw. also SCOP, CATH](externaldb.md)) installations.
 
 ```java
         AtomCache cache = new AtomCache();
@@ -89,9 +89,9 @@ If you want to learn how to use the BioJava mmCIF parser to populate your own da
 The parser operates similar to a XML parser by triggering "events". The [SimpleMMcifConsumer](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/SimpleMMcifConsumer.html) listens to new categories being read from the file and then builds up the BioJava data model.
 
 To re-use the parser for your own datamodel, just implement the [MMcifConsumer](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/MMcifConsumer.html) interface and add it to the [SimpleMMcifParser](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/SimpleMMcifParser.html).
-<pre>
+```java
         parser.addMMcifConsumer(myOwnConsumerImplementation);
-</pre>
+```
 
 ## I loaded a Structure object, what now?
 
@@ -105,7 +105,6 @@ BioJava provides a number of algorithms and visualisation tools that you can use
 ## Further reading
 
 See the [http://mmcif.rcsb.org/](http://mmcif.rcsb.org/) site for more documentation on mmcif.
-
 
 
 <!-- References -->
