@@ -6,10 +6,15 @@ Biojava provides access to a number of external structural databases. These ofte
 SCOP
 ----
 
-<div style="float:right; margin-left:auto; border: grey 1px;">
-	<img src="img/1dan_scop.png" width=300 /><br/>
-	<p style="width:300px; font-size:80%;">(Top) The structure 1DAN contains four chains. (Bottom) These chains are broken up into six SCOP domains. The green chain L becomes 3 domains, while a combination of chains U (red) and T (orange) go to form the central purpal domain.</p>
-</div>
+<table>
+<tr><td>
+	   <img src="img/1dan_scop.png" width=300 />
+    </td>
+<td>
+	(Top) The structure 1DAN contains four chains. (Bottom) These chains are broken up into six SCOP domains. The green chain L becomes 3 domains, while a combination of chains U (red) and T (orange) go to form the central purpal domain.</p>
+</td>
+</tr>
+</table>
 
 The Structural Classification of Proteins (SCOP) is a manually curated classification of protein structural domains. It provides two pieces of data:
 
