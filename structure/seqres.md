@@ -5,7 +5,7 @@ How molecular sequences are linked to experimentally observed atoms.
 
 ## Sequences and Atoms
 
-In many experiments not all atoms that are part of the molecule udner study can be observed. As such the ATOM records in PDB oftein contain missing atoms or only the part of a molecule that could be experimentally determined. In case of multi-domain proteins the PDB often contains only one of the domains (and in some cases even shorter fragments).
+In many experiments not all atoms that are part of the molecule under study can be observed. As such the ATOM records in PDB oftein contain missing atoms or only the part of a molecule that could be experimentally determined. In case of multi-domain proteins the PDB often contains only one of the domains (and in some cases even shorter fragments).
 
 Let's take a look at an example. The [Protein Feature View](https://github.com/andreasprlic/proteinfeatureview) provides a graphical summary of how the regions that have been observed in an experiment and are available in the PDB map to UniProt.
 
