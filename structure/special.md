@@ -46,7 +46,7 @@ A [http://en.wikipedia.org/wiki/Chromophore](chromophore) is the part of a molec
 			}
 ```
 
-This will give this output, note 'DYG' at position 66.
+This will give this output, note 'DYG' at position 63.
 
 ```		
            60
