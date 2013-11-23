@@ -46,19 +46,22 @@ A [http://en.wikipedia.org/wiki/Chromophore](chromophore) is the part of a molec
 			}
 ```
 
-This will give this output
+This will give this output, note 'DYG' at position 66.
 
-```
-		note 'DYG' at position 66
+```		
            60
 		...01234567890
 		...AAFDYGNRVFTEY...
-		
-...
+```
+
+DYG is an unusual group - it has 3 characters as a result of .getOne_letter_code()
+
+```
+	...
 		62 65 PHE amino F L-PEPTIDE LINKING
 		63 66 DYG amino DYG L-PEPTIDE LINKING
 		64 69 ASN amino N L-PEPTIDE LINKING
-...
+	...
 ```
 
 ## Microheterogeneity
