@@ -9,6 +9,8 @@
 A chromophore is the part of a molecule responsible for its color. Several proteins, such as GFP contain a chromopohre that consists of three modified residues. BioJava represents this as a single group in terms of atoms, however as three amino acids when creating the amino acid sequences.
 
 ```java
+			
+						
 			// make sure we download chemical component definitions
 			// which is required for correctly representing the chromophore
 			FileParsingParameters params = new FileParsingParameters();			
@@ -25,7 +27,8 @@ A chromophore is the part of a molecule responsible for its color. Several prote
 			
 			// and print out the internals
 			System.out.println(s1.getPDBHeader().toPDB());
-			
+						
+			// chromophore is at PDB residue number 66
 			for ( Chain c : s1.getChains()) {
 			
 				System.out.println("Chain " + c.getChainID() + 
@@ -37,12 +40,9 @@ A chromophore is the part of a molecule responsible for its color. Several prote
 				
 				int pos = 0 ;
 				for (Group g: c.getAtomGroups()) {
-					pos++;
-					
-					System.out.println(pos + " " + g.getResidueNumber() + " " + g.getPDBName() + " " + g.getType()  + " " + g.getChemComp().getOne_letter_code() + " " + g.getChemComp().getType() );				
-					
-				}
-				
+					pos++;					
+					System.out.println(pos + " " + g.getResidueNumber() + " " + g.getPDBName() + " " + g.getType()  + " " + g.getChemComp().getOne_letter_code() + " " + g.getChemComp().getType() );									
+				}				
 			}
 ```
 
