@@ -6,7 +6,7 @@
 
 ## Chromophores
 
-A chromophore is the part of a molecule responsible for its color. Several proteins, such as GFP contain a chromopohre that consists of three modified residues. BioJava represents this as a single group in terms of atoms, however as three amino acids when creating the amino acid sequences.
+A [http://en.wikipedia.org/wiki/Chromophore](chromophore) is the part of a molecule responsible for its color. Several proteins, such as GFP contain a chromopohre that consists of three modified residues. BioJava represents this as a single group in terms of atoms, however as three amino acids when creating the amino acid sequences.
 
 ```java
 			
@@ -44,6 +44,21 @@ A chromophore is the part of a molecule responsible for its color. Several prote
 					System.out.println(pos + " " + g.getResidueNumber() + " " + g.getPDBName() + " " + g.getType()  + " " + g.getChemComp().getOne_letter_code() + " " + g.getChemComp().getType() );									
 				}				
 			}
+```
+
+This will give this output
+
+```
+		note 'DYG' at position 66
+           60
+		...01234567890
+		...AAFDYGNRVFTEY...
+		
+...
+		62 65 PHE amino F L-PEPTIDE LINKING
+		63 66 DYG amino DYG L-PEPTIDE LINKING
+		64 69 ASN amino N L-PEPTIDE LINKING
+...
 ```
 
 ## Microheterogeneity
