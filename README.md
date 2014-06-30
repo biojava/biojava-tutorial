@@ -13,11 +13,13 @@ At the moment this tutorial is still under development. Please check  the [BioJa
 
 Quick [Installation](installation.md)
 
-Book 1: [The Protein Structure modules](structure/README.md)
+Book 1: [The Core module](core/README.md), basic working with sequences.
 
-Book 2: [The Genomics Module](genomics/README.md)
+Book 2: [The Alignment module](alignment/README.md), pairwise and multiple alignments of protein sequences.
 
-Book 3: Alignments
+Book 3: [The Protein Structure modules](structure/README.md), everything related to working with 3D structures.
+
+Book 4: [The Genomics Module](genomics/README.md), working with genomic data
 
 
 ## License

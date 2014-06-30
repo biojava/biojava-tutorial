@@ -1,20 +1,20 @@
-The BioJava - Genomics Module
+The BioJava - Alignment Module
 =====================================================
 
-A tutorial for the genomics module of [BioJava](http://www.biojava.org)
+A tutorial for the alignment module of [BioJava](http://www.biojava.org).
 
 ## About
 <table>
     <tr>
         <td>
-            <img src="img/genomics.png"/>
+            <img src="img/alignment.png"/>
         </td>
         <td>
-            The <i>genome</i> module of BioJava provides an API that allows to
+            The <i>alignment</i> module of BioJava provides an API that contains
             <ul>
-                <li>Parse popular file formats used in genomcs</li>
-                <li>Convert from one file format to another</li>
-                <li>Translate DNA sequences into protein sequences</li>                
+                <li>Implementations of dynamic programming algorithms for sequence alignment</li>
+                <li>Reading and Writing of popular alignment file formats</li>
+                <li>A single-, or multi- threaded multiple sequence alignment algorithm.</li>
             </ul>
 
         </td>
@@ -27,18 +27,15 @@ This tutorial is split into several chapters.
 
 Chapter 1 - Quick [Installation](installation.md)
 
-Chapter 2 - Reading [gene names information](genenames.md) from genenames.org
+Chapter 2 - Global alignment - Needleman and Wunsch algorithm
 
-Chapter 3 - Reading [chromosomal positions](chromosomeposition.md) for genes. (UCSC's refFlat.txt.gz )
+Chapter 3 - Local alignment - Smith-Waterman algorithm
 
-Chapter 4 - Reading [GTF and GFF files](gff.md)
+Chapter 4 - Multiple Sequence alignment
 
-Chapter 5 - Reading and writing a [Genebank](genebank.md) file
+Chapter 5 - Reading and writing of multiple alignments
 
-Chapter 5 - Reading [karyotype (cytoband)](karyotype.md) files
-
-Chapter 6 - Reading genomic DNA sequences using UCSC's [.2bit file format](twobit.md)
-
+Chapter 6 - BLAST - why you don't need BioJava for parsing BLAST
 
 ## Please cite
 
