@@ -11,7 +11,13 @@ At the moment this tutorial is still under development. Please check  the [BioJa
 
 ## Index
 
+Quick [Installation](installation.md)
+
 Book 1: [The Protein Structure modules](structure/README.md)
+
+Book 2: [The Genomics Module](genomics/README.md)
+
+Book 3: Alignments
 
 
 ## License

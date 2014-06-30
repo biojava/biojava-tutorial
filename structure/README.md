@@ -43,7 +43,7 @@ Chapter 7 - [SEQRES and ATOM records](seqres.md), mapping to Uniprot (SIFTs)
 
 Chapter 8 - Protein [Structure Alignments](alignment.md)
 
-Chapter 9 - [Biological Assemblies](bioassembly.md) 
+Chapter 9 - [Biological Assemblies](bioassembly.md)
 
 Chapter 10 - [External Databases](externaldb.md) like SCOP &amp; CATH
 
@@ -51,13 +51,9 @@ Chapter 11 - Protein Symmetry
 
 Chapter 12 - Bonds
 
-Chapter 13 - [Special Cases](special.md) 
+Chapter 13 - [Special Cases](special.md)
 
 Chapter 14 - [Lists](lists.md) of PDB IDs and PDB [status information](lists.md).
-Chapter 14 - Working with representative subsets of PDB
-
-
-
 
 ### Author: 
 
