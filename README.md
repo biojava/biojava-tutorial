@@ -2,6 +2,7 @@ BioJava 3 tutorial
 =================
 
 A brief introduction into [BioJava 3](https://github.com/biojava/biojava).
+
 == 
 
 The goal of this tutorial is to provide an educational introduction into some of the features that are provided by BioJava. 
