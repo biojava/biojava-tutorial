@@ -53,7 +53,7 @@ The functionality to perform and visualize these alignments can of course be
 used also from your own code. Let's first have a look at the alignment
 algorithms.
 
-## The Alignment Algorithms
+## Pairwise Alignment Algorithms
 
 ### Combinatorial Extension (CE)
 
@@ -246,6 +246,10 @@ alignments in batch mode, or full database searches. Some additional parameters
 are available which are not exposed in the GUI, such as outputting results to a
 file in various formats.
 
+
+## See Also
+
+For details about performing alignments programatically, see [Structure Alignment in BioJava](alignmentcode.md)
 
 ## Acknowledgements
 
