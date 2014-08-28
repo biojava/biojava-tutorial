@@ -33,5 +33,6 @@ This code snippet will produce a list of all non-redundant interfaces present in
 
 An interface is defined here as any 2 chains with at least a pair of atoms within the given distance cutoff (6 A in the example above)
 
+See [DemoCrystalInterfaces](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoCrystalInterfaces.java) for a fully working demo of the example above.
 
 
