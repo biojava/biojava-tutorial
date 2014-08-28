@@ -1,8 +1,8 @@
-# How to calculate all crystal contacts in a PDB structure
+# How to find all crystal contacts in a PDB structure
 
 ## Why crystal contacts?
 
-A protein structure is determined by X-ray diffraction by producing a crystal - an infinite lattice of molecules - of the protein. Thus the end result of the diffraction experiment is a crystal lattice and not just a single molecule. However the PDB file only contains the coordinates of the Asymmetric Unit, defined as the minimum unit needed to reconstruct the full crystal using symmetry operators. 
+A protein structure is determined by X-ray diffraction from a protein crystal, i.e. an infinite lattice of molecules. Thus the end result of the diffraction experiment is a crystal lattice and not just a single molecule. However the PDB file only contains the coordinates of the Asymmetric Unit, defined as the minimum unit needed to reconstruct the full crystal using symmetry operators.
 
 
 ## Getting the set of unique contacts in the crystal lattice
@@ -31,7 +31,12 @@ This code snippet will produce a list of all non-redundant interfaces present in
 
 ```
 
-An interface is defined here as any 2 chains with at least a pair of atoms within the given distance cutoff (6 A in the example above)
+An interface is defined here as any 2 chains with at least a pair of atoms within the given distance cutoff (6 A in the example above). 
+
+The algorithm to find all unique interfaces in the crystal works roughly like this:
++ Reconstructs the full unit cell by applying the matrix operators of the corresponding space group to the Asymmetric Unit.
++ Searches all cells around the original one by applying crystal translations, if any 2 chains in that search is found to contact then the new contact is added to the final list.
++ The search is performend without repeating redundant symmetry operators, making sure that if a contact is found then it is a unique contact.
 
 See [DemoCrystalInterfaces](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoCrystalInterfaces.java) for a fully working demo of the example above.
 
