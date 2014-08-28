@@ -1,6 +1,11 @@
-# Finding contacts within a protein chain: contact maps
+# Finding contacts between atoms in a protein: contact maps
 
-Contacts are a useful tool to analyse protein structures. It simplifies the 3-Dimensional view of the structures into a 2-Dimensional set of contacts between its atoms or its residues. The representation of the contacts in a matrix is known as the contact map. Many protein structure analysis and prediction efforts are done by using contacts, see for instance 
+Contacts are a useful tool to analyse protein structures. They simplify the 3-Dimensional view of the structures into a 2-Dimensional set of contacts between its atoms or its residues. The representation of the contacts in a matrix is known as the contact map. Many protein structure analysis and prediction efforts are done by using contacts. For instance they can be useful for:
+
++ development of structural alignment algorithms [Holm 1993][] [Caprara 2004][]
++ automatic domain identification [Alexandrov 2003][] [Emmert-Streib 2007][]
++ structural modelling by extraction of contact-based empirical potentials [Benkert 2008][]
++ structure prediction via contact prediction from sequence information [Jones 2012][]
 
 ## Getting the contact map of a protein chain
 
@@ -36,7 +41,8 @@ One can also find the contacting atoms between two protein chains. For instance 
 		
 		Structure structure = StructureIO.getStructure("1SMT");
 			
-		AtomContactSet contacts = StructureTools.getAtomsInContact(structure.getChain(0), structure.getChain(1), 5, false);
+		AtomContactSet contacts = 
+			StructureTools.getAtomsInContact(structure.getChain(0), structure.getChain(1), 5, false);
 		
 		System.out.println("Total number of atom contacts: "+contacts.size());
 		
@@ -45,6 +51,13 @@ One can also find the contacting atoms between two protein chains. For instance 
 ```
 
 
-See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoContacts.java) for a fully working demo of the example above.
+See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoContacts.java) for a fully working demo of the examples above.
 
 
+
+[Holm 1993]: http://www.biomedcentral.com/pubmed/8377180
+[Caprara 2004]: http://www.biomedcentral.com/pubmed/15072687
+[Alexandrov 2003]: http://www.biomedcentral.com/pubmed/12584135
+[Emmert-Streib 2007]: http://www.biomedcentral.com/pubmed/17608939
+[Benkert 2008]: http://www.biomedcentral.com/pubmed/17932912
+[Jones 2012]: http://www.ncbi.nlm.nih.gov/pubmed/22101153
