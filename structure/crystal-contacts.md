@@ -2,7 +2,11 @@
 
 ## Why crystal contacts?
 
-A protein structure is determined by X-ray diffraction from a protein crystal, i.e. an infinite lattice of molecules. Thus the end result of the diffraction experiment is a crystal lattice and not just a single molecule. However the PDB file only contains the coordinates of the Asymmetric Unit, defined as the minimum unit needed to reconstruct the full crystal using symmetry operators.
+A protein structure is determined by X-ray diffraction from a protein crystal, i.e. an infinite lattice of molecules. Thus the end result of the diffraction experiment is a crystal lattice and not just a single molecule. However the PDB file only contains the coordinates of the Asymmetric Unit (AU), defined as the minimum unit needed to reconstruct the full crystal using symmetry operators.
+
+Looking at the AU alone is not enough to understand the crystal structure. For instance the biologically relevant assembly (known as the Biological Unit) can occur through a symmetry operator that can be found looking at the crystal contacts. See for instance [1M4N](http://www.rcsb.org/pdb/explore.do?structureId=1M4N): its biological unit is a dimer that happens through a 2-fold operator and is the largest interface found in the crystal. 
+
+Looking at crystal contacts can also be important in order to assess the quality and reliability of the deposited PDB model: an AU can look perfectly fine but then upon reconstruction of the lattice the molecules can be clashing, which indicates that something is wrong in the model.
 
 
 ## Getting the set of unique contacts in the crystal lattice
