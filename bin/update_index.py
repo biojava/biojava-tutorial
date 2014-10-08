@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 """
-A script to update footer links for all tutorial pages
+This script generates the footers for all markdown files. Rerun the script
+after adding new books or chapters in order to update the footer sections on
+each page with links to the next and previous chapters.
+
+The script works by recursively parsing "## Index" sections in files, starting
+with README.md. The footer is marked with an HTML comment, `automatically
+generated footer`.  Any text after this comment is destroyed by the script, so
+all edits should be made above that point.
+
 """
 
 import sys,os,re
@@ -85,7 +93,16 @@ class TutorialIndex(object):
         return os.path.join(os.path.dirname(parentlink),self.link)
 
     def makefooter(self):
-        lines = ["---","","Navigation:"]
+        """ makefooter() -> str
+
+        Creates the footer text (everything below the "automatically generated
+        footer" line)
+        """
+        # Don't include footer on main page
+        if self.parent is None:
+            return ""
+
+        lines = ["","---","","Navigation:"]
         # Iterate over parents
         p = self.parent
         linkmd = [self.makename()] #reverse order (self to root)
@@ -137,14 +154,16 @@ class TutorialIndex(object):
                 .format(self=self,parent=self.parent.title if self.parent else None)
 
 if __name__ == "__main__":
-    root = TutorialIndex("README.md",title="BioJava Tutorial")
+    # Set root index
+    root = TutorialIndex("README.md",title="Home")
 
+    # Rewrite headers
     root.parse()
 
     # Output tree
     def pr(node,indent=""):
-        print "{}{}\t{}".format(indent,node.link,node.rootlink())
+        print "{}{}".format(indent,node.link,node.rootlink())
         for n in node.children:
-            pr(n,indent+"\t")
+            pr(n,indent+"  ")
 
     pr(root)
