@@ -82,3 +82,16 @@ There are quite a number of external database IDs that are supported here. See t
 
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 4 : Local installations
+
+Prev: [Chapter 3 : data model](structure-data-model.md)
+
+Next: [Chapter 5 : Chemical Component Dictionary](chemcomp.md)

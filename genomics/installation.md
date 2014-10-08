@@ -50,3 +50,14 @@ If you run
 
  on your project, the BioJava dependencies will be automatically downloaded and installed for you.
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 4: The Genomics Module](README.md)
+| Chapter 1 : Installation
+
+Next: [Chapter 2 : gene names information](genenames.md)

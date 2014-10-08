@@ -19,3 +19,14 @@ The following provides information about the status of a PDB entry
     String currentID = PDBStatus.getCurrent("1hhb"); 
 ```   
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 14 : status information
+
+Prev: [Chapter 13 : Special Cases](special.md)

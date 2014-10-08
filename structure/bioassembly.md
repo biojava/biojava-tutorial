@@ -226,3 +226,16 @@ public static void main(String[] args){
 ## Further Reading
 
 The RCSB PDB web site has a great [tutorial on Biological Assemblies](http://www.rcsb.org/pdb/101/static101.do?p=education_discussion/Looking-at-Structures/bioassembly_tutorial.html).
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 9 : Biological Assemblies
+
+Prev: [Chapter 8 : Structure Alignments](alignment.md)
+
+Next: [Chapter 10 : External Databases](externaldb.md)

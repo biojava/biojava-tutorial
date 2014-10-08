@@ -51,3 +51,15 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 [view license](../license.md)
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| Book 2: The Alignment module
+
+Prev: [Book 1: The Core module](../core/README.md)
+
+Next: [Book 3: The Protein Structure modules](../structure/README.md)

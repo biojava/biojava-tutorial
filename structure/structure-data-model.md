@@ -160,3 +160,16 @@ This prints all the compounds/entities in a structure
 
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 3 : data model
+
+Prev: [Chapter 2 : First Steps](firststeps.md)
+
+Next: [Chapter 4 : Local installations](caching.md)

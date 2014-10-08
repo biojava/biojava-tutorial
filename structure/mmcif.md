@@ -114,3 +114,16 @@ See the [http://mmcif.rcsb.org/](http://mmcif.rcsb.org/) site for more documenta
 
 [Westbrook 2003]: http://www.ncbi.nlm.nih.gov/pubmed/12647386 "Westbrook JD and Fitzgerald PM. The PDB format, mmCIF, and other data formats. Methods Biochem Anal 2003; 44 161-79. pmid:12647386."
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 6 : work with mmCIF/PDBx files
+
+Prev: [Chapter 5 : Chemical Component Dictionary](chemcomp.md)
+
+Next: [Chapter 7 : SEQRES and ATOM records](seqres.md)

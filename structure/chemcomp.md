@@ -81,3 +81,16 @@ If you want to enable the second behaviour (slow loading of all chem comps at st
 ```java
      ChemCompGroupFactory.setChemCompProvider(new AllChemCompProvider());
 ```
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 5 : Chemical Component Dictionary
+
+Prev: [Chapter 4 : Local installations](caching.md)
+
+Next: [Chapter 6 : work with mmCIF/PDBx files](mmcif.md)

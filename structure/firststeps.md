@@ -116,3 +116,16 @@ BioJava provides a number of algorithms and visualisation tools that you can use
 
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 2 : First Steps
+
+Prev: [Chapter 1 : Installation](installation.md)
+
+Next: [Chapter 3 : data model](structure-data-model.md)

@@ -54,3 +54,13 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 [view license](../license.md)
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| Book 4: The Genomics Module
+
+Prev: [Book 3: The Protein Structure modules](../structure/README.md)

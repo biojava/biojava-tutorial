@@ -98,3 +98,16 @@ This gives the following output:
  As you can see for each residue in the Uniprot / PDB sequence the matching counterpart is provided (if there is one).
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 7 : SEQRES and ATOM records
+
+Prev: [Chapter 6 : work with mmCIF/PDBx files](mmcif.md)
+
+Next: [Chapter 8 : Structure Alignments](alignment.md)

@@ -27,3 +27,5 @@ Book 4: [The Genomics Module](genomics/README.md), working with genomic data
 The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license.
 
 [view license](license.md)
+
+<!--automatically generated footer-->

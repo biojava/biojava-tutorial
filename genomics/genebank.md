@@ -97,3 +97,15 @@ Use the GenbankWriterHelper to write DNA sequences into a Genbank file.
 		System.out.println(fragwriter.toString());
 
 ```
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 4: The Genomics Module](README.md)
+| Chapter 5 : Genebank
+
+Prev: [Chapter 4 : GTF and GFF files](gff.md)
+
+Next: [Chapter 5 : karyotype (cytoband)](karyotype.md)

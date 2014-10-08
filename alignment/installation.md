@@ -49,3 +49,12 @@ If you run
 
  on your project, the BioJava dependencies will be automatically downloaded and installed for you.
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 2: The Alignment module](README.md)
+| Chapter 1 : Installation

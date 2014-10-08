@@ -29,3 +29,15 @@ If a local copy of the file is available you can specify it in the following way
 SortedSet<Cytoband> cytobands = me.getAllCytobands(new URL("file://path/to/local/copy/"));
 
 ```
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 4: The Genomics Module](README.md)
+| Chapter 5 : karyotype (cytoband)
+
+Prev: [Chapter 5 : Genebank](genebank.md)
+
+Next: [Chapter 6 : .2bit file format](twobit.md)

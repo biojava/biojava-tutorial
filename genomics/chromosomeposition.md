@@ -39,3 +39,15 @@ If a local copy of the file is available, it can be provide via this:
 
 
 ```
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 4: The Genomics Module](README.md)
+| Chapter 3 : chromosomal positions
+
+Prev: [Chapter 2 : gene names information](genenames.md)
+
+Next: [Chapter 4 : GTF and GFF files](gff.md)

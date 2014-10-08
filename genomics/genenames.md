@@ -47,3 +47,15 @@ If you have a local copy of this file, then you can just provide an input stream
 
 
 ```
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 4: The Genomics Module](README.md)
+| Chapter 2 : gene names information
+
+Prev: [Chapter 1 : Installation](installation.md)
+
+Next: [Chapter 3 : chromosomal positions](chromosomeposition.md)

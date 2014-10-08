@@ -123,3 +123,16 @@ DYG is an unusual group - it has 3 characters as a result of .getOne_letter_code
 ## Microheterogeneity
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 13 : Special Cases
+
+Prev: [Chapter 10 : External Databases](externaldb.md)
+
+Next: [Chapter 14 : status information](lists.md)

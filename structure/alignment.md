@@ -107,3 +107,16 @@ calmodulin](img/1cfd_1cll_fatcat.png)
 ## Acknowledgements
 
 Thanks to P. Bourne, Yuzhen Ye and A. Godzik for granting permission to freely use and redistribute their algorithms.
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 8 : Structure Alignments
+
+Prev: [Chapter 7 : SEQRES and ATOM records](seqres.md)
+
+Next: [Chapter 9 : Biological Assemblies](bioassembly.md)

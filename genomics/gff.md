@@ -50,3 +50,16 @@ specific gene prediction program or features supported by your favorite genome b
 complete set of java classes to do these conversions where the list of supported gene prediction applications and
 genome browsers will get longer based on end user requests.
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 4: The Genomics Module](README.md)
+| Chapter 4 : GTF and GFF files
+
+Prev: [Chapter 3 : chromosomal positions](chromosomeposition.md)
+
+Next: [Chapter 5 : Genebank](genebank.md)
