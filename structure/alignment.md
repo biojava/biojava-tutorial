@@ -3,7 +3,7 @@ Protein Structure Alignment
 
 ## What is a structure alignment?
 
-A **Structural alignment** attempts to establish equivalences between two or more polymer structures based on their shape and three-dimensional conformation. In contrast to simple structural superposition (see below), where at least some equivalent residues of the two structures are known, structural alignment requires no a priori knowledge of equivalent positions. 
+A **Structural alignment** attempts to establish equivalences between two or more polymer structures based on their shape and three-dimensional conformation. In contrast to simple structural superposition (see below), where at least some equivalent residues of the two structures are known, structural alignment requires no a priori knowledge of equivalent positions.
 
 Structural alignment is a valuable tool for the comparison of proteins with low sequence similarity, where evolutionary relationships between proteins cannot be easily detected by standard sequence alignment techniques. Structural alignment can therefore be used to imply evolutionary relationships between proteins that share very little common sequence. However, caution should be exercised when using the results as evidence for shared evolutionary ancestry, because of the possible confounding effects of convergent evolution by which multiple unrelated amino acid sequences converge on a common tertiary structure.
 
@@ -11,12 +11,20 @@ For more info see the Wikipedia article on [protein structure alignment](http://
 
 ## Alignment Algorithms supported by BioJava
 
-BioJava comes with implementations of the Combinatorial Extension (CE) and FATCAT algorithms. Both algorithms come in two variations, as such one can say that BioJava supports the following four algorithms.
+BioJava comes with a number of algorithms for aligning structures. The following
+five options are displayed by default in the user interface, although others can
+be accessed programmatically using the methods in
+[StructureAlignmentFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/StructureAlignmentFactory.html).
 
 1. Combinatorial Extension (CE)
 2. Combinatorial Extension with Circular Permutation (CE-CP)
 3. FATCAT - rigid
 4. FATCAT - flexible.
+5. Smith-Waterman superposition
+
+CE and FATCAT both use structural similarity to align the proteins, while
+Smith-Waterman performs a local sequence alignment and then displays the result
+in 3D. See below for descriptions of the algorithms.
 
 ## Alignment User Interface
 
@@ -24,9 +32,9 @@ Before going the details how to use the algorithms programmatically, let's take 
 
 <pre>
         AlignmentGui.getInstance();
-</pre>    
+</pre>
 
-shows the following user interface. 
+shows the following user interface.
 
 ![Alignment GUI](img/alignment_gui.png)
 
@@ -59,6 +67,8 @@ decomposing the protein automatically using the [Protein Domain
 Parser](http://www.biojava.org/docs/api/org/biojava/bio/structure/domain/LocalProteinDomainParser.html)
 algorithm).
 
+BioJava class: [org.biojava.bio.structure.align.ce.CeMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeMain.html)
+
 ### Combinatorial Extension with Circular Permutation (CE-CP)
 
 CE and FATCAT both assume that aligned residues occur in the same order in both
@@ -82,6 +92,8 @@ proteins will be shown in different colors:
 
 CE-CP was developed by Spencer E. Bliven, Philip E. Bourne, and Andreas Prli&#263;.
 
+BioJava class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeCPMain.html)
+
 ### FATCAT - rigid
 
 This is a Java implementation of the original FATCAT algorithm by [Yuzhen Ye
@@ -90,6 +102,8 @@ This is a Java implementation of the original FATCAT algorithm by [Yuzhen Ye
 It performs similarly to CE for most proteins. The 'rigid' flavor uses a
 rigid-body superposition and only considers alignments with matching sequence
 order.
+
+BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatRigid](www.biojava.org/docs/api/org/biojava/bio/structure/align/fatcat/FatCatRigid.html)
 
 ### FATCAT - flexible
 
@@ -103,6 +117,76 @@ this is that it can lead to additional false positives in unrelated structures.
 
 ![(Left) Rigid and (Right) flexible alignments of
 calmodulin](img/1cfd_1cll_fatcat.png)
+
+BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatFlexible](www.biojava.org/docs/api/org/biojava/bio/structure/align/fatcat/FatCatFlexible.html)
+
+### Smith-Waterman
+
+This aligns residues based on Smith and Waterman's 1981 algorithm for local
+*sequence* alignment. No structural information is included in the alignment, so
+this only works for proteins with significant sequence similarity. It uses the
+Blosum65 scoring matrix.
+
+The two structures are superimposed based on this alignment. Be aware that errors
+locating gaps can lead to high RMSD in the resulting superposition due to a
+small number of badly aligned residues. However, this method is faster than
+the structure-based methods.
+
+BioJava Class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeCPMain.html)
+
+### Other methods
+
+The following methods are not presented in the user interface by default:
+
+* [BioJavaStructureAlignment](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/BioJavaStructureAlignment.html)
+  A structure-based alignment method able of returning multiple alternate
+  alignments. It was writen by Andreas Prlic and based on the PSC++ algorithm
+  provided by Peter Lackner.
+* [CeSideChainMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeSideChainMain.html)
+  A variant of CE using CB-CB distances, which sometimes improves alignments in
+  proteins with parallel sheets and helices.
+* [OptimalCECPMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/OptimalCECPMain.html)
+  An alternate (much slower) algorithm for finding circular permutations.
+
+Additional methods can be added by implementing the
+[StructureAlignment](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/StructureAlignment.html)
+interface.
+
+
+## Creating alignments programmatically
+
+The various structure alignment algorithms in BioJava implement the
+`StructureAlignment` interface, and are normally accessed through
+`StructureAlignmentFactory`. Here's an example of how to create a CE-CP
+alignment and print some information about it.
+
+```java
+String name1 = "3cna.A";
+String name2 = "2pel";
+
+AtomCache cache = new AtomCache();
+
+Atom[] ca1 = cache.getAtoms(name1);
+Atom[] ca2 = cache.getAtoms(name2);
+
+StructureAlignment algorithm  = StructureAlignmentFactory.getAlgorithm(CeCPMain.algorithmName);
+
+AFPChain afpChain = algorithm.align(ca1,ca2);
+
+// Print text output
+System.out.println(afpChain.toCE(ca1,ca2));
+```
+
+To display the alignment using jMol, use:
+
+```java
+// Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
+GuiWrapper.display(afpChain, ca1, ca2);
+```
+
+Note that these require that you include the structure-gui package and the jmol
+binary in the classpath at runtime.
+
 
 ## Acknowledgements
 
