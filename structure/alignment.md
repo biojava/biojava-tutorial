@@ -218,14 +218,14 @@ AFPChain afpChain = algorithm.align(ca1,ca2);
 System.out.println(afpChain.toCE(ca1,ca2));
 ```
 
-To display the alignment using jMol, use:
+To display the alignment using Jmol, use:
 
 ```java
 GuiWrapper.display(afpChain, ca1, ca2);
 // Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
 ```
 
-Note that these require that you include the structure-gui package and the jMol
+Note that these require that you include the structure-gui package and the Jmol
 binary in the classpath at runtime.
 
 ## Command-line tools
