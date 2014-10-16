@@ -129,7 +129,7 @@ BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatFlexible](www.bioja
 ### Smith-Waterman
 
 This aligns residues based on Smith and Waterman's 1981 algorithm for local
-*sequence* alignment. No structural information is included in the alignment, so
+*sequence* alignment [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/7265238). No structural information is included in the alignment, so
 this only works for proteins with significant sequence similarity. It uses the
 Blosum65 scoring matrix.
 
