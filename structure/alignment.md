@@ -28,17 +28,20 @@ in 3D. See below for descriptions of the algorithms.
 
 ## Alignment User Interface
 
-Before going the details how to use the algorithms programmatically, let's take a look at the user interface that cames with the *biojava-structure-gui* module.
+Before going the details how to use the algorithms programmatically, let's take
+a look at the user interface that cames with the *biojava-structure-gui* module.
 
-<pre>
-        AlignmentGui.getInstance();
-</pre>
+```java
+AlignmentGui.getInstance();
+```
 
-shows the following user interface.
+This code shows the following user interface:
 
 ![Alignment GUI](img/alignment_gui.png)
 
-You can manually select protein chains, domains, or custom files to be aligned. Try to align 2hyn vs. 1zll. This will show the results in a graphical way, in 3D:
+You can manually select protein chains, domains, or custom files to be aligned.
+Try to align 2hyn vs. 1zll. This will show the results in a graphical way, in
+3D:
 
 ![3D Alignment of PDB IDs 2hyn and 1zll](img/2hyn_1zll.png)
 
@@ -46,7 +49,9 @@ and also a 2D display, that interacts with the 3D display
 
 ![2D Alignment of PDB IDs 2hyn and 1zll](img/alignmentpanel.png)
 
-The functionality to perform and visualize these alignments can of course be used also from your own code. Let's first have a look at the alignment algorithms:
+The functionality to perform and visualize these alignments can of course be
+used also from your own code. Let's first have a look at the alignment
+algorithms.
 
 ## The Alignment Algorithms
 
@@ -60,7 +65,7 @@ structure, and then combining those to try to align the most residues possible
 while keeping the overall RMSD of the superposition low.
 
 CE is a rigid-body alignment algorithm, which means that the structures being
-compared are kept fixed during superpositon. In some cases it may be desirable
+compared are kept fixed during superposition. In some cases it may be desirable
 to break large proteins up into domains prior to aligning them (by manually
 inputing a subrange, using the [SCOP or CATH databases](externaldb.md), or by
 decomposing the protein automatically using the [Protein Domain
@@ -77,7 +82,7 @@ related by a circular permutation, the N-terminal part of one protein is related
 to the C-terminal part of the other, and vice versa. CE-CP allows circularly
 permuted proteins to be compared.  For more information on circular
 permutations, see the
-[wikipedia](http://en.wikipedia.org/wiki/Circular_permutation_in_proteins) or
+[Wikipedia](http://en.wikipedia.org/wiki/Circular_permutation_in_proteins) or
 [Molecule of the
 Month](http://www.pdb.org/pdb/101/motm.do?momID=124&evtc=Suggest&evta=Moleculeof%20the%20Month&evtl=TopBar)
 articles.
@@ -140,7 +145,7 @@ The following methods are not presented in the user interface by default:
 
 * [BioJavaStructureAlignment](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/BioJavaStructureAlignment.html)
   A structure-based alignment method able of returning multiple alternate
-  alignments. It was writen by Andreas Prlic and based on the PSC++ algorithm
+  alignments. It was written by Andreas Prli&#263; and based on the PSC++ algorithm
   provided by Peter Lackner.
 * [CeSideChainMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeSideChainMain.html)
   A variant of CE using CB-CB distances, which sometimes improves alignments in
@@ -151,45 +156,6 @@ The following methods are not presented in the user interface by default:
 Additional methods can be added by implementing the
 [StructureAlignment](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/StructureAlignment.html)
 interface.
-
-
-
-## Creating alignments programmatically
-
-The various structure alignment algorithms in BioJava implement the
-`StructureAlignment` interface, and are normally accessed through
-`StructureAlignmentFactory`. Here's an example of how to create a CE-CP
-alignment and print some information about it.
-
-```java
-// Fetch CA atoms for the structures to be aligned
-String name1 = "3cna.A";
-String name2 = "2pel";
-AtomCache cache = new AtomCache();
-Atom[] ca1 = cache.getAtoms(name1);
-Atom[] ca2 = cache.getAtoms(name2);
-
-// Get StructureAlignment instance
-StructureAlignment algorithm  = StructureAlignmentFactory.getAlgorithm(CeCPMain.algorithmName);
-
-// Perform the alignment
-AFPChain afpChain = algorithm.align(ca1,ca2);
-
-// Print text output
-System.out.println(afpChain.toCE(ca1,ca2));
-```
-
-To display the alignment using jMol, use:
-
-```java
-GuiWrapper.display(afpChain, ca1, ca2);
-// Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
-```
-
-Note that these require that you include the structure-gui package and the jmol
-binary in the classpath at runtime.
-
-## Command-line tools
 
 ## PDB-wide database searches
 
@@ -225,6 +191,59 @@ downloading all PDB files from the [FTP
 server](ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/) and setting
 the `PDB_DIR` environmental variable. This operation sped up the search from
 about 30 hours to less than 4 hours.
+
+
+## Creating alignments programmatically
+
+The various structure alignment algorithms in BioJava implement the
+`StructureAlignment` interface, and are normally accessed through
+`StructureAlignmentFactory`. Here's an example of how to create a CE-CP
+alignment and print some information about it.
+
+```java
+// Fetch CA atoms for the structures to be aligned
+String name1 = "3cna.A";
+String name2 = "2pel";
+AtomCache cache = new AtomCache();
+Atom[] ca1 = cache.getAtoms(name1);
+Atom[] ca2 = cache.getAtoms(name2);
+
+// Get StructureAlignment instance
+StructureAlignment algorithm  = StructureAlignmentFactory.getAlgorithm(CeCPMain.algorithmName);
+
+// Perform the alignment
+AFPChain afpChain = algorithm.align(ca1,ca2);
+
+// Print text output
+System.out.println(afpChain.toCE(ca1,ca2));
+```
+
+To display the alignment using jMol, use:
+
+```java
+GuiWrapper.display(afpChain, ca1, ca2);
+// Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
+```
+
+Note that these require that you include the structure-gui package and the jMol
+binary in the classpath at runtime.
+
+## Command-line tools
+
+Many of the alignment algorithms are available in the form of command line
+tools. These can be accessed through the main methods of the StructureAlignment
+classes. Tar bundles are also available with scripts for running
+[CE and FATCAT](http://source.rcsb.org/jfatcatserver/download.jsp).
+
+Example:
+```bash
+runCE.sh -pdb1 4hhb.A -pdb2 4hhb.B -show3d
+```
+
+Using the command line tool it is possible to run pairwise alignments, several
+alignments in batch mode, or full database searches. Some additional parameters
+are available which are not exposed in the GUI, such as outputting results to a
+file in various formats.
 
 
 ## Acknowledgements
