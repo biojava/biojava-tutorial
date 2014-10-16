@@ -59,7 +59,7 @@ algorithms.
 
 The Combinatorial Extension (CE) algorithm was originally developed by
 [Shindyalov and Bourne in
-1998](http://peds.oxfordjournals.org/content/11/9/739.short).
+1998](http://peds.oxfordjournals.org/content/11/9/739.short) [![Version](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/9796821).
 It works by identifying segments of the two proteins with similar local
 structure, and then combining those to try to align the most residues possible
 while keeping the overall RMSD of the superposition low.
