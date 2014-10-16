@@ -85,7 +85,7 @@ permutations, see the
 [Wikipedia](http://en.wikipedia.org/wiki/Circular_permutation_in_proteins) or
 [Molecule of the
 Month](http://www.pdb.org/pdb/101/motm.do?momID=124&evtc=Suggest&evta=Moleculeof%20the%20Month&evtl=TopBar)
-articles.
+articles [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/22496628).
 
 
 For proteins without a circular permutation, CE-CP results look very similar to
