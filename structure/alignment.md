@@ -12,8 +12,8 @@ For more info see the Wikipedia article on [protein structure alignment](http://
 ## Alignment Algorithms supported by BioJava
 
 BioJava comes with a number of algorithms for aligning structures. The following
-five options are displayed by default in the user interface, although others can
-be accessed programmatically using the methods in
+five options are displayed by default in the graphical user interface (GUI),
+although others can be accessed programmatically using the methods in
 [StructureAlignmentFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/StructureAlignmentFactory.html).
 
 1. Combinatorial Extension (CE)
@@ -153,6 +153,7 @@ Additional methods can be added by implementing the
 interface.
 
 
+
 ## Creating alignments programmatically
 
 The various structure alignment algorithms in BioJava implement the
@@ -161,16 +162,17 @@ The various structure alignment algorithms in BioJava implement the
 alignment and print some information about it.
 
 ```java
+// Fetch CA atoms for the structures to be aligned
 String name1 = "3cna.A";
 String name2 = "2pel";
-
 AtomCache cache = new AtomCache();
-
 Atom[] ca1 = cache.getAtoms(name1);
 Atom[] ca2 = cache.getAtoms(name2);
 
+// Get StructureAlignment instance
 StructureAlignment algorithm  = StructureAlignmentFactory.getAlgorithm(CeCPMain.algorithmName);
 
+// Perform the alignment
 AFPChain afpChain = algorithm.align(ca1,ca2);
 
 // Print text output
@@ -180,12 +182,49 @@ System.out.println(afpChain.toCE(ca1,ca2));
 To display the alignment using jMol, use:
 
 ```java
-// Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
 GuiWrapper.display(afpChain, ca1, ca2);
+// Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
 ```
 
 Note that these require that you include the structure-gui package and the jmol
 binary in the classpath at runtime.
+
+## Command-line tools
+
+## PDB-wide database searches
+
+The Alignment GUI also provides functionality for PDB-wide structural searches.
+This systematically compares a structure against a non-redundant set of all
+other structures in the PDB at either a chain or a domain level. Representatives
+are selected using the RCSB's clustering of proteins with 40% sequence identity,
+as described
+[here](http://www.rcsb.org/pdb/static.do?p=general_information/cluster/structureAll.jsp).
+Domains are selected using either SCOP (when available) or the
+ProteinDomainParser algorithm.
+
+![Database Search GUI](img/database_search.png)
+
+To perform a database search, select the 'Database Search' tab, then choose a
+query structure based on PDB ID, SCOP domain id, or from a custom file. The
+output directory will be used to store results. These consist of individual
+alignments in compressed XML format, as well as a tab-delimited file of
+similarity scores and statistics. The statistics are displayed in an interactive
+results table, which allows the alignments to be sorted. The 'Align' column
+allows individual alignments to be visualized with the alignment GUI.
+
+![Database Search Results](img/database_search_results.png)
+
+Be aware that this process can be very time consuming. Before
+starting a manual search, it is worth considering whether a pre-computed result
+may be available online, for instance for
+[FATCAT-rigid](http://www.rcsb.org/pdb/static.do?p=general_information/cluster/structureAll.jsp)
+or [DALI](http://ekhidna.biocenter.helsinki.fi/dali/start). For custom files or
+specific domains, a few optimizations can reduce the time for a database search.
+Downloading PDB files is a considerable bottleneck. This can be solved by
+downloading all PDB files from the [FTP
+server](ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/) and setting
+the `PDB_DIR` environmental variable. This operation sped up the search from
+about 30 hours to less than 4 hours.
 
 
 ## Acknowledgements
