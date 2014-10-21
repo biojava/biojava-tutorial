@@ -53,4 +53,4 @@ It also contains support for Selenocysteine and Pyrrolysine
 
 ## More details 
 
-See the Cookbook for more details on dealing with sequences: [http://biojava.org/wiki/BioJava:CookBook:Core:Overview](http://biojava.org/wiki/BioJava:CookBook:Core:Overview}
+See the Cookbook for [more details on dealing with sequences] (http://biojava.org/wiki/BioJava:CookBook:Core:Overview)
