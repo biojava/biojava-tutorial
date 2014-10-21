@@ -27,9 +27,11 @@ This tutorial is split into several chapters.
 
 Chapter 1 - Quick [Installation](installation.md)
 
-Chapter 2 - Reading and Writing of FASTA sequences
+Chapter 2 - [Basic Sequence types](sequences.md)
 
-Chapter 3 - Translating DNA and protein sequences.
+Chapter 3 - Reading and Writing sequences
+
+Chapter 4 - [Translating](translating.md) DNA and protein sequences.
 
 ## Please cite
 
