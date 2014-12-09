@@ -48,17 +48,19 @@ Chapter 9 - [Biological Assemblies](bioassembly.md)
 
 Chapter 10 - [External Databases](externaldb.md) like SCOP &amp; CATH
 
-Chapter 11 - [Contacts within a chain and between chains](contact-map.md)
+Chapter 11 - [Accessible Surface Areas](asa.md)
 
-Chapter 12 - Finding all interfaces in crystal: [crystal contacts](crystal-contacts.md)
+Chapter 12 - [Contacts within a chain and between chains](contact-map.md)
 
-Chapter 13 - Protein Symmetry
+Chapter 13 - Finding all interfaces in crystal: [crystal contacts](crystal-contacts.md)
 
-Chapter 14 - Bonds
+Chapter 14 - Protein Symmetry
 
-Chapter 15 - [Special Cases](special.md)
+Chapter 15 - Bonds
 
-Chapter 16 - [Lists](lists.md) of PDB IDs and PDB [status information](lists.md).
+Chapter 16 - [Special Cases](special.md)
+
+Chapter 17 - [Lists](lists.md) of PDB IDs and PDB [status information](lists.md).
 
 
 ### Author: 
