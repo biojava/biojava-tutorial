@@ -61,3 +61,16 @@ See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava3-struc
 [Emmert-Streib 2007]: http://www.biomedcentral.com/pubmed/17608939
 [Benkert 2008]: http://www.biomedcentral.com/pubmed/17932912
 [Jones 2012]: http://www.ncbi.nlm.nih.gov/pubmed/22101153
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 12 : Contacts within a chain and between chains
+
+Prev: [Chapter 11 : Accessible Surface Areas](asa.md)
+
+Next: [Chapter 13 - Finding all interfaces in crystal: crystal contacts](crystal-contacts.md)

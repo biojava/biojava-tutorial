@@ -44,7 +44,7 @@ class TutorialIndex(object):
 
         filename = self.rootlink()
 
-        with open(filename,"rw+") as file:
+        with open(filename,"r+") as file:
             line = file.readline()
             had_footer=False
 

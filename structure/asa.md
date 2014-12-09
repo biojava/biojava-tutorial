@@ -34,3 +34,16 @@ This code will do the ASA calculation and output the values per residue and the 
 See [DemoAsa](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoAsa.java) for a fully working demo.
 
 [Shrake 1973]: http://www.sciencedirect.com/science/article/pii/0022283673900119
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Protein Structure modules](README.md)
+| Chapter 11 : Accessible Surface Areas
+
+Prev: [Chapter 10 : External Databases](externaldb.md)
+
+Next: [Chapter 12 : Contacts within a chain and between chains](contact-map.md)
