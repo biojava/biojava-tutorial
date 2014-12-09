@@ -44,4 +44,17 @@ The algorithm to find all unique interfaces in the crystal works roughly like th
 
 See [DemoCrystalInterfaces](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoCrystalInterfaces.java) for a fully working demo of the example above.
 
+## Clustering the interfaces
+One can also cluster the interfaces based on their similarity. The similarity is measured through contact overlap: number of common contacts over average number of contact in both chains. The clustering can be done as following:
+
+```java
+		List<StructureInterfaceCluster> clusters = interfaces.getClusters();
+		for (StructureInterfaceCluster cluster:clusters) {
+			System.out.print("Cluster "+cluster.getId()+" members: ");
+			for (StructureInterface member:cluster.getMembers()) {
+				System.out.print(member.getId()+" ");
+			}
+			System.out.println();
+		}
+```
 
