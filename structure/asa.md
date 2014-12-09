@@ -4,7 +4,7 @@ BioJava can also do calculation of Accessible Surface Areas (ASA) through an imp
 
 This code will do the ASA calculation and output the values per residue and the total:
 ```java
-    AtomCache cache = new AtomCache();
+		AtomCache cache = new AtomCache();
 		cache.setUseMmCif(true);
 		
 		StructureIO.setAtomCache(cache); 
