@@ -27,6 +27,7 @@ A tutorial for the protein structure modules of [BioJava](http://www.biojava.org
 
 This tutorial is split into several chapters.
 
+
 Chapter 1 - Quick [Installation](installation.md)
 
 Chapter 2 - [First Steps](firststeps.md)
@@ -47,13 +48,18 @@ Chapter 9 - [Biological Assemblies](bioassembly.md)
 
 Chapter 10 - [External Databases](externaldb.md) like SCOP &amp; CATH
 
-Chapter 11 - Protein Symmetry
+Chapter 11 - [Contacts within a chain and between chains](contact-map.md)
 
-Chapter 12 - Bonds
+Chapter 12 - Finding all interfaces in crystal: [crystal contacts](crystal-contacts.md)
 
-Chapter 13 - [Special Cases](special.md)
+Chapter 13 - Protein Symmetry
 
-Chapter 14 - [Lists](lists.md) of PDB IDs and PDB [status information](lists.md).
+Chapter 14 - Bonds
+
+Chapter 15 - [Special Cases](special.md)
+
+Chapter 16 - [Lists](lists.md) of PDB IDs and PDB [status information](lists.md).
+
 
 ### Author: 
 
