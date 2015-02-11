@@ -6,22 +6,8 @@ BioJava is open source and you can get the code from [Github](https://github.com
 
 BioJava uses [Maven](http://maven.apache.org/) as a build and distribution system. If you are new to Maven, take a look at the [Getting Started with Maven](http://maven.apache.org/guides/getting-started/index.html)  guide.
 
-Currently, we are providing a BioJava specific Maven repository at (http://biojava.org/download/maven/) .
 
-You can add the BioJava repository by adding the following XML to your project pom.xml file:
-
-```xml
-        <repositories>
-            ...
-            <repository>
-                <id>biojava-maven-repo</id>
-                <name>BioJava repository</name>
-                <url>http://www.biojava.org/download/maven/</url>           
-            </repository>
-        </repositories>
-```
-
-We are currently in the process of changing our distribution to Maven Central, which would not even require this configuration step.
+As of version 4, BioJava is available in maven central. This is all you would need to add a BioJava dependency to your projects:
 
 ```xml
         <dependencies>
@@ -31,8 +17,8 @@ We are currently in the process of changing our distribution to Maven Central, w
                 <dependency>
 
                         <groupId>org.biojava</groupId>
-                        <artifactId>biojava3-core</artifactId>
-                        <version>3.0.8</version>
+                        <artifactId>biojava-core</artifactId>
+                        <version>4.0.0</version>
                 </dependency>
 
 
