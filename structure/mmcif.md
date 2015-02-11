@@ -17,7 +17,7 @@ BioJava provides you with both a mmCIF parser and a data model that reads PDB an
 
 ## First steps
 
-The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html) class.
+The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
 
 ```java
     Structure structure = StructureIO.getStructure("4HHB");

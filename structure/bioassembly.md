@@ -17,7 +17,7 @@ A crystal asymmetric unit may contain:
 
 The biological assembly (also sometimes referred to as the biological unit) is the macromolecular assembly that has either been shown to be or is believed to be the functional form of the molecule For example, the functional form of hemoglobin has four chains.
 
-The [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html) and [AtomCache](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html) classes in Biojava provide access methods to work with either asymmetric unit or biological assembly.
+The [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) and [AtomCache](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html) classes in Biojava provide access methods to work with either asymmetric unit or biological assembly.
 
 Let's load both representations of hemoglobin PDB ID [1HHO](http://www.rcsb.org/pdb/explore.do?structureId=1hho) and visualize it:
 
@@ -107,7 +107,7 @@ B) There is also a pre-computed file available that contains an assembled versio
 
 BioJava contains utility classes to re-create biological assemblies for both PDB and mmCIF, as well as to parse the pre-computed file. The [BioUnitDataProvider](http://www.biojava.org/docs/api/org/biojava/nbio/structure/quaternary/io/BioUnitDataProvider.html) interface defines what is required to re-build an assembly. The [BioUnitDataProviderFactory](http://www.biojava.org/docs/api/org/biojava/nbio/structure/quaternary/io/BioUnitDataProviderFactory.html) allows to specify which of the BioUnitDataProviders is getting used.
 
-Take a look at the method getBiologicalAssembly() in [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html)  to see how the BioUnitDataProviders are used by the *BiologicalAssemblyBuilder*.
+Take a look at the method getBiologicalAssembly() in [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html)  to see how the BioUnitDataProviders are used by the *BiologicalAssemblyBuilder*.
 
 ## Memory consumption
 

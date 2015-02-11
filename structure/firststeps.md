@@ -3,7 +3,7 @@ First Steps
 
 ## First steps
 
-The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava3/structure/StructureIO.html) class.
+The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
 
 ```java
      public static void main(String[] args){
