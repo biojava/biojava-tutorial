@@ -42,7 +42,7 @@ The *mmCIF/PDBx* file format contains the information how the Seqres and atom re
 
 ## Accessing Seqres and Atom groups
 
-By default BioJava loads both the Seqres and Atom groups into the [Chain](http://www.biojava.org/docs/api/org/biojava/bio/structure/Chain.html) 
+By default BioJava loads both the Seqres and Atom groups into the [Chain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Chain.html) 
 objects.
 
 <pre>
@@ -59,7 +59,7 @@ can iterate over all Seqres groups in a chain and check, if they have observed a
 
 The mapping between PDB and UniProt changes over time, due to the dynamic nature of biological data. The [PDBe](http://www.pdbe.org) has a project that provides up-to-date mappings between the two databases, the [SIFTs](http://www.ebi.ac.uk/pdbe/docs/sifts/) project. 
 
-BioJava contains a parser for the SIFTs XML files. The [SiftsMappingProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/sifts/SiftsMappingProvider.html) also acts similar to the AtomCache class, that we [discussed earlier](caching.md) and can automatically download and locally install SIFTs files.
+BioJava contains a parser for the SIFTs XML files. The [SiftsMappingProvider](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/sifts/SiftsMappingProvider.html) also acts similar to the AtomCache class, that we [discussed earlier](caching.md) and can automatically download and locally install SIFTs files.
 
 Here, how to request the mapping for one particular PDB ID.
 

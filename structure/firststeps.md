@@ -17,7 +17,7 @@ The simplest way to load a PDB file is by using the [StructureIO](http://www.bio
     }   
 ```
 
-BioJava  automatically downloads the PDB file for hemoglobin [4HHB](http://www.rcsb.org/pdb/explore.do?structureId=4HHB) and copies it into a temporary location. Then the PDB file parser loads the data into a [Structure](http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html) object, that provides access to the content in the file. (If you call this a second time, BioJava will automatically re-use the local file.)
+BioJava  automatically downloads the PDB file for hemoglobin [4HHB](http://www.rcsb.org/pdb/explore.do?structureId=4HHB) and copies it into a temporary location. Then the PDB file parser loads the data into a [Structure](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html) object, that provides access to the content in the file. (If you call this a second time, BioJava will automatically re-use the local file.)
 
 <table>
     <tr>
@@ -50,7 +50,7 @@ Talking about startup properties, it is also good to mention the fact that many 
 
 ## A Quick 3D View
 
-If you have the *biojava-structure-gui* module installed, you can quickly visualise a [Structure](http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html) via this:
+If you have the *biojava-structure-gui* module installed, you can quickly visualise a [Structure](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html) via this:
 
 ```java
     public static void main(String[] args){
@@ -81,7 +81,7 @@ This will result in the following view:
             <img src="img/4hhb_jmol.png"/>
         </td>
         <td>
-            The <a href="http://www.biojava.org/docs/api/org/biojava/bio/structure/align/gui/jmol/StructureAlignmentJmol.html">StructureAlignmentJmol</a> class provides a wrapper for the <a href="http://jmol.sourceforge.net/">Jmol</a> viewer and provides a bridge to BioJava, so Structure objects can be sent to Jmol for visualisation.
+            The <a href="http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/gui/jmol/StructureAlignmentJmol.html">StructureAlignmentJmol</a> class provides a wrapper for the <a href="http://jmol.sourceforge.net/">Jmol</a> viewer and provides a bridge to BioJava, so Structure objects can be sent to Jmol for visualisation.
         </td>
     </tr>
 </table>   

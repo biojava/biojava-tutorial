@@ -25,7 +25,7 @@ The Structural Classification of Proteins (SCOP) is a manually curated classific
 
 The structure for a known SCOP domain can be fetched via its 7-letter domain ID (eg 'd2bq6a1') via ```StructureIO.getStructure()```, as described in [Local PDB Installations](caching.md#Caching of other SCOP, CATH).
 
-The SCOP classification can be accessed through the [```ScopDatabase```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopDatabase.html) class.
+The SCOP classification can be accessed through the [```ScopDatabase```](http://www.biojava.org/docs/api/org/biojava/nbio/structure/scop/ScopDatabase.html) class.
 
 ```java
     ScopDatabase scop = ScopFactory.getSCOP();
@@ -39,7 +39,7 @@ A list of domains can be retrieved for a given protein.
     List<ScopDomain> domains = scop.getDomainsForPDB("4HHB");
 ```
 
-You can get lots of useful information from the [```ScopDomain```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopDomain.html) object. 
+You can get lots of useful information from the [```ScopDomain```](http://www.biojava.org/docs/api/org/biojava/nbio/structure/scop/ScopDomain.html) object. 
 
     ScopDomain domain = domains.get(0);
     String scopID = domain.getScopId(); // d4hhba_
@@ -48,7 +48,7 @@ You can get lots of useful information from the [```ScopDomain```](http://www.bi
 
 ### Viewing the SCOP hierarchy
 
-The full hierarchy is available as a tree of [```ScopNode```](http://www.biojava.org/docs/api/org/biojava/bio/structure/scop/ScopNode.html)s, which can be easily traversed using their ```getParentSunid()``` and ```getChildren()``` methods.
+The full hierarchy is available as a tree of [```ScopNode```](http://www.biojava.org/docs/api/org/biojava/nbio/structure/scop/ScopNode.html)s, which can be easily traversed using their ```getParentSunid()``` and ```getChildren()``` methods.
 
 ```java
     ScopNode node = scop.getScopNode(sunId);

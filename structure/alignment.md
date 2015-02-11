@@ -14,7 +14,7 @@ For more info see the Wikipedia article on [protein structure alignment](http://
 BioJava comes with a number of algorithms for aligning structures. The following
 five options are displayed by default in the graphical user interface (GUI),
 although others can be accessed programmatically using the methods in
-[StructureAlignmentFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/StructureAlignmentFactory.html).
+[StructureAlignmentFactory](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignmentFactory.html).
 
 1. Combinatorial Extension (CE)
 2. Combinatorial Extension with Circular Permutation (CE-CP)
@@ -69,10 +69,10 @@ compared are kept fixed during superposition. In some cases it may be desirable
 to break large proteins up into domains prior to aligning them (by manually
 inputing a subrange, using the [SCOP or CATH databases](externaldb.md), or by
 decomposing the protein automatically using the [Protein Domain
-Parser](http://www.biojava.org/docs/api/org/biojava/bio/structure/domain/LocalProteinDomainParser.html)
+Parser](http://www.biojava.org/docs/api/org/biojava/nbio/structure/domain/LocalProteinDomainParser.html)
 algorithm).
 
-BioJava class: [org.biojava.bio.structure.align.ce.CeMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeMain.html)
+BioJava class: [org.biojava.bio.structure.align.ce.CeMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeMain.html)
 
 ### Combinatorial Extension with Circular Permutation (CE-CP)
 
@@ -97,7 +97,7 @@ proteins will be shown in different colors:
 
 CE-CP was developed by Spencer E. Bliven, Philip E. Bourne, and Andreas Prli&#263;.
 
-BioJava class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeCPMain.html)
+BioJava class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
 
 ### FATCAT - rigid
 
@@ -109,7 +109,7 @@ It performs similarly to CE for most proteins. The 'rigid' flavor uses a
 rigid-body superposition and only considers alignments with matching sequence
 order.
 
-BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatRigid](www.biojava.org/docs/api/org/biojava/bio/structure/align/fatcat/FatCatRigid.html)
+BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatRigid](www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatRigid.html)
 
 ### FATCAT - flexible
 
@@ -124,7 +124,7 @@ this is that it can lead to additional false positives in unrelated structures.
 ![(Left) Rigid and (Right) flexible alignments of
 calmodulin](img/1cfd_1cll_fatcat.png)
 
-BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatFlexible](www.biojava.org/docs/api/org/biojava/bio/structure/align/fatcat/FatCatFlexible.html)
+BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatFlexible](www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatFlexible.html)
 
 ### Smith-Waterman
 
@@ -138,24 +138,24 @@ locating gaps can lead to high RMSD in the resulting superposition due to a
 small number of badly aligned residues. However, this method is faster than
 the structure-based methods.
 
-BioJava Class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeCPMain.html)
+BioJava Class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
 
 ### Other methods
 
 The following methods are not presented in the user interface by default:
 
-* [BioJavaStructureAlignment](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/BioJavaStructureAlignment.html)
+* [BioJavaStructureAlignment](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/BioJavaStructureAlignment.html)
   A structure-based alignment method able of returning multiple alternate
   alignments. It was written by Andreas Prli&#263; and based on the PSC++ algorithm
   provided by Peter Lackner.
-* [CeSideChainMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/CeSideChainMain.html)
+* [CeSideChainMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeSideChainMain.html)
   A variant of CE using CB-CB distances, which sometimes improves alignments in
   proteins with parallel sheets and helices.
-* [OptimalCECPMain](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/ce/OptimalCECPMain.html)
+* [OptimalCECPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/OptimalCECPMain.html)
   An alternate (much slower) algorithm for finding circular permutations.
 
 Additional methods can be added by implementing the
-[StructureAlignment](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/StructureAlignment.html)
+[StructureAlignment](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignment.html)
 interface.
 
 ## PDB-wide database searches

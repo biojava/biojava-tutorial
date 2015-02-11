@@ -4,7 +4,7 @@ Local PDB Installations
 BioJava can automatically download and install most of the data files that it needs. Those downloads 
 will happen only once. Future requests for the data file will re-use the local copy.
 
-The main class that provides this functionality is the [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html).
+The main class that provides this functionality is the [AtomCache](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html).
 
 It is hidden inside the StructureIO class, that we already encountered earlier.
 
@@ -42,7 +42,7 @@ An alternative is to hard-code the path in this way (but setting it as a propert
 ## File Parsing Parameters
 
 The AtomCache also provides access to configuring various options that are available during the 
-parsing of files. The [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/FileParsingParameters.html)
+parsing of files. The [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/FileParsingParameters.html)
 class is the main place to influence the level of detail and as a consequence the speed with which files can be loaded.
 
 This example turns on the use of chemical components when loading a structure. (See also the [next chapter](chemcomp.md))
@@ -76,7 +76,7 @@ The AtomCache not only provides access to PDB, it can also fetch Structure repre
 ```
 
 There are quite a number of external database IDs that are supported here. See the 
-<a href="http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html#getStructure(java.lang.String)">AtomCache documentation</a> for more details on the supported options.
+<a href="http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html#getStructure(java.lang.String)">AtomCache documentation</a> for more details on the supported options.
 
 
 

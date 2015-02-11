@@ -40,7 +40,7 @@ If you already have a local PDB installation, you can configure where BioJava sh
 
 ## From PDB to mmCIF
 
-By default BioJava is using the PDB file format for parsing data. In order to switch it to use mmCIF, we can take control over the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/bio/structure/align/util/AtomCache.html) which manages your PDB ([and btw. also SCOP, CATH](externaldb.md)) installations.
+By default BioJava is using the PDB file format for parsing data. In order to switch it to use mmCIF, we can take control over the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html) which manages your PDB ([and btw. also SCOP, CATH](externaldb.md)) installations.
 
 ```java
         AtomCache cache = new AtomCache();
@@ -86,9 +86,9 @@ If you want to learn how to use the BioJava mmCIF parser to populate your own da
         Structure cifStructure = consumer.getStructure();
 ```
 
-The parser operates similar to a XML parser by triggering "events". The [SimpleMMcifConsumer](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/SimpleMMcifConsumer.html) listens to new categories being read from the file and then builds up the BioJava data model.
+The parser operates similar to a XML parser by triggering "events". The [SimpleMMcifConsumer](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/SimpleMMcifConsumer.html) listens to new categories being read from the file and then builds up the BioJava data model.
 
-To re-use the parser for your own datamodel, just implement the [MMcifConsumer](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/MMcifConsumer.html) interface and add it to the [SimpleMMcifParser](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/SimpleMMcifParser.html).
+To re-use the parser for your own datamodel, just implement the [MMcifConsumer](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/MMcifConsumer.html) interface and add it to the [SimpleMMcifParser](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/SimpleMMcifParser.html).
 ```java
         parser.addMMcifConsumer(myOwnConsumerImplementation);
 ```
