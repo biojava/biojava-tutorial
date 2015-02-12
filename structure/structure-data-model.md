@@ -9,7 +9,7 @@ BioJava at its core is a collection of file parsers and (in some cases) data mod
 ## The main hierarchy
 
 BioJava provides a flexible data structure for managing protein structural data. The 
-[http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html Structure] class is the main container. 
+[http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html Structure] class is the main container. 
 
 A Structure has a hierarchy of sub-objects:
 
@@ -36,8 +36,8 @@ This works for both NMR and X-ray based structures and by default the first mode
 
 ## Working with atoms
 
-Different ways are provided how to access the data contained in a [Structure](http://www.biojava.org/docs/api/org/biojava/bio/structure/Structure.html).
-If you want to directly access an array of [Atoms](http://www.biojava.org/docs/api/org/biojava/bio/structure/Atom.html) you can use the utility class called [StructureTools](http://www.biojava.org/docs/api/org/biojava/bio/structure/StructureTools.html)
+Different ways are provided how to access the data contained in a [Structure](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html).
+If you want to directly access an array of [Atoms](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Atom.html) you can use the utility class called [StructureTools](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureTools.html)
 
 ```java
     // get all C-alpha atoms in the structure
@@ -79,11 +79,11 @@ Here an example that loops over the whole data model and prints out the HEM grou
 
 ## Working with groups
 
-The [Group](http://www.biojava.org/docs/api/org/biojava/bio/structure/Group.html) interface defines all methods common to a group of atoms. There are 3 types of Groups:
+The [Group](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Group.html) interface defines all methods common to a group of atoms. There are 3 types of Groups:
 
-* [AminoAcid](http://www.biojava.org/docs/api/org/biojava/bio/structure/AminoAcid.html)
-* [Nucleotide](http://www.biojava.org/docs/api/org/biojava/bio/structure/NucleotideImpl.html) 
-* [Hetatom](http://www.biojava.org/docs/api/org/biojava/bio/structure/HetatomImpl.html) 
+* [AminoAcid](http://www.biojava.org/docs/api/org/biojava/nbio/structure/AminoAcid.html)
+* [Nucleotide](http://www.biojava.org/docs/api/org/biojava/nbio/structure/NucleotideImpl.html) 
+* [Hetatom](http://www.biojava.org/docs/api/org/biojava/nbio/structure/HetatomImpl.html) 
 
 In order to get all amino acids that have been observed in a PDB chain, you can use the following utility method:
 

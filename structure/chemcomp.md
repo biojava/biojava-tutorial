@@ -56,7 +56,7 @@ By default BioJava ships with a minimal representation of standard amino acids, 
 1. fetch missing Chemical Component definitions on the fly (small download and parsing delays every time a new chemical compound is found), or
 2. Load all definitions at startup (slow startup, but then no further delays later on, requires more memory)
 
-You can enable the first behaviour by doing using the [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/FileParsingParameters.html) class:
+You can enable the first behaviour by doing using the [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/FileParsingParameters.html) class:
 
 ```java
             AtomCache cache = new AtomCache();
@@ -76,7 +76,7 @@ You can enable the first behaviour by doing using the [FileParsingParameters](ht
             Structure structure = StructureIO.getStructure(...);
 ```
 
-If you want to enable the second behaviour (slow loading of all chem comps at startup, but no further small delays later on) you can use the same code but change the behaviour by switching the [ChemCompProvider](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/ChemCompProvider.html) implementation in the [ChemCompGroupFactory](http://www.biojava.org/docs/api/org/biojava/bio/structure/io/mmcif/ChemCompGroupFactory.html)
+If you want to enable the second behaviour (slow loading of all chem comps at startup, but no further small delays later on) you can use the same code but change the behaviour by switching the [ChemCompProvider](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/ChemCompProvider.html) implementation in the [ChemCompGroupFactory](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/ChemCompGroupFactory.html)
 
 ```java
      ChemCompGroupFactory.setChemCompProvider(new AllChemCompProvider());
