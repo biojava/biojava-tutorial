@@ -29,7 +29,7 @@ Chapter 1 - Quick [Installation](installation.md)
 
 Chapter 2 - [Basic Sequence types](sequences.md)
 
-Chapter 3 - Reading and Writing sequences
+Chapter 3 - [Reading and Writing sequences](readwrite.md)
 
 Chapter 4 - [Translating](translating.md) DNA and protein sequences.
 
