@@ -79,7 +79,7 @@ System.out.println(protSequences);
 Use the GenbankWriterHelper to write DNA sequences into a Genbank file.
 
 ```java
-// First let's read dome DNA sequences from a genbank file
+// First let's read some DNA sequences from a genbank file
 
 File dnaFile = new File("src/test/resources/NM_000266.gb");
 LinkedHashMap<String, DNASequence> dnaSequences =
