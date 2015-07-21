@@ -158,6 +158,10 @@ Additional methods can be added by implementing the
 [StructureAlignment](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignment.html)
 interface.
 
+## Multiple Structure Alignment
+
+Since BioJava 4.1.0, multiple structure alignments can be generated.
+
 ## PDB-wide database searches
 
 The Alignment GUI also provides functionality for PDB-wide structural searches.
@@ -249,7 +253,7 @@ file in various formats.
 
 ## See Also
 
-For details about performing alignments programatically, see [Structure Alignment in BioJava](alignmentcode.md)
+For details about the structure alignment data models in biojava, see [Structure Alignment Data Models](alignment-data-model.md)
 
 ## Acknowledgements
 
