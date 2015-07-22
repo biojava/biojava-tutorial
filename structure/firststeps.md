@@ -1,7 +1,7 @@
 First Steps
 ===========
 
-## First steps
+## First Steps
 
 The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
 
@@ -40,7 +40,7 @@ If you already have a local PDB installation, you can configure where BioJava sh
     -DPDB_DIR=/wherever/you/want/
 </pre>
 
-## Memory consumption
+## Memory Consumption
 
 Talking about startup properties, it is also good to mention the fact that many PDB entries are large molecules and the default 64k memory allowance for Java applications is not sufficient in many cases.  BioJava contains several built-in caches which automatically adjust to the available memory. As such, the more memory you grant your Java applicaiton, the better it can utilize the caches and the better the performance will be. Change the maximum heap space of your Java VM with this startup parameter:
 
@@ -86,7 +86,7 @@ This will result in the following view:
     </tr>
 </table>   
 
-## Asymmetric unit and Biological Assembly
+## Asymmetric Unit and Biological Assembly
 
 By default many people work with the *asymmetric unit* of a protein. However for many studies the correct representation to look at is the *biological assembly* of a protein. You can request it by calling
 
@@ -105,13 +105,13 @@ By default many people work with the *asymmetric unit* of a protein. However for
 
 This topic is important, so we dedicated a [whole chapter](bioassembly.md) to it.
 
-## I loaded a Structure object, what now?
+## I Loaded a Structure Object, What Now?
 
 BioJava provides a number of algorithms and visualisation tools that you can use to further analyse the structure, or look at it. Here a couple of suggestions for further reads:
 
 + [The BioJava Cookbook for protein structures](http://biojava.org/wiki/BioJava:CookBook#Protein_Structure)
 + How does BioJava [represent the content](structure-data-model.md) of a PDB/mmCIF file?
-+ [How to calculate a protein structure alignment using BioJava](http://biojava.org/wiki/BioJava:CookBook:PDB:align)
++ How to calculate a protein structure alignment using BioJava: [tutorial](alignment.md) or [cookbook](http://biojava.org/wiki/BioJava:CookBook:PDB:align)
 + [How to work with Groups (AminoAcid, Nucleotide, Hetatom)](http://biojava.org/wiki/BioJava:CookBook:PDB:groups)
 
 
@@ -123,9 +123,9 @@ BioJava provides a number of algorithms and visualisation tools that you can use
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 2 : First Steps
 
 Prev: [Chapter 1 : Installation](installation.md)
 
-Next: [Chapter 3 : data model](structure-data-model.md)
+Next: [Chapter 3 : Structure Data Model](structure-data-model.md)
