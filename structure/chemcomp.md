@@ -3,20 +3,20 @@ The Chemical Component Dictionary
 
 The [Chemical Component Dictionary](http://www.wwpdb.org/ccd.html) is an external reference file describing all residue and small molecule components found in PDB entries. This dictionary contains detailed chemical descriptions for standard and modified amino acids/nucleotides, small molecule ligands, and solvent molecules. 
 
-### How does BioJava decide what groups are amino acids?
+### How Does BioJava Decide what Groups Are Amino Acids?
 
 BioJava utilizes the Chem. Comp. Dictionary to achieve a chemically correct representation of each group. To make it clear how this can work, let's take a look at how [Selenomethionine](http://en.wikipedia.org/wiki/Selenomethionine) and water is dealt with:
 
 ```java
-            Structure structure = StructureIO.getStructure("1A62");
-                    
-            for (Chain chain : structure.getChains()){
-                for (Group group : chain.getAtomGroups()){
-                    if ( group.getPDBName().equals("MSE") || group.getPDBName().equals("HOH")){
-                        System.out.println(group.getPDBName() + " is a group of type " + group.getType());
-                    }
-                }
-            }
+Structure structure = StructureIO.getStructure("1A62");
+
+for (Chain chain : structure.getChains()){
+    for (Group group : chain.getAtomGroups()){
+        if ( group.getPDBName().equals("MSE") || group.getPDBName().equals("HOH")){
+            System.out.println(group.getPDBName() + " is a group of type " + group.getType());
+        }
+    }
+}
 ```
 
 This will give this output:
@@ -50,18 +50,19 @@ As you can see, although MSE is flaged as HETATM in the PDB file, BioJava still 
 </table>
 
 
-### How to access Chemical Component definitions
+### How to Access Chemical Component Definitions
+
 By default BioJava ships with a minimal representation of standard amino acids, which is useful when you just want to work with atoms and a basic data representation. However if you want to work with a  correct representation (e.g. distinguish ligands from the polypeptide chain, correctly resolve chemically modified residues), it is good to tell the library to either
 
-1. fetch missing Chemical Component definitions on the fly (small download and parsing delays every time a new chemical compound is found), or
-2. Load all definitions at startup (slow startup, but then no further delays later on, requires more memory)
+1. Fetch missing **Chemical Component Definitions** on the fly (small download and parsing delays every time a new chemical compound is found), or
+2. Load all **Chemical Component Definitions**  at startup (slow startup, but then no further delays later on, requires more memory)
 
 You can enable the first behaviour by doing using the [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/FileParsingParameters.html) class:
 
 ```java
             AtomCache cache = new AtomCache();
             
-             // by default all files are stored at a temporary location.
+            // by default all files are stored at a temporary location.
             // you can set this either via at startup with -DPDB_DIR=/path/to/files/
             // or hard code it this way:
             cache.setPath("/tmp/");
@@ -88,9 +89,9 @@ If you want to enable the second behaviour (slow loading of all chem comps at st
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 5 : Chemical Component Dictionary
 
 Prev: [Chapter 4 : Local installations](caching.md)
 
-Next: [Chapter 6 : work with mmCIF/PDBx files](mmcif.md)
+Next: [Chapter 6 : Work with mmCIF/PDBx Files](mmcif.md)
