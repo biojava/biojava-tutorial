@@ -1,17 +1,17 @@
-# The BioJava-structure data model
+# The BioJava-Structure Data Model
 
 A biologically and chemically meaningful data representation of PDB/mmCIF.
 
-## The basics   
+## The Basics   
 
-BioJava at its core is a collection of file parsers and (in some cases) data models to represent frequently used biological data.  The protein-structure modules represent macromolecular data in a way that should make it easy to work with. The representation is essentially independ of the underlying file format and the user can chose to work with either PDB or mmCIF files and still get an almost identical data representation. (There can be subtile differences between PDB and mmCIF data, for example the atom indices in a few entries are not 100% identical)
+BioJava at its core is a collection of file parsers and (in some cases) data models to represent frequently used biological data. The protein-structure modules represent macromolecular data in a way that should make it easy to work with. The representation is essentially independent of the underlying file format and the user can chose to work with either PDB or mmCIF files and still get an almost identical data representation. (There can be subtile differences between PDB and mmCIF data, for example the atom indices in a few entries are not 100% identical)
 
-## The main hierarchy
+## The Main Hierarchy
 
 BioJava provides a flexible data structure for managing protein structural data. The 
-[http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html Structure] class is the main container. 
+[Structure](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html) class is the main container. 
 
-A Structure has a hierarchy of sub-objects:
+A `Structure` has a hierarchy of sub-objects:
 
 <pre>
 Structure 
@@ -25,28 +25,27 @@ Structure
                  Atom(s)
 </pre>
 
-All structure objects contain one or more "models". That means also X-ray structures contain a "virtual" model which serves as a container for the chains. The most common way to access chains will be via
+All `Structure` objects contain one or more `Models`. That means also X-ray structures contain a "virtual" model which serves as a container for the chains. The most common way to access chains is via:
 
 ```java
         List <Chain> chains = structure.getChains();
 ```
 
-This works for both NMR and X-ray based structures and by default the first model is getting accessed.
+This works for both NMR and X-ray based structures and by default the first `Model` is getting accessed.
 
-
-## Working with atoms
+## Working with Atoms
 
 Different ways are provided how to access the data contained in a [Structure](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html).
-If you want to directly access an array of [Atoms](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Atom.html) you can use the utility class called [StructureTools](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureTools.html)
+If you want to directly access an array of representative [Atoms](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Atom.html) (CA for proteins, P in nucleotides),you can use the utility class called [StructureTools](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureTools.html)
 
 ```java
-    // get all C-alpha atoms in the structure
-    Atom[] caAtoms = StructureTools.getAtomCAArray(structure);
+    // get all representative atoms in the structure, one for residue
+    Atom[] caAtoms = StructureTools.getRepresentativeAtomArray(structure);
 ```
 
 Alternatively you can access atoms also by their parent-group.
 
-## Loop over all the data
+## Loop over All the Data
 
 Here an example that loops over the whole data model and prints out the HEM groups of hemoglobin:
 
@@ -77,7 +76,7 @@ Here an example that loops over the whole data model and prints out the HEM grou
 			}
 ```
 
-## Working with groups
+## Working with Groups
 
 The [Group](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Group.html) interface defines all methods common to a group of atoms. There are 3 types of Groups:
 
@@ -97,7 +96,6 @@ In order to get all amino acids that have been observed in a PDB chain, you can 
                 System.out.println(aa + " " + aa.getSecStruc());
             }
 ```
-
 
 In a similar way you can access all nucleotide groups by
 ```java
@@ -167,8 +165,8 @@ This prints all the compounds/entities in a structure
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
-| Chapter 3 : data model
+| [Book 3: The Structure modules](README.md)
+| Chapter 3 : Structure Data Model
 
 Prev: [Chapter 2 : First Steps](firststeps.md)
 
