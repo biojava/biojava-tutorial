@@ -233,7 +233,7 @@ The RCSB PDB web site has a great [tutorial on Biological Assemblies](http://www
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 9 : Biological Assemblies
 
 Prev: [Chapter 8 : Structure Alignments](alignment.md)

@@ -63,4 +63,4 @@ Navigation:
 
 Prev: [Book 1: The Core module](../core/README.md)
 
-Next: [Book 3: The Protein Structure modules](../structure/README.md)
+Next: [Book 3: The Structure modules](../structure/README.md)

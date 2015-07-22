@@ -65,9 +65,9 @@ One can also cluster the interfaces based on their similarity. The similarity is
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
-| Chapter 13 - Finding all interfaces in crystal: crystal contacts
+| [Book 3: The Structure modules](README.md)
+| Chapter 13 - Finding all Interfaces in Crystal: Crystal Contacts
 
-Prev: [Chapter 12 : Contacts within a chain and between chains](contact-map.md)
+Prev: [Chapter 12 : Contacts Within a Chain and between Chains](contact-map.md)
 
 Next: [Chapter 16 : Special Cases](special.md)

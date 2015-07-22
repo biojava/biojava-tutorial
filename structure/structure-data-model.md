@@ -170,4 +170,4 @@ Navigation:
 
 Prev: [Chapter 2 : First Steps](firststeps.md)
 
-Next: [Chapter 4 : Local installations](caching.md)
+Next: [Chapter 4 : Local Installations](caching.md)

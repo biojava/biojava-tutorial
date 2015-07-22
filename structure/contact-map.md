@@ -68,9 +68,9 @@ See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava3-struc
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
-| Chapter 12 : Contacts within a chain and between chains
+| [Book 3: The Structure modules](README.md)
+| Chapter 12 : Contacts Within a Chain and between Chains
 
 Prev: [Chapter 11 : Accessible Surface Areas](asa.md)
 
-Next: [Chapter 13 - Finding all interfaces in crystal: crystal contacts](crystal-contacts.md)
+Next: [Chapter 13 - Finding all Interfaces in Crystal: Crystal Contacts](crystal-contacts.md)

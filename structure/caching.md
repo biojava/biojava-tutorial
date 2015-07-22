@@ -90,7 +90,7 @@ There are quite a number of external database IDs that are supported here. See t
 Navigation:
 [Home](../README.md)
 | [Book 3: The Structure modules](README.md)
-| Chapter 4 : Local installations
+| Chapter 4 : Local Installations
 
 Prev: [Chapter 3 : Structure Data Model](structure-data-model.md)
 

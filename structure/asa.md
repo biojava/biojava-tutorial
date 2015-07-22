@@ -41,9 +41,9 @@ See [DemoAsa](https://github.com/biojava/biojava/blob/master/biojava3-structure/
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 11 : Accessible Surface Areas
 
 Prev: [Chapter 10 : External Databases](externaldb.md)
 
-Next: [Chapter 12 : Contacts within a chain and between chains](contact-map.md)
+Next: [Chapter 12 : Contacts Within a Chain and between Chains](contact-map.md)

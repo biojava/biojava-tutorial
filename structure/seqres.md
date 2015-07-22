@@ -104,8 +104,8 @@ This gives the following output:
 Navigation:
 [Home](../README.md)
 | [Book 3: The Structure modules](README.md)
-| Chapter 7 : SEQRES and ATOM records
+| Chapter 7 : SEQRES and ATOM Records
 
-Prev: [Chapter 6 : work with mmCIF/PDBx files](mmcif.md)
+Prev: [Chapter 6 : Work with mmCIF/PDBx Files](mmcif.md)
 
 Next: [Chapter 8 : Structure Alignments](alignment.md)

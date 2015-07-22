@@ -388,6 +388,6 @@ Navigation:
 | [Book 3: The Structure modules](README.md)
 | Chapter 8 : Structure Alignments
 
-Prev: [Chapter 7 : SEQRES and ATOM records](seqres.md)
+Prev: [Chapter 7 : SEQRES and ATOM Records](seqres.md)
 
 Next: [Chapter 9 : Biological Assemblies](bioassembly.md)

@@ -126,4 +126,4 @@ Navigation:
 
 Prev: [Chapter 5 : Chemical Component Dictionary](chemcomp.md)
 
-Next: [Chapter 7 : SEQRES and ATOM records](seqres.md)
+Next: [Chapter 7 : SEQRES and ATOM Records](seqres.md)

@@ -92,6 +92,6 @@ Navigation:
 | [Book 3: The Structure modules](README.md)
 | Chapter 5 : Chemical Component Dictionary
 
-Prev: [Chapter 4 : Local installations](caching.md)
+Prev: [Chapter 4 : Local Installations](caching.md)
 
 Next: [Chapter 6 : Work with mmCIF/PDBx Files](mmcif.md)
