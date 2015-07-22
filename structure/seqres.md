@@ -1,4 +1,4 @@
-SEQRES and ATOM records, mapping to Uniprot (SIFTs)
+SEQRES and ATOM Records, Mapping to Uniprot (SIFTs)
 ===================================================
 
 How molecular sequences are linked to experimentally observed atoms.
@@ -16,7 +16,7 @@ As you can see, there are three PDB entries (PDB IDs [3LOH](http://www.rcsb.org/
 
 The blue-boxes are regions for which atoms records are available. For the grey regions there is sequence information available in the PDB, but no coordinates.
 
-## Seqres and Atom records
+## Seqres and Atom Records
 
 The sequence that has been used in the experiment is stored in the **Seqres** records in the PDB. It is often not the same sequences as can be found in Uniprot, since it can contain cloning-artefacts and modifications that were necessary in order to crystallize a structure.
 
@@ -40,7 +40,7 @@ The *mmCIF/PDBx* file format contains the information how the Seqres and atom re
             
 ```
 
-## Accessing Seqres and Atom groups
+## Accessing Seqres and Atom Groups
 
 By default BioJava loads both the Seqres and Atom groups into the [Chain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Chain.html) 
 objects.
@@ -53,9 +53,7 @@ objects.
 Groups that are part of the Seqres sequence as well as of the Atom records are mapped onto each other. This means you
 can iterate over all Seqres groups in a chain and check, if they have observed atoms.
 
-
-
-## Mapping from Uniprot to Atom records 
+## Mapping from Uniprot to Atom Records 
 
 The mapping between PDB and UniProt changes over time, due to the dynamic nature of biological data. The [PDBe](http://www.pdbe.org) has a project that provides up-to-date mappings between the two databases, the [SIFTs](http://www.ebi.ac.uk/pdbe/docs/sifts/) project. 
 
@@ -105,7 +103,7 @@ This gives the following output:
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 7 : SEQRES and ATOM records
 
 Prev: [Chapter 6 : work with mmCIF/PDBx files](mmcif.md)
