@@ -1,4 +1,4 @@
-Structure Alignment
+Structure Alignments
 ===========================
 
 ## What is a Structure Alignment?
@@ -227,9 +227,33 @@ interface.
 
 ## Multiple Structure Alignment
 
-Since BioJava 4.1.0, multiple structure alignments can be generated.
+This Java implementation for multiple structure alignments, named MultipleMC, is based on the original CE-MC implementation by [Guda C, Scheeff ED, Bourne PE &amp; Shindyalov IN in 2001](http://psb.stanford.edu/psb-online/proceedings/psb01/abstracts/p275.html)
+[![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/11262947).
 
-## PDB-wide database searches
+The idea remains unchanged: perform **all-to-all pairwise alignments** of the structures, choose the 
+**reference** as the most similar structure to all others and run a **Monte Carlo optimization** of
+the multiple residue equivalencies (EQRs) to minimize a score function that depends on the inter-residue
+distances.
+
+Although the main idea is the same as in the original algorithm, some details of the implementation have 
+been changed in the BioJava version. They are described in the main class, but as a summary:
+
+1. It accepts **any pairwise alignment** algorithm (instead of being attached to CE), so any
+of the algorithms described before is suitable for generating a seed for optimization. Note that
+this property allows *non-topological* and *flexible* multiple structure alignments, always restricted
+by the pairwise alignment algorithm limitations.
+2. The **moves** in the Monte Carlo optimization have been simplified to 3, instead of 4.
+3. A **new move** to insert and delete individual gaps has been added.
+4. The scoring function has been modified to a **continuous** function, maintaining the properties that the authors described.
+5. The **probability function** is normalized in synchronization with the optimization progression, to improce the convergence into a score maximum after some random exploration of the multidimensiona space. 
+
+The algorithm performs similarly to other multiple structure alignment algorithms for most protein families. 
+The parameters both for the pairwise aligner and the MC optimization can have an impact on the final result. There is not a unique set of parameters, because they usually depend on the specific case. Thus, trying some parameter combinations, keeping in mind the effect they produce in the score function, is a good practice when doing structure alignments.
+
+BioJava class: [org.biojava.nbio.structure.align.multiple.mc.MultipleMcMain]
+(www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/mc/MultipleMcMain.html)
+
+## PDB-wide Database Searches
 
 The Alignment GUI also provides functionality for PDB-wide structural searches.
 This systematically compares a structure against a non-redundant set of all
@@ -265,10 +289,10 @@ the `PDB_DIR` environmental variable. This operation sped up the search from
 about 30 hours to less than 4 hours.
 
 
-## Creating alignments programmatically
+## Creating Alignments Programmatically
 
-The various structure alignment algorithms in BioJava implement the
-`StructureAlignment` interface, and are normally accessed through
+The **pairwise structure alignment** algorithms in BioJava implement the
+`StructureAlignment` interface, and are usually accessed through
 `StructureAlignmentFactory`. Here's an example of how to create a CE-CP
 alignment and print some information about it.
 
@@ -294,13 +318,43 @@ To display the alignment using Jmol, use:
 
 ```java
 GuiWrapper.display(afpChain, ca1, ca2);
-// Or StructureAlignmentDisplay.display(afpChain, ca1, ca2);
+// Or using the biojava-structure-gui module
+StructureAlignmentDisplay.display(afpChain, ca1, ca2);
 ```
 
 Note that these require that you include the structure-gui package and the Jmol
 binary in the classpath at runtime.
 
-## Command-line tools
+For creating **multiple structure alignments**, the code is a little bit different, because the
+returned data structure and the number of input structures are different. Here is an 
+example of how to create and display a multiple alignment:
+
+```java
+//Specify the structures to align: some ASP-proteinases
+List<String> names = Arrays.asList("3app", "4ape", "5pep", "1psn", "4cms", "1bbs.A", "1smr.A");
+
+//Load the CA atoms of the structures
+AtomCache cache = new AtomCache();
+List<Atom[]> atomArrays = new ArrayList<Atom[]>();
+for (String name:names)	{
+  atomArrays.add(cache.getAtoms(name));
+}
+
+//Generate the multiple alignment algorithm with the chosen pairwise algorithm
+StructureAlignment pairwise  = StructureAlignmentFactory.getAlgorithm(CeMain.algorithmName);
+MultipleMcMain multiple = new MultipleMcMain(pairwise);
+
+//Perform the alignment
+MultipleAlignment result = algorithm.align(atomArrays);
+
+//Output the FASTA sequence alignment
+System.out.println(MultipleAlignmentWriter.toFASTA(result));
+
+//Display the results in a 3D view
+MultipleAlignmentDisplay.display(result);
+```
+
+## Command-Line Tools
 
 Many of the alignment algorithms are available in the form of command line
 tools. These can be accessed through the main methods of the StructureAlignment
@@ -317,8 +371,7 @@ alignments in batch mode, or full database searches. Some additional parameters
 are available which are not exposed in the GUI, such as outputting results to a
 file in various formats.
 
-
-## See Also
+## Alignment Data Model
 
 For details about the structure alignment data models in biojava, see [Structure Alignment Data Model](alignment-data-model.md)
 
@@ -332,7 +385,7 @@ Thanks to P. Bourne, Yuzhen Ye and A. Godzik for granting permission to freely u
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 8 : Structure Alignments
 
 Prev: [Chapter 7 : SEQRES and ATOM records](seqres.md)
