@@ -15,6 +15,8 @@ Some of the important stored variables are:
 * BlockRotationMatrix: rotation component of the superposition transformation.
 * BlockShiftVector: translation component of the superposition transformation.
 
+BioJava class: [org.biojava.bio.structure.align.model.AFPChain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/model/AFPChain.html)
+
 ### The Optimal Alignment
 
 The residue equivalencies of the alignment (EQRs) are described in the optimal 
@@ -79,6 +81,8 @@ transformation.
 In addtition, the data structure is not limited in the number and types of scores
 it can store, because the scores are stored in a key:value fashion, as it will be
 described later.
+
+BioJava class: [org.biojava.bio.structure.align.multiple.MultipleAlignment](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/MultipleAlignment.html)
 
 ### Object Hierarchy
 
@@ -167,8 +171,20 @@ on a `MultipleAlignment`:
   double bsRMSD = alignment.getScore('bsRMSD');
 ```
 
-Methods and names for some frequent scores are located in a util class called
-`MultipleAlignmentScorer`.
+### Manipulating Multiple Alignments
+
+Some classes are designed to contain utility methods for manipulating a `MultipleAlignment` object.
+The most important ones are ennumerated and briefly described below:
+
+* [MultipleAlignmentScorer](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/util/MultipleAlignmentScorer.html): contains frequent names for scores and methods to calculate them.
+
+* [MultipleAlignmentTools](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/util/MultipleAlignmentTools.html): contains helper methods, such as sequence alignment calculation, transform atom arrays of the structures or calculate aligned residue distances between all structures.
+
+* [MultipleAlignmentWriter](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/util/MultipleAlignmentWriter.html): contains methods to generate different types of String outputs of the alignment, e.g. FASTA, XML, FatCat.
+
+* [MultipleSuperimposer](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/util/MultipleSuperimposer.html): interface for implementations that calculate the structure superpositions of the alignment. Some examples of implementations are the ReferenceSuperimposer (superimposes all the structures to a reference) and the CoreSuperimposer (only uses EQRs present in all structures, without gaps, to superimpose them).
+
+* [MultipleAlignmentXMLParser](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/xml/MultipleAlignmentXMLParser.html): contains a method to create a `MultipleAlignment` object from an XML file representation.
 
 ### Overview
 
@@ -207,3 +223,7 @@ the first representation supports any number of structures, while the second is
 only supporting pairwise alignments. However, the conversion can be done with some
 lines of code if needed (instantiate a new `AFPChain` and copy one by one the 
 properties that can be represented from the `MultipleAlignment`.
+
+===
+
+Go back to [Chapter 8 : Structure Alignments](alignment.md).
