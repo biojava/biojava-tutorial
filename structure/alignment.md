@@ -1,20 +1,25 @@
-Protein Structure Alignment
+Structure Alignment
 ===========================
 
-## What is a structure alignment?
+## What is a Structure Alignment?
 
-A **Structural alignment** attempts to establish equivalences between two or more polymer structures based on their shape and three-dimensional conformation. In contrast to simple structural superposition (see below), where at least some equivalent residues of the two structures are known, structural alignment requires no a priori knowledge of equivalent positions.
+A **structural alignment** attempts to establish equivalences between two or more polymer structures based on their shape and three-dimensional conformation. In contrast to simple structural superposition (see below), where at least some equivalent residues of the two structures are known, structural alignment requires no a priori knowledge of equivalent positions.
 
-Structural alignment is a valuable tool for the comparison of proteins with low sequence similarity, where evolutionary relationships between proteins cannot be easily detected by standard sequence alignment techniques. Structural alignment can therefore be used to imply evolutionary relationships between proteins that share very little common sequence. However, caution should be exercised when using the results as evidence for shared evolutionary ancestry, because of the possible confounding effects of convergent evolution by which multiple unrelated amino acid sequences converge on a common tertiary structure.
+**Structural alignment** is a valuable tool for the comparison of proteins with low sequence similarity, where evolutionary relationships between proteins cannot be easily detected by standard sequence alignment techniques. **Structural alignment** can therefore be used to imply evolutionary relationships between proteins that share very little common sequence. However, caution should be exercised when using the results as evidence for shared evolutionary ancestry, because of the possible confounding effects of convergent evolution by which multiple unrelated amino acid sequences converge on a common tertiary structure.
 
-For more info see the Wikipedia article on [protein structure alignment](http://en.wikipedia.org/wiki/Structural_alignment).
+**Structural alignment** of other biological structures can also be made in BioJava. For example, nucleic acids can
+be structurally aligned to find common structural motifs, independent of sequence simililarity. This is specially
+important for RNAs, because their 3D structure arrangement is important for their function.
+
+For more info see the Wikipedia article on [structure alignment](http://en.wikipedia.org/wiki/Structural_alignment).
 
 ## Alignment Algorithms supported by BioJava
 
 BioJava comes with a number of algorithms for aligning structures. The following
 five options are displayed by default in the graphical user interface (GUI),
 although others can be accessed programmatically using the methods in
-[StructureAlignmentFactory](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignmentFactory.html).
+[StructureAlignmentFactory]
+(http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignmentFactory.html).
 
 1. Combinatorial Extension (CE)
 2. Combinatorial Extension with Circular Permutation (CE-CP)
@@ -22,9 +27,15 @@ although others can be accessed programmatically using the methods in
 4. FATCAT - flexible.
 5. Smith-Waterman superposition
 
-CE and FATCAT both use structural similarity to align the proteins, while
+CE and FATCAT both use structural similarity to align the structures, while
 Smith-Waterman performs a local sequence alignment and then displays the result
 in 3D. See below for descriptions of the algorithms.
+
+Since BioJava version 4.1.0, multiple structure alignments can be generated and visualized. 
+The algorithm is described in detail below. As an overview, it uses any pairwise alignment 
+algorithm and a reference structure to align all of the structures. Then, it runs a Monte 
+Carlo optimization method to determine the residue equivalencies between all the strucutures,
+identifying conserved structural motifs.
 
 ## Alignment User Interface
 
@@ -39,7 +50,7 @@ This code shows the following user interface:
 
 ![Alignment GUI](img/alignment_gui.png)
 
-You can manually select protein chains, domains, or custom files to be aligned.
+You can manually select structure chains, domains, or custom files to be aligned.
 Try to align 2hyn vs. 1zll. This will show the results in a graphical way, in
 3D:
 
@@ -60,7 +71,7 @@ algorithms.
 The Combinatorial Extension (CE) algorithm was originally developed by
 [Shindyalov and Bourne in
 1998](http://peds.oxfordjournals.org/content/11/9/739.short) [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/9796821).
-It works by identifying segments of the two proteins with similar local
+It works by identifying segments of the two structures with similar local
 structure, and then combining those to try to align the most residues possible
 while keeping the overall RMSD of the superposition low.
 
@@ -77,15 +88,16 @@ BioJava class: [org.biojava.bio.structure.align.ce.CeMain](http://www.biojava.or
 ### Combinatorial Extension with Circular Permutation (CE-CP)
 
 CE and FATCAT both assume that aligned residues occur in the same order in both
-proteins (e.g. they are both *sequence-order dependent* algorithms). In proteins
+structures (e.g. they are both *sequence-order dependent* algorithms). In proteins
 related by a circular permutation, the N-terminal part of one protein is related
 to the C-terminal part of the other, and vice versa. CE-CP allows circularly
 permuted proteins to be compared.  For more information on circular
 permutations, see the
 [Wikipedia](http://en.wikipedia.org/wiki/Circular_permutation_in_proteins) or
-[Molecule of the
-Month](http://www.pdb.org/pdb/101/motm.do?momID=124&evtc=Suggest&evta=Moleculeof%20the%20Month&evtl=TopBar)
-articles [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/22496628).
+[Molecule of the Month]
+(http://www.pdb.org/pdb/101/motm.do?momID=124&evtc=Suggest&evta=Moleculeof%20the%20Month&evtl=TopBar)
+articles [![pubmed]
+(http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/22496628).
 
 
 For proteins without a circular permutation, CE-CP results look very similar to
@@ -97,7 +109,7 @@ proteins will be shown in different colors:
 
 CE-CP was developed by Spencer E. Bliven, Philip E. Bourne, and Andreas Prli&#263;.
 
-BioJava class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
+BioJava class: [org.biojava.nbio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
 
 ### FATCAT - rigid
 
@@ -105,15 +117,16 @@ This is a Java implementation of the original FATCAT algorithm by [Yuzhen Ye
 &amp; Adam Godzik in
 2003](http://bioinformatics.oxfordjournals.org/content/19/suppl_2/ii246.abstract)
 [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/14534198).
-It performs similarly to CE for most proteins. The 'rigid' flavor uses a
+It performs similarly to CE for most structures. The 'rigid' flavor uses a
 rigid-body superposition and only considers alignments with matching sequence
 order.
 
-BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatRigid](www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatRigid.html)
+BioJava class: [org.biojava.nbio.structure.align.fatcat.FatCatRigid]
+(www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatRigid.html)
 
 ### FATCAT - flexible
 
-FATCAT-flexible introduces 'twists' between different parts of the proteins
+FATCAT-flexible introduces 'twists' between different parts of the structures
 which are superimposed independently. This is ideal for proteins which undergo
 large conformational shifts, where a global superposition cannot capture the
 underlying similarity between domains. For instance, the structures of
@@ -124,13 +137,14 @@ this is that it can lead to additional false positives in unrelated structures.
 ![(Left) Rigid and (Right) flexible alignments of
 calmodulin](img/1cfd_1cll_fatcat.png)
 
-BioJava class: [org.biojava.bio.structure.align.fatcat.FatCatFlexible](www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatFlexible.html)
+BioJava class: [org.biojava.nbio.structure.align.fatcat.FatCatFlexible]
+(www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatFlexible.html)
 
 ### Smith-Waterman
 
 This aligns residues based on Smith and Waterman's 1981 algorithm for local
 *sequence* alignment [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/7265238). No structural information is included in the alignment, so
-this only works for proteins with significant sequence similarity. It uses the
+this only works for structures with significant sequence similarity. It uses the
 Blosum65 scoring matrix.
 
 The two structures are superimposed based on this alignment. Be aware that errors
@@ -138,7 +152,8 @@ locating gaps can lead to high RMSD in the resulting superposition due to a
 small number of badly aligned residues. However, this method is faster than
 the structure-based methods.
 
-BioJava Class: [org.biojava.bio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
+BioJava Class: [org.biojava.nbio.structure.align.ce.CeCPMain]
+(http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
 
 ### Other methods
 
@@ -253,7 +268,7 @@ file in various formats.
 
 ## See Also
 
-For details about the structure alignment data models in biojava, see [Structure Alignment Data Models](alignment-data-model.md)
+For details about the structure alignment data models in biojava, see [Structure Alignment Data Model](alignment-data-model.md)
 
 ## Acknowledgements
 
