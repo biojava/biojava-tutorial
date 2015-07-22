@@ -1,7 +1,7 @@
-The Protein Structure Modules of BioJava
+The Structure Modules of BioJava
 =====================================================
 
-A tutorial for the protein structure modules of [BioJava](http://www.biojava.org)
+A tutorial for the structure modules of [BioJava](http://www.biojava.org)
 
 ## About
 <table>
@@ -32,17 +32,17 @@ Chapter 1 - Quick [Installation](installation.md)
 
 Chapter 2 - [First Steps](firststeps.md)
 
-Chapter 3 - The [data model](structure-data-model.md) for the representation of macromolecular structures.
+Chapter 3 - The [Structure Data Model](structure-data-model.md), for the representation of macromolecular structures
 
-Chapter 4 - [Local installations](caching.md) of PDB
+Chapter 4 - [Local Installations](caching.md) of PDB
 
 Chapter 5 - The [Chemical Component Dictionary](chemcomp.md)
 
-Chapter 6 - How to [work with mmCIF/PDBx files](mmcif.md)
+Chapter 6 - How to [Work with mmCIF/PDBx Files](mmcif.md)
 
-Chapter 7 - [SEQRES and ATOM records](seqres.md), mapping to Uniprot (SIFTs)
+Chapter 7 - [SEQRES and ATOM Records](seqres.md), mapping to Uniprot (SIFTs)
 
-Chapter 8 - Protein [Structure Alignments](alignment.md)
+Chapter 8 - [Structure Alignments](alignment.md)
 
 Chapter 9 - [Biological Assemblies](bioassembly.md)
 
@@ -50,9 +50,9 @@ Chapter 10 - [External Databases](externaldb.md) like SCOP &amp; CATH
 
 Chapter 11 - [Accessible Surface Areas](asa.md)
 
-Chapter 12 - [Contacts within a chain and between chains](contact-map.md)
+Chapter 12 - [Contacts Within a Chain and between Chains](contact-map.md)
 
-Chapter 13 - Finding all interfaces in crystal: [crystal contacts](crystal-contacts.md)
+Chapter 13 - Finding all Interfaces in Crystal: [Crystal Contacts](crystal-contacts.md)
 
 Chapter 14 - Protein Symmetry
 
@@ -60,7 +60,7 @@ Chapter 15 - Bonds
 
 Chapter 16 - [Special Cases](special.md)
 
-Chapter 17 - [Lists](lists.md) of PDB IDs and PDB [status information](lists.md).
+Chapter 17 - [Lists](lists.md) of PDB IDs and PDB [Status Information](lists.md)
 
 
 ### Author: 
@@ -88,7 +88,7 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 
 Navigation:
 [Home](../README.md)
-| Book 3: The Protein Structure modules
+| Book 3: The Structure modules
 
 Prev: [Book 2: The Alignment module](../alignment/README.md)
 

@@ -20,7 +20,7 @@ is the same as
 ```
 
 
-## Where are the files getting written to?
+## Where Are the Files Written to?
 
 By default the AtomCache writes all files into a temporary location (The system temp directory "java.io.tempdir"). 
 
@@ -45,7 +45,7 @@ The AtomCache also provides access to configuring various options that are avail
 parsing of files. The [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/FileParsingParameters.html)
 class is the main place to influence the level of detail and as a consequence the speed with which files can be loaded.
 
-This example turns on the use of chemical components when loading a structure. (See also the [next chapter](chemcomp.md))
+This example turns on the use of chemical components when loading a `Structure`. (See also the [next chapter](chemcomp.md))
 
 ```java
 	AtomCache cache = new AtomCache();
@@ -89,9 +89,9 @@ There are quite a number of external database IDs that are supported here. See t
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
-| Chapter 4 : Local installations
+| [Book 3: The Structure modules](README.md)
+| Chapter 4 : Local Installations
 
-Prev: [Chapter 3 : data model](structure-data-model.md)
+Prev: [Chapter 3 : Structure Data Model](structure-data-model.md)
 
 Next: [Chapter 5 : Chemical Component Dictionary](chemcomp.md)

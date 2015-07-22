@@ -130,9 +130,9 @@ DYG is an unusual group - it has 3 characters as a result of .getOne_letter_code
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
+| [Book 3: The Structure modules](README.md)
 | Chapter 16 : Special Cases
 
-Prev: [Chapter 13 - Finding all interfaces in crystal: crystal contacts](crystal-contacts.md)
+Prev: [Chapter 13 - Finding all Interfaces in Crystal: Crystal Contacts](crystal-contacts.md)
 
-Next: [Chapter 17 : status information](lists.md)
+Next: [Chapter 17 : Status Information](lists.md)

@@ -1,4 +1,4 @@
-# How to parse mmCIF files using BioJava
+# How to Parse mmCIF Files using BioJava
 
 A quick tutorial how to work with mmCIF files.
 
@@ -10,12 +10,12 @@ The Protein Data Bank (PDB) has been distributing its archival files as PDB file
 
 The mmCIF file format has been around for some time (see [Westbrook 2000][] and [Westbrook 2003][] ) [BioJava](http://www.biojava.org) has been supporting mmCIF already for several years. This tutorial is meant to provide a quick introduction into how to parse mmCIF files using [BioJava](http://www.biojava.org)
 
-## The basics
+## The Basics
 
 BioJava provides you with both a mmCIF parser and a data model that reads PDB and mmCIF files into a biological and chemically  meaningful data model (BioJava supports the [Chemical Components Dictionary](mmcif.md)). If you don't want to use that data model, you can still use BioJava's file parsers, and more on that later, let's start first with the most basic way of loading a protein structure.
 
 
-## First steps
+## First Steps
 
 The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
 
@@ -61,7 +61,7 @@ By default BioJava is using the PDB file format for parsing data. In order to sw
 
 As you can see, the AtomCache will again download the missing mmCIF file for 4HHB in the background. 
 
-## Low level access
+## Low Level Access
 
 If you want to learn how to use the BioJava mmCIF parser to populate your own data structure, let's first take a look this lower-level code:
 
@@ -93,13 +93,13 @@ To re-use the parser for your own datamodel, just implement the [MMcifConsumer](
         parser.addMMcifConsumer(myOwnConsumerImplementation);
 ```
 
-## I loaded a Structure object, what now?
+## I Loaded a Structure Object, What Now?
 
 BioJava provides a number of algorithms and visualisation tools that you can use to further analyse the structure, or look at it. Here a couple of suggestions for further reads:
 
 + [The BioJava Cookbook for protein structures](http://biojava.org/wiki/BioJava:CookBook#Protein_Structure)
 + How does BioJava [represent the content](structure-data-model.md) of a PDB/mmCIF file?
-+ [How to calculate a protein structure alignment using BioJava](http://biojava.org/wiki/BioJava:CookBook:PDB:align)
++ How to calculate a protein structure alignment using BioJava: [tutorial](alignment.md) or [cookbook](http://biojava.org/wiki/BioJava:CookBook:PDB:align)
 + [How to work with Groups (AminoAcid, Nucleotide, Hetatom)](http://biojava.org/wiki/BioJava:CookBook:PDB:groups)
 
 ## Further reading
@@ -121,9 +121,9 @@ See the [http://mmcif.rcsb.org/](http://mmcif.rcsb.org/) site for more documenta
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
-| Chapter 6 : work with mmCIF/PDBx files
+| [Book 3: The Structure modules](README.md)
+| Chapter 6 : Work with mmCIF/PDBx Files
 
 Prev: [Chapter 5 : Chemical Component Dictionary](chemcomp.md)
 
-Next: [Chapter 7 : SEQRES and ATOM records](seqres.md)
+Next: [Chapter 7 : SEQRES and ATOM Records](seqres.md)

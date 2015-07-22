@@ -26,7 +26,7 @@ The following provides information about the status of a PDB entry
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Protein Structure modules](README.md)
-| Chapter 17 : status information
+| [Book 3: The Structure modules](README.md)
+| Chapter 17 : Status Information
 
 Prev: [Chapter 16 : Special Cases](special.md)
