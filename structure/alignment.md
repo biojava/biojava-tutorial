@@ -3,13 +3,25 @@ Structure Alignment
 
 ## What is a Structure Alignment?
 
-A **structural alignment** attempts to establish equivalences between two or more polymer structures based on their shape and three-dimensional conformation. In contrast to simple structural superposition (see below), where at least some equivalent residues of the two structures are known, structural alignment requires no a priori knowledge of equivalent positions.
+A **structural alignment** attempts to establish equivalences between two or 
+more polymer structures based on their shape and three-dimensional conformation. 
+In contrast to simple structural superposition (see below), where at least some 
+equivalent residues of the two structures are known, structural alignment requires 
+no a priori knowledge of equivalent positions.
 
-**Structural alignment** is a valuable tool for the comparison of proteins with low sequence similarity, where evolutionary relationships between proteins cannot be easily detected by standard sequence alignment techniques. **Structural alignment** can therefore be used to imply evolutionary relationships between proteins that share very little common sequence. However, caution should be exercised when using the results as evidence for shared evolutionary ancestry, because of the possible confounding effects of convergent evolution by which multiple unrelated amino acid sequences converge on a common tertiary structure.
+A **structural alignment** is a valuable tool for the comparison of proteins with 
+low sequence similarity, where evolutionary relationships between proteins cannot 
+be easily detected by standard sequence alignment techniques. Therefore, a 
+**structural alignment** can be used to imply evolutionary relationships between 
+proteins that share very little common sequence. However, caution should be exercised 
+when using the results as evidence for shared evolutionary ancestry, because of the 
+possible confounding effects of convergent evolution by which multiple unrelated amino 
+acid sequences converge on a common tertiary structure.
 
-**Structural alignment** of other biological structures can also be made in BioJava. For example, nucleic acids can
-be structurally aligned to find common structural motifs, independent of sequence simililarity. This is specially
-important for RNAs, because their 3D structure arrangement is important for their function.
+A **structural alignment** of other biological polymers can also be made in BioJava.
+For example, nucleic acids can be structurally aligned to find common structural motifs, 
+independent of sequence simililarity. This is specially important for RNAs, because their
+3D structure arrangement is important for their function.
 
 For more info see the Wikipedia article on [structure alignment](http://en.wikipedia.org/wiki/Structural_alignment).
 
@@ -17,9 +29,8 @@ For more info see the Wikipedia article on [structure alignment](http://en.wikip
 
 BioJava comes with a number of algorithms for aligning structures. The following
 five options are displayed by default in the graphical user interface (GUI),
-although others can be accessed programmatically using the methods in
-[StructureAlignmentFactory]
-(http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignmentFactory.html).
+although others can be accessed programmatically using the methods in 
+[StructureAlignmentFactory](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/StructureAlignmentFactory.html).
 
 1. Combinatorial Extension (CE)
 2. Combinatorial Extension with Circular Permutation (CE-CP)
@@ -27,20 +38,25 @@ although others can be accessed programmatically using the methods in
 4. FATCAT - flexible.
 5. Smith-Waterman superposition
 
-CE and FATCAT both use structural similarity to align the structures, while
-Smith-Waterman performs a local sequence alignment and then displays the result
+**CE** and **FATCAT** both use structural similarity to align the structures, while
+**Smith-Waterman** performs a local sequence alignment and then displays the result
 in 3D. See below for descriptions of the algorithms.
 
-Since BioJava version 4.1.0, multiple structure alignments can be generated and visualized. 
+Since BioJava version 4.1.0, multiple structures can be compared at the same time in 
+a **multiple structure alignment**, that can later be visualized in Jmol. 
 The algorithm is described in detail below. As an overview, it uses any pairwise alignment 
-algorithm and a reference structure to align all of the structures. Then, it runs a Monte 
-Carlo optimization method to determine the residue equivalencies between all the strucutures,
-identifying conserved structural motifs.
+algorithm and a **reference** structure to per perform an alignment of all the structures. 
+Then, it runs a **Monte Carlo** optimization to determine the residue equivalencies among
+all the strucutures, identifying conserved **structural motifs**.
 
 ## Alignment User Interface
 
 Before going the details how to use the algorithms programmatically, let's take
-a look at the user interface that cames with the *biojava-structure-gui* module.
+a look at the user interface that comes with the *biojava-structure-gui* module.
+
+### Pairwise Alignment GUI
+
+Generating an instance of the GUI is just one line of code:
 
 ```java
 AlignmentGui.getInstance();
@@ -60,9 +76,45 @@ and also a 2D display, that interacts with the 3D display
 
 ![2D Alignment of PDB IDs 2hyn and 1zll](img/alignmentpanel.png)
 
-The functionality to perform and visualize these alignments can of course be
-used also from your own code. Let's first have a look at the alignment
-algorithms.
+### Multiple Alignment GUI
+
+Because of the inherent difference between multiple and pairwise alignments,
+a separate GUI is used to trigger multiple structural alignments. Generating 
+an instance of the GUI is analogous to the pairwise alignment GUI:
+
+```java
+MultipleAlignmentGUI.getInstance();
+```
+
+This code shows the following user interface:
+
+![Multiple Alignment GUI](img/multiple_gui.png)
+
+The input format is a free text field, where the structure identifiers are 
+indidcated, space separated. A **structure identifier** is a String that 
+uniquely identifies a structure. It is basically composed of the pdbID, the
+chain letters and the ranges of residues of each chain. For the formal description
+visit [StructureIdentifier](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIdentifier.html).
+
+As an example, a multiple structure alignment of 6 globins is shown here. 
+Their structure identifiers are shown in the previous figure of the GUI.
+The results are shown in a graphical way, as for the pairwise alignments:
+
+![3D Globin Multiple Alignment](img/multiple_jmol_globins.png)
+
+The only difference with the Pairwise Alignment View is the possibility to show
+a subset of structures to be visualized, by checking the boxes under the 3D
+window and pressing the Show Only button afterwards.
+
+A **sequence alignment panel** that interacts with the 3D display can also be shown.
+
+![3D Globin Multiple Panel](img/multiple_panel_globins.png)
+
+Explore the coloring options in the *Edit* menu, and through the *View* menu for 
+alternative representations of the alignment.
+
+The functionality to perform and visualize these alignments can also be
+used from your own code. Let's first have a look at the alignment algorithms.
 
 ## Pairwise Alignment Algorithms
 
