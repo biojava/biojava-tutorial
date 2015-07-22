@@ -110,7 +110,7 @@ class TutorialIndex(object):
             name = p.makename()
             # Get a path to p relative to our own path
             link = os.path.relpath(p.rootlink(),os.path.dirname(self.rootlink()))
-            linkmd.append("[{}]({})".format(name,link))
+            linkmd.append("[{0}]({1})".format(name,link))
             p = p.parent
         linkmd.reverse()
         lines.append("\n| ".join(linkmd))
@@ -123,13 +123,13 @@ class TutorialIndex(object):
                 prev = self.parent.children[pos-1]
                 name = prev.makename()
                 link = os.path.relpath(prev.rootlink(),os.path.dirname(self.rootlink()))
-                lines.append("Prev: [{}]({})".format(name,link))
+                lines.append("Prev: [{0}]({1})".format(name,link))
                 lines.append("")
             if pos < len(self.parent.children)-1:
                 next = self.parent.children[pos+1]
                 name = next.makename()
                 link = os.path.relpath(next.rootlink(),os.path.dirname(self.rootlink()))
-                lines.append("Next: [{}]({})".format(name,link))
+                lines.append("Next: [{0}]({1})".format(name,link))
                 lines.append("")
 
         #lines.append(self.makename()+", "+self.link)
@@ -162,7 +162,7 @@ if __name__ == "__main__":
 
     # Output tree
     def pr(node,indent=""):
-        print "{}{}".format(indent,node.link,node.rootlink())
+        print "{0}{1}".format(indent,node.link,node.rootlink())
         for n in node.children:
             pr(n,indent+"  ")
 
