@@ -61,6 +61,29 @@ By default BioJava is using the PDB file format for parsing data. In order to sw
 
 As you can see, the AtomCache will again download the missing mmCIF file for 4HHB in the background. 
 
+## URL based parsing of files
+
+StructureIO can also access files via URLs and fetch the data dynamically. E.g. the following code shows how to load a file from a remote server. 
+
+```java
+        String u = "http://ftp.wwpdb.org/pub/pdb/data/biounit/mmCIF/divided/nw/4nwr-assembly1.cif.gz";
+        try {
+            Structure s = StructureIO.getStructure(u);
+
+            System.out.println(s);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+```
+
+### Local URLs
+BioJava can also access local files, by specifying the URL as 
+
+<pre>
+    file:///path/to/local/file
+</pre>
+
+
 ## Low Level Access
 
 If you want to learn how to use the BioJava mmCIF parser to populate your own data structure, let's first take a look this lower-level code:
