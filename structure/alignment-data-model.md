@@ -215,14 +215,14 @@ ensemble constructor. An example on how to do it programatically is below:
   Atom[] chain2;
   boolean flexible = false;
   MultipleAlignmentEnsemble ensemble = new MultipleAlignmentEnsemble(afpChain, chain1, chain2, false);
-  MultipleAlignment converted = ensemble.getMultipleAlignments().get(0);
+  MultipleAlignment converted = ensemble.getMultipleAlignment(0);
 ```
 
 There is no method to convert from a `MultipleAlignment` to an `AFPChain`, because
 the first representation supports any number of structures, while the second is 
 only supporting pairwise alignments. However, the conversion can be done with some
 lines of code if needed (instantiate a new `AFPChain` and copy one by one the 
-properties that can be represented from the `MultipleAlignment`.
+properties that can be represented from the `MultipleAlignment`).
 
 ===
 
