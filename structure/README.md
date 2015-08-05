@@ -54,7 +54,7 @@ Chapter 12 - [Contacts Within a Chain and between Chains](contact-map.md)
 
 Chapter 13 - Finding all Interfaces in Crystal: [Crystal Contacts](crystal-contacts.md)
 
-Chapter 14 - Protein Symmetry
+Chapter 14 - [Protein Symmetry](symmetry.md)
 
 Chapter 15 - Bonds
 
