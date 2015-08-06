@@ -200,7 +200,7 @@ below:
 
 ![PDB ID 1VYM](img/symm_combined.png)
 
-This results can gives hints about the function and evolution of proteins and biological
+This results can give hints about the function and evolution of proteins and biological
 structures.
 
 <!--automatically generated footer-->
