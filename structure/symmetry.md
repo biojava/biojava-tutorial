@@ -100,11 +100,14 @@ symmetry is called **CE-Symm**.
 
 ### CE-Symm
 
-As the name of the algorithm explicitly states, **CE-Symm** uses a **CE** alignment
-of the structure chain to itself, disabling the identity alignment (the diagonal of
-the **DotPlot** representation of a structure alignment). This allows the identification 
-of alternative self-alignments, which are related to symmetry and/or structural repeats
-inside the chain.
+The **CE-Symm** algorithm was originally developed by [Myers-Turnbull D., Bliven SE., 
+Rose PW., Aziz ZK., Youkharibache P., Bourne PE. & Prlić A. in 2014]
+(http://www.sciencedirect.com/science/article/pii/S0022283614001557)  [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/24681267).
+As the name of the algorithm explicitly states, **CE-Symm** uses the Combinatorial
+Extension (**CE**) algorithm to generate an alignment of the structure chain to itself, 
+disabling the identity alignment (the diagonal of the **DotPlot** representation of a 
+structure alignment). This allows the identification of alternative self-alignments, 
+which are related to symmetry and/or structural repeats inside the chain.
 
 By a procedure called **refinement**, the subunits of the chain that are part of the symmetry 
 are defined and a **multiple alignment** is created. This process can be thought as to
