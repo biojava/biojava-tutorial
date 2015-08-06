@@ -89,7 +89,7 @@ If you want to enable the second behaviour (slow loading of all chem comps at st
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 5 : Chemical Component Dictionary
 
 Prev: [Chapter 4 : Local Installations](caching.md)

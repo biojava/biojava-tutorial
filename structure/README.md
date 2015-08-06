@@ -54,7 +54,7 @@ Chapter 12 - [Contacts Within a Chain and between Chains](contact-map.md)
 
 Chapter 13 - Finding all Interfaces in Crystal: [Crystal Contacts](crystal-contacts.md)
 
-Chapter 14 - Protein Symmetry
+Chapter 14 - [Protein Symmetry](symmetry.md)
 
 Chapter 15 - Bonds
 
@@ -88,8 +88,8 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 
 Navigation:
 [Home](../README.md)
-| Book 3: The Structure modules
+| Book 3: The Structure Modules
 
-Prev: [Book 2: The Alignment module](../alignment/README.md)
+Prev: [Book 2: The Alignment Module](../alignment/README.md)
 
 Next: [Book 4: The Genomics Module](../genomics/README.md)

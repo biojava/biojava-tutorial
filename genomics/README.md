@@ -64,4 +64,4 @@ Navigation:
 [Home](../README.md)
 | Book 4: The Genomics Module
 
-Prev: [Book 3: The Structure modules](../structure/README.md)
+Prev: [Book 3: The Structure Modules](../structure/README.md)

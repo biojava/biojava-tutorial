@@ -68,7 +68,7 @@ See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava3-struc
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 12 : Contacts Within a Chain and between Chains
 
 Prev: [Chapter 11 : Accessible Surface Areas](asa.md)

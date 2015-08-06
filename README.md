@@ -1,8 +1,8 @@
-BioJava tutorial
-=================
+BioJava Tutorial
+====================
 
 A brief introduction into [BioJava](https://github.com/biojava/biojava).
-== 
+-----
 
 The goal of this tutorial is to provide an educational introduction into some of the features that are provided by BioJava. 
 
@@ -14,11 +14,11 @@ The tutorial is intended to work with the most recent version of BioJava, althou
 
 Quick [Installation](installation.md)
 
-Book 1: [The Core module](core/README.md), basic working with sequences.
+Book 1: [The Core Module](core/README.md), basic working with sequences.
 
-Book 2: [The Alignment module](alignment/README.md), pairwise and multiple alignments of protein sequences.
+Book 2: [The Alignment Module](alignment/README.md), pairwise and multiple alignments of protein sequences.
 
-Book 3: [The Structure modules](structure/README.md), everything related to working with 3D structures.
+Book 3: [The Structure Modules](structure/README.md), everything related to working with 3D structures.
 
 Book 4: [The Genomics Module](genomics/README.md), working with genomic data.
 
@@ -28,7 +28,7 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 
 [view license](license.md)
 
-## Please cite
+## Please Cite
 
 **BioJava: an open-source framework for bioinformatics in 2012**<br/>
 *Andreas Prlic; Andrew Yates; Spencer E. Bliven; Peter W. Rose; Julius Jacobsen; Peter V. Troshin; Mark Chapman; Jianjiong Gao; Chuan Hock Koh; Sylvain Foisy; Richard Holland; Gediminas Rimsa; Michael L. Heuer; H. Brandstatter-Muller; Philip E. Bourne; Scooter Willis* <br/>

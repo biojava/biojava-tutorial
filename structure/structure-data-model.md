@@ -165,7 +165,7 @@ This prints all the compounds/entities in a structure
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 3 : Structure Data Model
 
 Prev: [Chapter 2 : First Steps](firststeps.md)

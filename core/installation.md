@@ -42,7 +42,7 @@ If you run
 
 Navigation:
 [Home](../README.md)
-| [Book 1: The Core module](README.md)
+| [Book 1: The Core Module](README.md)
 | Chapter 1 : Installation
 
 Next: [Chapter 2 : Basic Sequence types](sequences.md)
