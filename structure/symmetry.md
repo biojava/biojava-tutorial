@@ -2,8 +2,8 @@ Protein Symmetry using BioJava
 ================================================================
 
 BioJava can be used to detect, analyze, and visualize **symmetry** and 
-**pseudo-symmetry** in the quaternary (biological assembly) and tertiary 
-(internal) structural levels.
+**pseudo-symmetry** in the **quaternary** (biological assembly) and tertiary 
+(**internal**) structural levels.
 
 ## Quaternary Symmetry
 
@@ -135,8 +135,11 @@ params.setMultipleAxes(true);
 //Run the symmetry analysis - alignment as an output
 MultipleAlignment symmetry = ceSymm.align(atoms, params);
 
+//Get the axes of symmetry from the aligner
+SymmetryAxes axes = ceSymm.getSymmetryAxes();
+
 //Display the results in jmol with the Symmetry GUI
-SymmetryDisplay.display(symmetry, ceSymm.getSymmetryAxes());
+SymmetryDisplay.display(symmetry, axes);
 ```
 
 To enable some extra features in the display, a `SymmetryDisplay`
@@ -157,22 +160,31 @@ point group internal symmetry:
 
 ![PDB ID 1U6D](img/symm_internal.png)
 
+#### Hierarchical Symmetry
 
+One additional feature of the **internal symmetry** display is the representation
+of hierarchical symmetries and repeats. Contrary to point groups, some structures 
+have different **levels** of symmetry. That is, the whole strucutre has, e.g. C2 
+symmetry and, at the same time, each of the two parts has C2 symmetry, but the axes 
+of both levels are not related by a point group (i.e. they do not cross to a single 
+point).
 
-
-
-
-
-
-![PDB ID 4GCR.2](img/symm_subunits.png)
- 
-
-
-### Hierarchical Symmetry
+A very clear example are the beta-gamma-crystallins, like 4GCR:
 
 ![PDB ID 4GCR](img/symm_hierarchy.png)
 
+#### Subunit Multiple Alignment
 
+Another feature of the display is the option to show the **multiple alignment** of 
+the symmetry related subunits created during the **refinement** process. Search for
+the option *Subunit Superposition* in the *symmetry* menu of the Jmol window. For 
+the previous example the display looks like that:
+
+![PDB ID 4GCR](img/symm_subunits.png)
+
+The subunit display highlights the differences and similarities between the symmetry 
+related subunits of the chain, and helps the user to identify conseved and divergent
+regions, with the help of the *Sequence Alignment Panel*.
 
 ## Combined Global Symmetry
 
