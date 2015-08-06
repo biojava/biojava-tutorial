@@ -62,7 +62,7 @@ In **global symmetry** all chains have to be part of the symmetry description.
 In a **point group** a single or multiple rotation axes define the overall symmetry
 operations, with the property that all the axes coincide in the same point.
 
-![PDB ID 1G63](img/1G63.jpg)
+![PDB ID 1VYM](img/symm_pg.png)
 
 #### Helical
 
@@ -82,7 +82,8 @@ only applies to a subset of chains.
 
 In **pseudo-symmetry** the chains related by the symmetry are not completely
 identical, but they share a sequence similarity above the pseudo-symmetry 
-similarity threshold. 
+similarity threshold.
+
 If we consider hemoglobin, at a 95% sequence identity threshold the alpha and 
 beta subunits are considered different, which correspond to an A2B2 stoichiometry 
 and a C2 point group. At the structural similarity level, all four chains are 
@@ -99,8 +100,80 @@ symmetry is called **CE-Symm**.
 
 ### CE-Symm
 
-`CeSymm`
+As the name of the algorithm explicitly states, **CE-Symm** uses a **CE** alignment
+of the structure chain to itself, disabling the identity alignment (the diagonal of
+the **DotPlot** representation of a structure alignment). This allows the identification 
+of alternative self-alignments, which are related to symmetry and/or structural repeats
+inside the chain.
 
-### 
+By a procedure called **refinement**, the subunits of the chain that are part of the symmetry 
+are defined and a **multiple alignment** is created. This process can be thought as to
+divide the chain into other subchains, and then superimposing each subchain to each other to
+create a multiple alignment of the subunits, respecting the symmetry axes.
+
+The **internal symmetry** detection algorithm is implemented in the biojava class
+[CeSymm](http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/internal/CeSymm).
+It implements the both [Structural Alignment](alignment.md) interfaces, so it works programatically
+like any of the structural alignment algorithms, and returns one of the structure alignment 
+[Data Models](alignment-data-model.md). 
+
+```java
+//Prepare the atom input, in a List with a single array
+Atom[] array = StructureTools.getRepresentativeAtomArray(structure);
+List<Atom[]> atoms = new ArrayList<Atom[]>();
+atoms.add(array);
+
+//Initialize the algorithm
+CeSymm ceSymm = new CeSymm();
+
+//Choose some parameters
+CESymmParameters params = (CESymmParameters) ceSymm.getParameters();
+params.setRefineMethod(RefineMethod.SINGLE);
+params.setOptimization(true);
+params.setMultipleAxes(true);
+
+//Run the symmetry analysis - alignment as an output
+MultipleAlignment symmetry = ceSymm.align(atoms, params);
+
+//Display the results in jmol with the Symmetry GUI
+SymmetryDisplay.display(symmetry, ceSymm.getSymmetryAxes());
+```
+
+To enable some extra features in the display, a `SymmetryDisplay`
+class has been created, although the `StrucutreAlignmentDisplay`
+and `MultipleAlignmentDisplay` methods can also be used for that
+purpose (they will not show symmetry axes or symmetry menus).
+
+Lastly, the `SymmetryGUI` class in the **structure-gui** package
+provides a GUI to trigger internal symmetry analysis, equivalent
+to the GUI to trigger structure alignments.
+
+### Symmetry Display
+
+The symmetry display is similar to the **quaternary symmetry**, because
+part of the code is shared. See for example this beta-propeller (1U6D), 
+where the repeated beta-sheets are connected by a linker forming a C6
+point group internal symmetry:
+
+![PDB ID 1U6D](img/symm_internal.png)
+
+
+
+
+
+
+
+
+![PDB ID 4GCR.2](img/symm_subunits.png)
  
-![SCOP ID d1jlya1](https://raw.github.com/rcsb/symmetry/master/docu/img/CeSymmScreenshotd1jlya1.png)
+
+
+### Hierarchical Symmetry
+
+![PDB ID 4GCR](img/symm_hierarchy.png)
+
+
+
+## Combined Global Symmetry
+
+![PDB ID 1VYM](img/symm_combined.png)
