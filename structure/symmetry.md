@@ -188,4 +188,17 @@ regions, with the help of the *Sequence Alignment Panel*.
 
 ## Combined Global Symmetry
 
+Finally, the internal and quaternary symmetries can be combined to obtain the global
+overall combined symmetry. As we have seen before, the protein 1VYM is a DNA-clamp that
+has three chains relates by C3 symmetry. Each chain is internally C2 symmetric, and each 
+part of the C2 internal symmetry is C2 symmetric, so a case of **hierarchical symmetry** 
+(C2 + C2). Once we have divided the whole structure into its asymmetric parts, we can 
+analyze the global symmetry that related each one of them. The interesting result is that
+in some cases, the internal symmetry **multiplies** the point group of the quaternary symmetry.
+What seemed a C3 + C2 + C2 is combined into a D6 overall symmetry, as we can see in the figure
+below:
+
 ![PDB ID 1VYM](img/symm_combined.png)
+
+This results can gives hints about the function and evolution of proteins and biological
+structures.
