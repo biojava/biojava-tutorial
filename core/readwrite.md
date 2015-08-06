@@ -62,3 +62,16 @@ BioJava can be used to parse large FASTA files. The example below can parse a 1G
             }
         }
 ```
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 1: The Core Module](README.md)
+| Chapter 3 : Reading and Writing sequences
+
+Prev: [Chapter 2 : Basic Sequence types](sequences.md)
+
+Next: [Chapter 4 : Translating](translating.md)

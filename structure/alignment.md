@@ -385,7 +385,7 @@ Thanks to P. Bourne, Yuzhen Ye and A. Godzik for granting permission to freely u
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 8 : Structure Alignments
 
 Prev: [Chapter 7 : SEQRES and ATOM Records](seqres.md)

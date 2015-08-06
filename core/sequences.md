@@ -60,9 +60,9 @@ See the Cookbook for [more details on dealing with sequences] (http://biojava.or
 
 Navigation:
 [Home](../README.md)
-| [Book 1: The Core module](README.md)
+| [Book 1: The Core Module](README.md)
 | Chapter 2 : Basic Sequence types
 
 Prev: [Chapter 1 : Installation](installation.md)
 
-Next: [Chapter 4 : Translating](translating.md)
+Next: [Chapter 3 : Reading and Writing sequences](readwrite.md)

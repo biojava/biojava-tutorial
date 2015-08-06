@@ -41,5 +41,5 @@ If you run
 
 Navigation:
 [Home](../README.md)
-| [Book 2: The Alignment module](README.md)
+| [Book 2: The Alignment Module](README.md)
 | Chapter 1 : Installation

@@ -202,3 +202,16 @@ below:
 
 This results can gives hints about the function and evolution of proteins and biological
 structures.
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Structure Modules](README.md)
+| Chapter 14 : Protein Symmetry
+
+Prev: [Chapter 13 - Finding all Interfaces in Crystal: Crystal Contacts](crystal-contacts.md)
+
+Next: [Chapter 16 : Special Cases](special.md)

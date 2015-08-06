@@ -55,6 +55,6 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 
 Navigation:
 [Home](../README.md)
-| Book 1: The Core module
+| Book 1: The Core Module
 
-Next: [Book 2: The Alignment module](../alignment/README.md)
+Next: [Book 2: The Alignment Module](../alignment/README.md)

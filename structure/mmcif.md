@@ -144,7 +144,7 @@ See the [http://mmcif.rcsb.org/](http://mmcif.rcsb.org/) site for more documenta
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 6 : Work with mmCIF/PDBx Files
 
 Prev: [Chapter 5 : Chemical Component Dictionary](chemcomp.md)

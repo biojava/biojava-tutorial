@@ -41,7 +41,7 @@ See [DemoAsa](https://github.com/biojava/biojava/blob/master/biojava3-structure/
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 11 : Accessible Surface Areas
 
 Prev: [Chapter 10 : External Databases](externaldb.md)

@@ -103,7 +103,7 @@ This gives the following output:
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 7 : SEQRES and ATOM Records
 
 Prev: [Chapter 6 : Work with mmCIF/PDBx Files](mmcif.md)

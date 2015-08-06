@@ -205,7 +205,7 @@ got 4 domains
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure modules](README.md)
+| [Book 3: The Structure Modules](README.md)
 | Chapter 10 : External Databases
 
 Prev: [Chapter 9 : Biological Assemblies](bioassembly.md)

@@ -110,7 +110,7 @@ Translated Frame:REVERSED_THREE : HRGS*AFG*LCAISSL*ANNQSHHSDGHSLSGEDSRTGQLLLRQMS
 
 Navigation:
 [Home](../README.md)
-| [Book 1: The Core module](README.md)
+| [Book 1: The Core Module](README.md)
 | Chapter 4 : Translating
 
-Prev: [Chapter 2 : Basic Sequence types](sequences.md)
+Prev: [Chapter 3 : Reading and Writing sequences](readwrite.md)
