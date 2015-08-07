@@ -116,7 +116,7 @@ create a multiple alignment of the subunits, respecting the symmetry axes.
 
 The **internal symmetry** detection algorithm is implemented in the biojava class
 [CeSymm](http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/internal/CeSymm).
-It implements the both [Structural Alignment](alignment.md) interfaces, so it works programatically
+It implements both [Structural Alignment](alignment.md) interfaces, so it works programatically
 like any of the structural alignment algorithms, and returns one of the structure alignment 
 [Data Models](alignment-data-model.md). 
 
