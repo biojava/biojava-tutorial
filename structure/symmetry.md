@@ -39,15 +39,18 @@ Structure s;
 QuatSymmetryParameters parameters = new QuatSymmetryParameters();
 parameters.setVerbose(true); //print information
 
-//Instantiate the detector and calculate symmetry
-CalcBioAssemblySymmetry calc = new CalcBioAssemblySymmetry(s, parameters);
-QuatSymmetryDetector detector = calc.orient();
+//Instantiate the detector
+QuatSymmetryDetector detector = QuatSymmetryDetector(structure, parameters);
 
-//Calculate and return global and local results
+//The getters calculate the quaternary symmetry automatically
 List<QuatSymmetryResults> globalResults = detector.getGlobalSymmetry();
 List<List<QuatSymmetryResults>> localResults = detector.getLocalSymmetries();
 
 ```
+The return type are `List` because there can be multiple valid options for the
+quaternary symmetry. The local results `List` is empty if there exist no local
+symmetry in the structure, and the global results `List` has always size bigger
+than 1, returning a C1 point group in the case of asymmetric structure.
 
 The `QuatSymmetryResults` object contains all the information of the symmetry.
 This object will be used later to obtain axes of symmetry, point group name,
@@ -116,33 +119,40 @@ create a multiple alignment of the subunits, respecting the symmetry axes.
 
 The **internal symmetry** detection algorithm is implemented in the biojava class
 [CeSymm](http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/internal/CeSymm).
-It implements both [Structural Alignment](alignment.md) interfaces, so it works programatically
-like any of the structural alignment algorithms, and returns one of the structure alignment 
-[Data Models](alignment-data-model.md). 
+It returns a MultipleAlignment, see the explanation of the model in [Data Models](alignment-data-model.md),
+that describes the internal subunits multiple alignment. In case of no symmetry detected, the
+returned alignment represents the optimal self-alignment produced by the first step of the **CE-Symm**
+algorithm.
 
 ```java
-//Prepare the atom input, in a List with a single array
-Atom[] array = StructureTools.getRepresentativeAtomArray(structure);
-List<Atom[]> atoms = new ArrayList<Atom[]>();
-atoms.add(array);
+//Input the atoms in a chain as an array
+Atom[] atoms = StructureTools.getRepresentativeAtomArray(chain);
 
 //Initialize the algorithm
 CeSymm ceSymm = new CeSymm();
 
 //Choose some parameters
-CESymmParameters params = (CESymmParameters) ceSymm.getParameters();
+CESymmParameters params = ceSymm.getParameters();
 params.setRefineMethod(RefineMethod.SINGLE);
 params.setOptimization(true);
 params.setMultipleAxes(true);
 
 //Run the symmetry analysis - alignment as an output
-MultipleAlignment symmetry = ceSymm.align(atoms, params);
+MultipleAlignment symmetry = ceSymm.analyze(atoms, params);
+
+//Test if the alignment returned was refined with
+boolean refined = SymmetryTools.isRefined(symmetry);
 
 //Get the axes of symmetry from the aligner
 SymmetryAxes axes = ceSymm.getSymmetryAxes();
 
-//Display the results in jmol with the Symmetry GUI
+//Display the results in jmol with the SymmetryDisplay
 SymmetryDisplay.display(symmetry, axes);
+
+//Show the point group, if any of the internal symmetry
+QuatSymmetryResults pg = SymmetryTools.getQuaternarySymmetry(symmetry);
+System.out.println(pg.getSymmetry());
+
 ```
 
 To enable some extra features in the display, a `SymmetryDisplay`
