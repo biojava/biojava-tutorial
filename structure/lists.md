@@ -27,6 +27,6 @@ The following provides information about the status of a PDB entry
 Navigation:
 [Home](../README.md)
 | [Book 3: The Structure Modules](README.md)
-| Chapter 17 : Status Information
+| Chapter 18 : Status Information
 
-Prev: [Chapter 16 : Special Cases](special.md)
+Prev: [Chapter 17 : Special Cases](special.md)

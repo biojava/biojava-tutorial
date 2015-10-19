@@ -56,11 +56,13 @@ Chapter 13 - Finding all Interfaces in Crystal: [Crystal Contacts](crystal-conta
 
 Chapter 14 - [Protein Symmetry](symmetry.md)
 
-Chapter 15 - Bonds
+Chapter 15 - [Protein Secondary Structure](secstruc.md)
 
-Chapter 16 - [Special Cases](special.md)
+Chapter 16 - Bonds
 
-Chapter 17 - [Lists](lists.md) of PDB IDs and PDB [Status Information](lists.md)
+Chapter 17 - [Special Cases](special.md)
+
+Chapter 18 - [Lists](lists.md) of PDB IDs and PDB [Status Information](lists.md)
 
 
 ### Author: 

@@ -227,4 +227,4 @@ Navigation:
 
 Prev: [Chapter 13 - Finding all Interfaces in Crystal: Crystal Contacts](crystal-contacts.md)
 
-Next: [Chapter 16 : Special Cases](special.md)
+Next: [Chapter 15 : Protein Secondary Structure](secstruc.md)
