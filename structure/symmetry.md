@@ -114,11 +114,8 @@ are defined and a **multiple alignment** is created. This process can be thought
 divide the chain into other subchains, and then superimposing each subchain to each other to
 create a multiple alignment of the subunits, respecting the symmetry axes.
 
-The **internal symmetry** detection algorithm is implemented in the biojava class
-[CeSymm](http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/internal/CeSymm).
-It implements both [Structural Alignment](alignment.md) interfaces, so it works programatically
-like any of the structural alignment algorithms, and returns one of the structure alignment 
-[Data Models](alignment-data-model.md). 
+BioJava Class: [org.biojava.nbio.structure.symmetry.internal.CeSymm]
+(http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/internal/CeSymm).
 
 ```java
 //Prepare the atom input, in a List with a single array
@@ -136,7 +133,7 @@ params.setOptimization(true);
 params.setMultipleAxes(true);
 
 //Run the symmetry analysis - alignment as an output
-MultipleAlignment symmetry = ceSymm.align(atoms, params);
+MultipleAlignment symmetry = ceSymm.analyze(atoms, params);
 
 //Get the axes of symmetry from the aligner
 SymmetryAxes axes = ceSymm.getSymmetryAxes();
@@ -146,9 +143,9 @@ SymmetryDisplay.display(symmetry, axes);
 ```
 
 To enable some extra features in the display, a `SymmetryDisplay`
-class has been created, although the `StrucutreAlignmentDisplay`
-and `MultipleAlignmentDisplay` methods can also be used for that
-purpose (they will not show symmetry axes or symmetry menus).
+class has been created, although the `MultipleAlignmentDisplay` method
+can also be used for that purpose (it will not show symmetry axes or 
+symmetry menus).
 
 Lastly, the `SymmetryGUI` class in the **structure-gui** package
 provides a GUI to trigger internal symmetry analysis, equivalent
@@ -203,7 +200,7 @@ below:
 
 ![PDB ID 1VYM](img/symm_combined.png)
 
-This results can give hints about the function and evolution of proteins and biological
+These results can give hints about the function and evolution of proteins and biological
 structures.
 
 <!--automatically generated footer-->
