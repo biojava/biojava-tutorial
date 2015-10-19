@@ -61,3 +61,16 @@ The algorithm implemented in BioJava for the prediction of SS is `DSSP`. It is d
 ### Data Structures
 
 
+
+<!--automatically generated footer-->
+
+---
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The Structure Modules](README.md)
+| Chapter 15 : Protein Secondary Structure
+
+Prev: [Chapter 14 : Protein Symmetry](symmetry.md)
+
+Next: [Chapter 17 : Special Cases](special.md)

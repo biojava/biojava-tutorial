@@ -131,8 +131,8 @@ DYG is an unusual group - it has 3 characters as a result of .getOne_letter_code
 Navigation:
 [Home](../README.md)
 | [Book 3: The Structure Modules](README.md)
-| Chapter 16 : Special Cases
+| Chapter 17 : Special Cases
 
-Prev: [Chapter 14 : Protein Symmetry](symmetry.md)
+Prev: [Chapter 15 : Protein Secondary Structure](secstruc.md)
 
-Next: [Chapter 17 : Status Information](lists.md)
+Next: [Chapter 18 : Status Information](lists.md)
