@@ -235,20 +235,20 @@ The idea remains unchanged: perform **all-to-all pairwise alignments** of the st
 the multiple residue equivalencies (EQRs) to minimize a score function that depends on the inter-residue
 distances.
 
-Although the main idea is the same as in the original algorithm, some details of the implementation have 
-been changed in the BioJava version. They are described in the main class, but as a summary:
+However, some details of the implementation have been changed in the BioJava version. 
+They are described in the main class, as a summary:
 
 1. It accepts **any pairwise alignment** algorithm (instead of being attached to CE), so any
 of the algorithms described before is suitable for generating a seed for optimization. Note that
 this property allows *non-topological* and *flexible* multiple structure alignments, always restricted
 by the pairwise alignment algorithm limitations.
-2. The **moves** in the Monte Carlo optimization have been simplified to 3, instead of 4.
+2. The **moves** in the Monte Carlo optimization have been simplified to 3.
 3. A **new move** to insert and delete individual gaps has been added.
 4. The scoring function has been modified to a **continuous** function, maintaining the properties that the authors described.
-5. The **probability function** is normalized in synchronization with the optimization progression, to improce the convergence into a score maximum after some random exploration of the multidimensiona space. 
+5. The **probability function** is normalized in synchronization with the optimization progression, to improve the convergence into a maximum score after some random exploration of the multidimensional alignment space.
 
 The algorithm performs similarly to other multiple structure alignment algorithms for most protein families. 
-The parameters both for the pairwise aligner and the MC optimization can have an impact on the final result. There is not a unique set of parameters, because they usually depend on the specific case. Thus, trying some parameter combinations, keeping in mind the effect they produce in the score function, is a good practice when doing structure alignments.
+The parameters both for the pairwise aligner and the MC optimization can have an impact on the final result. There is not a unique set of parameters, because they usually depend on the specific use case. Thus, trying some parameter combinations, keeping in mind the effect they produce in the score function, is a good practice when doing any structure alignment.
 
 BioJava class: [org.biojava.nbio.structure.align.multiple.mc.MultipleMcMain]
 (www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/mc/MultipleMcMain.html)
