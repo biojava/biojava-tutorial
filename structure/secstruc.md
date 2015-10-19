@@ -50,13 +50,43 @@ Following the `DSSP` convention, **BioJava** defines 8 types of secondary struct
     S = bend
     _ = loop (any other type)
 
-## Prediction of SS in BioJava
+## Parsing Secondary Structure in BioJava
+
+Currently there exist two alternatives to parse the secondary structure in **BioJava**: either from the PDB/mmCIF
+files of deposited structures (author assignment) or from the output file of a DSSP prediction. Both file types
+can be obtained from the PDB serevers, if available, so they can be automatically fetched by BioJava. 
+
+Note that the DSSP prediction output is more detailed and complete than the authors assignment. 
+The choice of one or the other will depend on the use case. 
+
+Below you can find some examples of how to parse and assign the SS of a `Structure`:
+
+```java
+    FileParsingParameters params = new FileParsingParameters();
+    params.setParseSecStruc(true);
+
+    AtomCache cache = new AtomCache();
+    cache.setFileParsingParams(params);
+    cache.setUseMmCif(false);
+
+    Structure s = cache.getStructure("5pti");
+```
+
+For more examples search in the **demo** package for `DemoLoadSecStruc` and `DemoParseSecStruc`.
+
+## Prediction of Secondary Structure in BioJava
 
 ### Algorithm
 
 The algorithm implemented in BioJava for the prediction of SS is `DSSP`. It is described in the paper from 
 [Kabsch W. & Sander C. in 1983](http://onlinelibrary.wiley.com/doi/10.1002/bip.360221211/abstract) 
 [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/6667333).
+
+```java
+GuiWrapper.display(afpChain, ca1, ca2);
+// Or using the biojava-structure-gui module
+StructureAlignmentDisplay.display(afpChain, ca1, ca2);
+```
 
 ### Data Structures
 
