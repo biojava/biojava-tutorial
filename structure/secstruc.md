@@ -10,8 +10,6 @@ Secondary structure can be formally defined by the pattern of hydrogen bonds of 
 More specifically, the secondary structure is defined by the patterns of hydrogen bonds formed between 
 amine hydrogen (-NH) and carbonyl oxygen (C=O) atoms contained in the backbone peptide bonds of the protein. 
 
-![alpha-beta](http://oregonstate.edu/instruction/bi314/summer09/Fig-02-19-0.jpg)
-
 For more info see the Wikipedia article on [protein secondary structure]
 (https://en.wikipedia.org/wiki/Protein_secondary_structure).
 
