@@ -17,7 +17,7 @@ As of version 4, BioJava is available in maven central. This is all you would ne
 
                         <groupId>org.biojava</groupId>
                         <artifactId>biojava-genomics</artifactId>
-                        <version>4.0.0</version>
+                        <version>4.2.0</version>
                         <!-- note: the genomics module depends on the BioJava-core module and will import it automatically -->
                 </dependency>
 
@@ -30,7 +30,7 @@ As of version 4, BioJava is available in maven central. This is all you would ne
 
                        <groupId>org.biojava</groupId>
                        <artifactId>biojava-structure</artifactId>
-                        <version>4.0.0</version>
+                        <version>4.2.0</version>
                   </dependency>
         </dependencies> 
 ```
