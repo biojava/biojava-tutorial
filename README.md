@@ -6,7 +6,7 @@ A brief introduction into [BioJava](https://github.com/biojava/biojava).
 
 The goal of this tutorial is to provide an educational introduction into some of the features that are provided by BioJava.
 
-At the moment this tutorial is still under development. Please check  the [BioJava Cookbook](http://biojava.org/wiki/BioJava:CookBook3.0) for a more comprehensive collection of examples about what is possible with BioJava and how to do things.
+At the moment this tutorial is still under development. Please check  the [BioJava Cookbook](http://biojava.org/wikis/BioJava:CookBook4.0) for a more comprehensive collection of examples about what is possible with BioJava and how to do things.
 
 The tutorial is intended to work with the most recent version of BioJava, although most examples will work with BioJava 3.0 and higher.
 
