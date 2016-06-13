@@ -91,11 +91,6 @@ Map<FastaSequence, Range[]> ranges = Jronn.getDisorder(sequences);
 
 ```
 
-
-### Author:
-
-[Andreas Prli&#263;](https://github.com/andreasprlic)
-
 ## Please cite
 
 **BioJava: an open-source framework for bioinformatics in 2012**<br/>
