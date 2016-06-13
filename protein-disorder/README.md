@@ -49,7 +49,7 @@ Examples of use are provided below. For more information please refer to
 JronnExample testcases.
 
 Finally instead of an API calls you can use a [ command line
-utility](/wikis/BioJava:CookBook3:ProteinDisorderCLI "wikilink"), which is
+utility](http://biojava.org/wikis/BioJava:CookBook3:ProteinDisorderCLI/ "wikilink"), which is
 likely to give you a better performance as it uses multiple threads to
 perform calculations.
 
@@ -69,7 +69,8 @@ Example 2: Calculate the probability of disorder for every residue in the sequen
 
 ```java
 final List<FastaSequence> sequences = SequenceUtil.readFasta(new FileInputStream("src/test/resources/fasta.in"));
-Map<FastaSequence, float[]> rawProbabilityScores = Jronn.getDisorderScores(sequences); ```
+Map<FastaSequence, float[]> rawProbabilityScores = Jronn.getDisorderScores(sequences); 
+```
 
 Example 3: Get the disordered regions of the protein for a single protein sequence
 ----------------------------------------------------------------------------------
