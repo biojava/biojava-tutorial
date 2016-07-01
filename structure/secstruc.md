@@ -196,6 +196,60 @@ H1: 48 - 55
 You can find examples of how to get the different file formats in the class `DemoSecStrucPred` in the **demo**
 package.
 
+### Example
+
+This is taken from the DemoLoadSecStruc example in the **demo** package.
+
+```java
+public static void main(String[] args) throws IOException,
+			StructureException {
+
+		String pdbID = "5pti";
+
+		// Only change needed to the DEFAULT Structure loading
+		FileParsingParameters params = new FileParsingParameters();
+		params.setParseSecStruc(true);
+
+		AtomCache cache = new AtomCache();
+		cache.setFileParsingParams(params);
+
+		// Use PDB format, because SS cannot be parsed from mmCIF yet
+		cache.setUseMmCif(false);
+
+		// The loaded Structure contains the SS assigned by Author (simple)
+		Structure s = cache.getStructure(pdbID);
+
+		// Print the Author's assignment (from PDB file)
+		System.out.println("Author's assignment: ");
+		printSecStruc(s);
+
+		// If the more detailed DSSP prediction is required call this
+		DSSPParser.fetch(pdbID, s, true);
+
+		// Print the assignment residue by residue
+		System.out.println("DSSP assignment: ");
+		printSecStruc(s);
+
+		// finally use BioJava's built in DSSP-like secondary structure assigner
+		SecStrucCalc secStrucCalc = new SecStrucCalc();
+
+		// calculate and assign
+		secStrucCalc.calculate(s,true);
+		printSecStruc(s);
+
+	}
+
+	public static void printSecStruc(Structure s){
+		List<SecStrucInfo> ssi = SecStrucTools.getSecStrucInfo(s);
+		for (SecStrucInfo ss : ssi) {
+			System.out.println(ss.getGroup().getChain().getName() + " "
+					+ ss.getGroup().getResidueNumber() + " "
+					+ ss.getGroup().getPDBName() + " -> " + ss.toString());
+		}
+	}
+```
+
+
 <!--automatically generated footer-->
 
 ---
