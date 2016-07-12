@@ -25,7 +25,7 @@ Structure
                  Atom(s)
 </pre>
 
-All `Structure` objects contain one or more `Models`. That means also X-ray structures contain a "virtual" model which serves as a container for the chains. This also allows to represent multi-model X-ray structures in PDB, e.g. from time-series analysis. The most common way to access chains is via:
+All `Structure` objects contain one or more `Models`. That means also X-ray structures contain a "virtual" model which serves as a container for the chains. This allows to represent multi-model X-ray structures, e.g. from time-series analysis. The most common way to access chains is via:
 
 ```java
         List <Chain> chains = structure.getChains();
