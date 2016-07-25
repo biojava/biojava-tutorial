@@ -80,9 +80,9 @@ Here an example that loops over the whole data model and prints out the HEM grou
 
 The [Group](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Group.html) interface defines all methods common to a group of atoms. There are 3 types of Groups:
 
-* [AminoAcid](http://www.biojava.org/docs/api/org/biojava/nbio/structure/AminoAcid.html)
-* [Nucleotide](http://www.biojava.org/docs/api/org/biojava/nbio/structure/NucleotideImpl.html) 
-* [Hetatom](http://www.biojava.org/docs/api/org/biojava/nbio/structure/HetatomImpl.html) 
+* [AminoAcid](http://www.biojava.org/docs/api4.2.1/org/biojava/nbio/structure/AminoAcid.html)
+* [Nucleotide](http://www.biojava.org/docs/api4.2.1/org/biojava/nbio/structure/NucleotideImpl.html) 
+* [Hetatom](http://www.biojava.org/docs/api4.2.1/org/biojava/nbio/structure/HetatomImpl.html) 
 
 In order to get all amino acids that have been observed in a PDB chain, you can use the following utility method:
 
