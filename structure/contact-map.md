@@ -29,7 +29,7 @@ This code snippet will produce the set of contacts between all C alpha atoms for
 
 ```
 
-The algorithm to find the contacts uses geometric hashing without need to calculate a full distance matrix, thus it scales nicely.
+The algorithm to find the contacts uses spatial hashing without need to calculate a full distance matrix, thus it scales nicely.
 
 ## Getting the contacts between two protein chains
 
