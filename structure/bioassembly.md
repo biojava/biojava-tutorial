@@ -134,7 +134,7 @@ Chains are identified by chain identifiers which serve to distinguish the differ
 
 In order to solve that issue there are 2 solutions:
 
-1. Assign new chain identifiers. In BioJava the new chain identifiers assigned are of the form `<original chain id>_<symmetry operator id>`.
+1. Assign new chain identifiers. In BioJava the new chain identifiers assigned are of the form `<original chain id>_<symmetry operator id>` (the symmetry operator id is numerical and is the one in field `_pdbx_struct_oper_list.id` in the mmCIF file).
 2. Place the symmetry partners into different models. This is the solution taken by the pre-computed biounit files available from the PDB. 
 
 Since version 5.0 BioJava uses approach 1) to store the biounit in a single `Structure` object. Because the chain identifiers are then of more than 1 character, the Structure can only be written out in mmCIF format (PDB format is limited to 1 character chain identifiers).
