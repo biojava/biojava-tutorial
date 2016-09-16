@@ -24,8 +24,8 @@ and beta-sheets, and they assign the corresponding type to each residue involved
 can be found in the `PDB` and `mmCIF` file formats deposited in the PDB, and it can be parsed in **BioJava**
 when a `Structure` is loaded.
 
-- **Prediction from Atom coordinates**: there exist various programs to predict the SS of a protein. 
-The algorithms use the atom coordinates of the aminoacids to detemine hydrogen bonds and geometrical patterns 
+- **Assignment from Atom coordinates**: there exist various programs to assign the SS of a protein. 
+The algorithms use the atom coordinates of the aminoacids to determine hydrogen bonds and geometrical patterns 
 that define the different types of protein secondary structure. One of the first and most popular algorithms 
 is `DSSP` (Dictionary of Secondary Structure of Proteins). **BioJava** has an implementation of the algorithm, 
 written originally in C++, which will be described in the next section.
@@ -81,17 +81,17 @@ Below you can find some examples of how to parse and assign the SS of a `Structu
 
 For more examples search in the **demo** package for `DemoLoadSecStruc`.
 
-## Prediction of Secondary Structure in BioJava
+## Assignment of Secondary Structure in BioJava
 
 ### Algorithm
 
-The algorithm implemented in BioJava for the prediction of SS is `DSSP`. It is described in the paper from 
+The algorithm implemented in BioJava for the assignment of SS is `DSSP`. It is described in the paper from 
 [Kabsch W. & Sander C. in 1983](http://onlinelibrary.wiley.com/doi/10.1002/bip.360221211/abstract) 
 [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/6667333).
 A brief explanation of the algorithm and the output format can be found
 [here](http://swift.cmbi.ru.nl/gv/dssp/DSSP_3.html).
 
-The interface is very easy: a single method, named *predict()*, calculates the SS and can assign it to the
+The interface is very easy: a single method, named *calculate()*, calculates the SS and can assign it to the
 input Structure overriding any previous annotation, like in the DSSPParser. An example can be found below:
 
 ```java
@@ -103,7 +103,7 @@ input Structure overriding any previous annotation, like in the DSSPParser. An e
         
     //Predict and assign the SS of the Structure
     SecStrucPred ssp = new SecStrucPred(); //Instantiation needed
-    ssp.predict(s, true); //true assigns the SS to the Structure
+    ssp.calculate(s, true); //true assigns the SS to the Structure
 ```
 
 BioJava Class: [org.biojava.nbio.structure.secstruc.SecStrucPred]
@@ -111,7 +111,7 @@ BioJava Class: [org.biojava.nbio.structure.secstruc.SecStrucPred]
 
 ### Storage and Data Structures
 
-Because there are different sources of SS annotation, the Sata Structure in **BioJava** that stores SS assignments 
+Because there are different sources of SS annotation, the data structure in **BioJava** that stores SS assignments 
 has two levels. The top level `SecStrucInfo` is very general and only contains two properties: **assignment**
 (String describing the source of information) and **type** the SS type.
 
@@ -144,7 +144,7 @@ a `Structure`:
 
 ### Output Formats
 
-Once the SS has been assigned (either loaded or predicted), there exist in **BioJava** some formats to visualize it:
+Once the SS has been assigned (either loaded or calculated), there are some easy formats to visualize it in **BioJava**:
 
 - **DSSP format**: the SS can be printed as a DSSP oputput file format, following the standards so that it can be
 parsed again. It is the safest way to serialize a SS annotation and recover it later, but it is probably the most 
