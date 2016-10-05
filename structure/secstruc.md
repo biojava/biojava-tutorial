@@ -102,12 +102,12 @@ input Structure overriding any previous annotation, like in the DSSPParser. An e
     Structure s = cache.getStructure(pdbID);
         
     //Predict and assign the SS of the Structure
-    SecStrucPred ssp = new SecStrucPred(); //Instantiation needed
+    SecStrucCalc ssp = new SecStrucCalc(); //Instantiation needed
     ssp.calculate(s, true); //true assigns the SS to the Structure
 ```
 
-BioJava Class: [org.biojava.nbio.structure.secstruc.SecStrucPred]
-(http://www.biojava.org/docs/api/org/biojava/nbio/structure/secstruc/SecStrucPred.html)
+BioJava Class: [org.biojava.nbio.structure.secstruc.SecStrucCalc]
+(http://www.biojava.org/docs/api/org/biojava/nbio/structure/secstruc/SecStrucCalc.html)
 
 ### Storage and Data Structures
 
