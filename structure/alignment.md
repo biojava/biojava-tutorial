@@ -345,13 +345,13 @@ StructureAlignment pairwise  = StructureAlignmentFactory.getAlgorithm(CeMain.alg
 MultipleMcMain multiple = new MultipleMcMain(pairwise);
 
 //Perform the alignment
-MultipleAlignment result = algorithm.align(atomArrays);
+MultipleAlignment result = multiple.align(atomArrays);
 
 //Output the FASTA sequence alignment
 System.out.println(MultipleAlignmentWriter.toFASTA(result));
 
 //Display the results in a 3D view
-MultipleAlignmentDisplay.display(result);
+MultipleAlignmentJmolDisplay.display(result);
 ```
 
 ## Command-Line Tools
