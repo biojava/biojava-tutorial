@@ -198,9 +198,35 @@ package.
 
 ### Example
 
+Use dependencies from maven
+
+```xml
+<dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-core</artifactId>
+            <version>4.2.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.biojava/biojava-modfinder -->
+        <dependency>
+            <groupId>org.biojava</groupId>
+            <artifactId>biojava-modfinder</artifactId>
+            <version>4.2.4</version>
+        </dependency>
+```
+
 This is taken from the DemoLoadSecStruc example in the **demo** package.
 
 ```java
+
+import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.StructureException;
+import org.biojava.nbio.structure.align.util.AtomCache;
+import org.biojava.nbio.structure.io.FileParsingParameters;
+import org.biojava.nbio.structure.secstruc.DSSPParser;
+import org.biojava.nbio.structure.secstruc.SecStrucCalc;
+import org.biojava.nbio.structure.secstruc.SecStrucInfo;
+import org.biojava.nbio.structure.secstruc.SecStrucTools;
+
 public static void main(String[] args) throws IOException,
 			StructureException {
 
