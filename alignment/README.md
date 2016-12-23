@@ -29,7 +29,7 @@ Chapter 1 - Quick [Installation](installation.md)
 
 Chapter 2 - Global alignment - Needleman and Wunsch algorithm
 
-Chapter 3 - Local alignment - Smith-Waterman algorithm
+Chapter 3 - [Local alignment](smithwaterman.md) - Smith-Waterman algorithm
 
 Chapter 4 - Multiple Sequence alignment
 
