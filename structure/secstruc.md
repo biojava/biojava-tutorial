@@ -202,16 +202,15 @@ Use dependencies from maven
 
 ```xml
 <dependency>
-            <groupId>org.biojava</groupId>
-            <artifactId>biojava-core</artifactId>
-            <version>4.2.4</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.biojava/biojava-modfinder -->
-        <dependency>
-            <groupId>org.biojava</groupId>
-            <artifactId>biojava-modfinder</artifactId>
-            <version>4.2.4</version>
-        </dependency>
+    <groupId>org.biojava</groupId>
+    <artifactId>biojava-core</artifactId>
+    <version>4.2.4</version>
+</dependency>
+<dependency>
+    <groupId>org.biojava</groupId>
+    <artifactId>biojava-modfinder</artifactId>
+    <version>4.2.4</version>
+</dependency>
 ```
 
 This is taken from the DemoLoadSecStruc example in the **demo** package.
