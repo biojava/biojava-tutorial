@@ -1,5 +1,5 @@
-BioJava Tutorial
-====================
+ <img src="logo.png" height="30"/> Tutorial
+===
 
 A brief introduction into [BioJava](https://github.com/biojava/biojava).
 -----
