@@ -156,9 +156,9 @@ System.out.println(pg.getSymmetry());
 ```
 
 To enable some extra features in the display, a `SymmetryDisplay`
-class has been created, although the `StrucutreAlignmentDisplay`
-and `MultipleAlignmentDisplay` methods can also be used for that
-purpose (they will not show symmetry axes or symmetry menus).
+class has been created, although the `MultipleAlignmentDisplay` method
+can also be used for that purpose (it will not show symmetry axes or 
+symmetry menus).
 
 Lastly, the `SymmetryGUI` class in the **structure-gui** package
 provides a GUI to trigger internal symmetry analysis, equivalent
@@ -213,7 +213,7 @@ below:
 
 ![PDB ID 1VYM](img/symm_combined.png)
 
-This results can give hints about the function and evolution of proteins and biological
+These results can give hints about the function and evolution of proteins and biological
 structures.
 
 <!--automatically generated footer-->
