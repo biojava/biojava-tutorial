@@ -50,6 +50,6 @@ The content of this tutorial is available under the [CC-BY](http://creativecommo
 
 Navigation:
 [Home](../README.md)
-| Book 2: The Alignment Module
+| Book 6: The ModFinder Module
 
 Prev: [Book 5: The Protein-Disorder Module Module](../protein-disorder/README.md)
