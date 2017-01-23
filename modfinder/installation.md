@@ -24,7 +24,7 @@ As of version 4, BioJava is available in maven central. This is all you would ne
                         <groupId>org.biojava</groupId>
                         <artifactId>biojava-modfinder</artifactId>
                         <version>4.2.0</version>
-                </dependency
+                </dependency>
                 <!-- other biojava jars as needed -->
         </dependencies> 
 ```
@@ -44,7 +44,7 @@ If you run
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The Structure Modules](README.md)
+| [Book 3: The ModFinder Modules](README.md)
 | Chapter 1 : Installation
 
-Next: [Chapter 2 : First Steps](firststeps.md)
+Next: [Chapter 2 : How to get the list of supported protein modifications](supported-protein-modifications.md)
