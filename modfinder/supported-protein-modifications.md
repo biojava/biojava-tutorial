@@ -14,7 +14,7 @@ The protmod maintains a registry of supported protein modifications. The list of
 - a set of protein modifications by a keyword (glycoprotein, phosphoprotein, sulfoprotein, …),
 - a set of protein modifications by involved components.
 
-## Example 
+## Examples
 
 ```java 
 // a protein modification by ID 
@@ -47,3 +47,12 @@ mods = ProteinModificationRegistry.getByKeyword(“phosphoprotein”);
 mods = ProteinModificationRegistry.getByComponent(Component.of(“FAD”));
 
 ```
+
+Navigation:
+[Home](../README.md)
+| [Book 3: The ModFinder Modules](README.md)
+| Chapter 2 - How to find all crystal contacts in a PDB structure
+
+Prev: [Chapter 1 : Installation](installation.md)
+
+Next: [Chapter 3 : How to identify protein modifications in a structure](identify-protein-modifications.md)
