@@ -22,7 +22,7 @@ This tutorial is split into several chapters.
 
 Chapter 1 - Quick [Installation](installation.md)
 
-Chapter 2 - [How to get the list of supported protein modifications](http://biojava.org/wiki/BioJava:CookBook3:SupportedProtMod)
+Chapter 2 - [How to get the list of supported protein modifications](supported-protein-modifications.md)
 
 Chapter 3 - [How to identify protein modifications in a structure](http://biojava.org/wiki/BioJava%3ACookBook3%3AModFinder)
 
