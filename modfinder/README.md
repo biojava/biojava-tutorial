@@ -26,7 +26,7 @@ Chapter 2 - [How to get the list of supported protein modifications](supported-p
 
 Chapter 3 - [How to identify protein modifications in a structure](identify-protein-modifications.md)
 
-Chapter 4 - [How to define a new protein modiifcation](http://biojava.org/wiki/BioJava:CookBook3:AddProtMod)
+Chapter 4 - [How to define a new protein modiifcation](add-protein-modification.md)
 
 ## Please cite
 
