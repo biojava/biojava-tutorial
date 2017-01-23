@@ -13,3 +13,37 @@ The protmod maintains a registry of supported protein modifications. The list of
 - a set of protein modifications by occurrence type (natural or hypothetical),
 - a set of protein modifications by a keyword (glycoprotein, phosphoprotein, sulfoprotein, …),
 - a set of protein modifications by involved components.
+
+## Example 
+
+```java 
+// a protein modification by ID 
+ProteinModification mod = ProteinModificationRegistry.getById(“0001”);
+
+Set mods;
+
+// all protein modifications 
+mods = ProteinModificationRegistry.allModifications();
+
+// a set of protein modifications by RESID ID 
+mods = ProteinModificationRegistry.getByResidId(“AA0151”);
+
+// a set of protein modifications by PSI-MOD ID 
+mods = ProteinModificationRegistry.getByPsimodId(“MOD:00305”);
+
+// a set of protein modifications by PDBCC ID 
+mods = ProteinModificationRegistry.getByPdbccId(“SEP”);
+
+// a set of protein modifications by category 
+mods = ProteinModificationRegistry.getByCategory(ModificationCategory.ATTACHMENT);
+
+// a set of protein modifications by occurrence type 
+mods = ProteinModificationRegistry.getByOccurrenceType(ModificationOccurrenceType.NATURAL);
+
+// a set of protein modifications by a keyword 
+mods = ProteinModificationRegistry.getByKeyword(“phosphoprotein”);
+
+// a set of protein modifications by involved components. 
+mods = ProteinModificationRegistry.getByComponent(Component.of(“FAD”));
+
+```
