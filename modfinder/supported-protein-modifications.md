@@ -50,7 +50,7 @@ mods = ProteinModificationRegistry.getByComponent(Component.of(“FAD”));
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The ModFinder Modules](README.md)
+| [Book 6: The ModFinder Modules](README.md)
 | Chapter 2 - How to get a list of supported protein modifications
 
 Prev: [Chapter 1 : Installation](installation.md)
