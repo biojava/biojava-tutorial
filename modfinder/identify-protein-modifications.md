@@ -27,7 +27,8 @@ List identifyPhosphosites(Structure struc) {
         }
     }
     return phosphosites;
-} ```
+}
+```
 
 ## Demo code to un the above methods
 
@@ -60,7 +61,8 @@ public static void main(String[] args) {
     } catch(Exception e) {
         e.printStackTrace();  
     }
-} ```
+}
+```
 
 
 Navigation:
