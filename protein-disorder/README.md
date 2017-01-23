@@ -116,3 +116,4 @@ Navigation:
 | Book 3: The Protein Structure modules
 
 Prev: [Book 4: The Genomics Module](../genomics/README.md)
+| Next: [Book 6: The ModFinder Module](../modfinder/README.md)
