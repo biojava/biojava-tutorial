@@ -30,7 +30,7 @@ List identifyPhosphosites(Structure struc) {
 }
 ```
 
-## Demo code to un the above methods
+## Demo code to run the above methods
 
 ```java
 import org.biojava.nbio.structure.ResidueNumber;
