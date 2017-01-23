@@ -83,7 +83,7 @@ ProteinModificationXmlReader.registerProteinModificationFromXml(fis);
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The ModFinder Modules](README.md)
+| [Book 6: The ModFinder Modules](README.md)
 | Chapter 4 - How to define a new protein modiifcation
 
 Prev: [Chapter 3 : How to identify protein modifications in a structure](installation.md)
