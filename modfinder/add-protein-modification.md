@@ -86,5 +86,5 @@ Navigation:
 | [Book 6: The ModFinder Modules](README.md)
 | Chapter 4 - How to define a new protein modiifcation
 
-Prev: [Chapter 3 : How to identify protein modifications in a structure](installation.md)
+Prev: [Chapter 3 : How to identify protein modifications in a structure](identify-protein-modifications.md)
 
