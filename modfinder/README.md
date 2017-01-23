@@ -10,8 +10,7 @@ A tutorial for the modfinder module of [BioJava](http://www.biojava.org)
             <img src='https://cloud.githubusercontent.com/assets/840895/22190971/fe5cd304-e0f4-11e6-9eb5-c1b071312081.png'>
         </td>
         <td>
-            The <i>modfinder</i> module of BioJava provides an API The <i>alignment</i> module of BioJava provides an API for identification of protein pre-, co-, and post-translational modifications from structures.
-
+            The <i>modfinder</i> module of BioJava provides an API for identification of protein pre-, co-, and post-translational modifications from structures.
         </td>
     </tr>
 </table>   
