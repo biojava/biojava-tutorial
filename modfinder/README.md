@@ -24,7 +24,7 @@ Chapter 1 - Quick [Installation](installation.md)
 
 Chapter 2 - [How to get the list of supported protein modifications](supported-protein-modifications.md)
 
-Chapter 3 - [How to identify protein modifications in a structure](http://biojava.org/wiki/BioJava%3ACookBook3%3AModFinder)
+Chapter 3 - [How to identify protein modifications in a structure](identify-protein-modifications.md)
 
 Chapter 4 - [How to define a new protein modiifcation](http://biojava.org/wiki/BioJava:CookBook3:AddProtMod)
 
