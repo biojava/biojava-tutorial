@@ -44,7 +44,7 @@ If you run
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The ModFinder Modules](README.md)
+| [Book 6: The ModFinder Modules](README.md)
 | Chapter 1 : Installation
 
 Next: [Chapter 2 : How to get the list of supported protein modifications](supported-protein-modifications.md)
