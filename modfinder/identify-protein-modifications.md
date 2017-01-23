@@ -67,7 +67,7 @@ public static void main(String[] args) {
 
 Navigation:
 [Home](../README.md)
-| [Book 3: The ModFinder Modules](README.md)
+| [Book 6: The ModFinder Modules](README.md)
 | Chapter 3 - How to identify protein modifications in a structure
 
 Prev: [Chapter 2 : How to get a list of supported protein modifications](installation.md)
