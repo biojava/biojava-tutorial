@@ -5,7 +5,7 @@ The protmod module contains [an XML file](https://github.com/biojava/biojava/blo
 
 The protmod maintains a registry of supported protein modifications. The list of protein modifications contained in the XML file will be automatically loaded. You can [define and register a new protein modification](add-protein-modification.md) if it has not been defined in the XML file. From the protein modification registry, a user can retrieve:
 
-all protein modifications,
+- all protein modifications,
 a protein modification by ID,
 a set of protein modifications by RESID ID,
 a set of protein modifications by PSI-MOD ID,
