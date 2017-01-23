@@ -70,6 +70,6 @@ Navigation:
 | [Book 6: The ModFinder Modules](README.md)
 | Chapter 3 - How to identify protein modifications in a structure
 
-Prev: [Chapter 2 : How to get a list of supported protein modifications](installation.md)
+Prev: [Chapter 2 : How to get a list of supported protein modifications](supported-protein-modifications.md)
 
 Next: [Chapter 4 : How to define a new protein modiifcation](add-protein-modification.md)
