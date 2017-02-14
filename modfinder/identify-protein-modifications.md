@@ -72,4 +72,4 @@ Navigation:
 
 Prev: [Chapter 2 : How to get a list of supported protein modifications](supported-protein-modifications.md)
 
-Next: [Chapter 4 : How to define a new protein modifcation](add-protein-modification.md)
+Next: [Chapter 4 : How to define a new protein modification](add-protein-modification.md)
