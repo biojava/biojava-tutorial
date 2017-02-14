@@ -7,7 +7,7 @@ How to identify protein modifications in a structure?
 Set<ModifiedCompound> identifyAllModfications(Structure struc) {
    ProteinModificationIdentifier parser = new ProteinModificationIdentifier();
    parser.identify(struc);
-   Set`<ModifiedCompound> mcs = parser.getIdentifiedModifiedCompound();
+   Set<ModifiedCompound> mcs = parser.getIdentifiedModifiedCompound();
    return mcs;
 }
 ```
@@ -16,12 +16,12 @@ Set<ModifiedCompound> identifyAllModfications(Structure struc) {
 
 ```java
 List identifyPhosphosites(Structure struc) {
-    List<ResidueNumber> phosphosites = new ArrayList`();
+    List<ResidueNumber> phosphosites = new ArrayList<>();
     ProteinModificationIdentifier parser = new ProteinModificationIdentifier();
     parser.identify(struc, ProteinModificationRegistry.getByKeyword("phosphoprotein"));
-    Set mcs = parser.getIdentifiedModifiedCompound();
+    Set<ModifiedCompound> mcs = parser.getIdentifiedModifiedCompound();
     for (ModifiedCompound mc : mcs) {
-        Set` groups = mc.getGroups(true);
+        Set<StructureGroup> groups = mc.getGroups(true);
         for (StructureGroup group : groups) {
             phosphosites.add(group.getPDBResidueNumber());
         }
@@ -39,14 +39,14 @@ import org.biojava.nbio.structure.io.PDBFileReader;
 import org.biojava.nbio.protmod.structure.ProteinModificationIdentifier;
 
 public static void main(String[] args) {
-    try {`
+    try {
         PDBFileReader reader = new PDBFileReader();
         reader.setAutoFetch(true);
 
         // identify all modificaitons from PDB:1CAD and print them
         String pdbId = "1CAD";
         Structure struc = reader.getStructureById(pdbId);
-        Set mcs = identifyAllModfications(struc);
+        Set<ModifiedCompound> mcs = identifyAllModfications(struc);
         for (ModifiedCompound mc : mcs) {
             System.out.println(mc.toString());
         }
@@ -54,7 +54,7 @@ public static void main(String[] args) {
         // identify all phosphosites from PDB:3MVJ and print them
         pdbId = "3MVJ";
         struc = reader.getStructureById(pdbId);
-        List psites = identifyPhosphosites(struc);
+        List<ResidueNumber> psites = identifyPhosphosites(struc);
         for (ResidueNumber psite : psites) {
             System.out.println(psite.toString());
         }
@@ -72,4 +72,4 @@ Navigation:
 
 Prev: [Chapter 2 : How to get a list of supported protein modifications](supported-protein-modifications.md)
 
-Next: [Chapter 4 : How to define a new protein modiifcation](add-protein-modification.md)
+Next: [Chapter 4 : How to define a new protein modifcation](add-protein-modification.md)

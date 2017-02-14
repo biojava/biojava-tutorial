@@ -6,7 +6,7 @@ BioJava is open source and you can get the code from [Github](https://github.com
 
 BioJava uses [Maven](http://maven.apache.org/) as a build and distribution system. If you are new to Maven, take a look at the [Getting Started with Maven](http://maven.apache.org/guides/getting-started/index.html)  guide.
 
-As of version 4, BioJava is available in maven central. This is all you would need to add a BioJava dependency to your projects:
+As of version 4, BioJava is available in maven central. This is all you would need to add BioJava dependencies to your project in the `pom.xml` file:
 
 ```xml
         <dependencies>

@@ -1,4 +1,4 @@
-How to define a new protein modiifcation?
+How to define a new protein modification?
 ===
 
 The protmod module automatically loads [a list of protein modifications](supported-protein-modifications.md) into the protein modification registry. In case you have a protein modification that is not preloaded, it is possible to define it by yourself and add it into the registry.
@@ -84,7 +84,7 @@ ProteinModificationXmlReader.registerProteinModificationFromXml(fis);
 Navigation:
 [Home](../README.md)
 | [Book 6: The ModFinder Modules](README.md)
-| Chapter 4 - How to define a new protein modiifcation
+| Chapter 4 - How to define a new protein modification
 
 Prev: [Chapter 3 : How to identify protein modifications in a structure](identify-protein-modifications.md)
 
