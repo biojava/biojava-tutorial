@@ -16,7 +16,7 @@ As of version 4, BioJava is available in maven central. This is all you would ne
                 <dependency>
 
                         <groupId>org.biojava</groupId>
-                        <artifactId>biojava-genomics</artifactId>
+                        <artifactId>biojava-genome</artifactId>
                         <version>4.2.0</version>
                         <!-- note: the genomics module depends on the BioJava-core module and will import it automatically -->
                 </dependency>
