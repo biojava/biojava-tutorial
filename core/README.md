@@ -16,7 +16,6 @@ A tutorial for the core module of [BioJava](http://www.biojava.org).
                 <li>Reading and Writing of popular sequence file formats</li>
                 <li>Translate DNA sequences into protein sequences</li>                
             </ul>
-
         </td>
     </tr>
 </table>   
