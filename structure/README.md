@@ -17,7 +17,6 @@ A tutorial for the structure modules of [BioJava](http://www.biojava.org)
                 <li>Perform standard analysis such as sequence and structure alignments</li>
                 <li>Visualize structures</li>
             </ul>
-
             This tutorial provides an overview of the most important functionalities.
         </td>
     </tr>
