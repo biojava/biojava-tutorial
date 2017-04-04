@@ -16,7 +16,6 @@ A tutorial for the genomics module of [BioJava](http://www.biojava.org)
                 <li>Convert from one file format to another</li>
                 <li>Translate DNA sequences into protein sequences</li>                
             </ul>
-
         </td>
     </tr>
 </table>   
