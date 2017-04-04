@@ -16,7 +16,6 @@ A tutorial for the alignment module of [BioJava](http://www.biojava.org).
                 <li>Reading and Writing of popular alignment file formats</li>
                 <li>A single-, or multi- threaded multiple sequence alignment algorithm.</li>
             </ul>
-
         </td>
     </tr>
 </table>   
