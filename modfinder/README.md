@@ -29,6 +29,11 @@ Chapter 4 - [How to define a new protein modification](add-protein-modification.
 
 ## Please cite
 
+**BioJava-ModFinder: identification of protein modifications in 3D structures from the Protein Data Bank**<br/>
+*Jianjiong Gao; Andreas Prlic; Chunxiao Bi; Wolfgang F. Bluhm; Dimitris Dimitropoulos; Dong Xu; Philip E. Bourne; Peter W. Rose* <br/>
+[Bioinformatics. 2017 Feb 17.](https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btx101) <br/>
+[![doi](http://img.shields.io/badge/doi-10.1093%2Fbioinformatics%2Fbtx101-blue.svg?style=flat)](https://doi.org/10.1093/bioinformatics/btx101) [![pubmed](http://img.shields.io/badge/pubmed-28334105-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/28334105)
+
 **BioJava: an open-source framework for bioinformatics in 2012**<br/>
 *Andreas Prlic; Andrew Yates; Spencer E. Bliven; Peter W. Rose; Julius Jacobsen; Peter V. Troshin; Mark Chapman; Jianjiong Gao; Chuan Hock Koh; Sylvain Foisy; Richard Holland; Gediminas Rimsa; Michael L. Heuer; H. Brandstatter-Muller; Philip E. Bourne; Scooter Willis* <br/>
 [Bioinformatics (2012) 28 (20): 2693-2695.](http://bioinformatics.oxfordjournals.org/content/28/20/2693.abstract) <br/>
