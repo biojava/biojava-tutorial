@@ -36,6 +36,25 @@ If you run
 
  on your project, the BioJava dependencies will be automatically downloaded and installed for you.
 
+### (Optional) Configuration
+
+BioJava can be configured through several properties:
+
+| Property | Description |
+| --- | --- |
+| `PDB_DIR` | Directory for caching structure files from the PDB. Mirrors the PDB's FTP server directory structure, with `PDB_DIR` equivalent to ftp://ftp.wwpdb.org/pub/pdb/. Default: temp directory |
+| `PDB_CACHE_DIR` | Cache directory for other files related to the structure package. Default: temp directory |
+
+These can be set either as java properties or as environmental variables. For example:
+
+```
+# This could be added to .bashrc
+export PDB_DIR=...
+# Or override for a particular execution
+java -DPDB_DIR=... -cp ...
+```
+
+Note that your IDE may ignore `.bashrc` settings, but should have a preference for passing VM arguments.
 
 <!--automatically generated footer-->
 
