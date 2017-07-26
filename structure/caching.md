@@ -31,6 +31,8 @@ you can configure the AtomCache by setting the PDB_DIR system property
     -DPDB_DIR=/wherever/you/want/
 </pre>
 
+BioJava will also check for a `PDB_DIR` environmental variable. If you launch BioJava from the command line, it can be useful to include `export PDB_DIR=/wherever/you/want` in your `.bashrc` file.
+
 An alternative is to hard-code the path in this way (but setting it as a property is better style)
 
 ```java
@@ -78,10 +80,7 @@ The AtomCache not only provides access to PDB, it can also fetch Structure repre
 There are quite a number of external database IDs that are supported here. See the 
 <a href="http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html#getStructure(java.lang.String)">AtomCache documentation</a> for more details on the supported options.
 
-
-
-
-
+The non-PDB files can be cached at a different location by setting the `PDB_CACHE_DIR` property (with `java -DPDB_CACHE_DIR=...`) or environmental variable.
 
 <!--automatically generated footer-->
 
