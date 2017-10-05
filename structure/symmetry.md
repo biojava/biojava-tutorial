@@ -9,8 +9,7 @@ BioJava can be used to detect, analyze, and visualize **symmetry** and
 
 The **quaternary symmetry** of a structure defines the relations between 
 its individual chains or groups of chains. For a more extensive explanation 
-about symmetery visit the [PDB help page]
-(http://www.rcsb.org/pdb/staticHelp.do?p=help/viewers/jmol_symmetry_view.html).
+about symmetery visit the [PDB help page](http://www.rcsb.org/pdb/staticHelp.do?p=help/viewers/jmol_symmetry_view.html).
 
 In the **quaternary symmetry** detection problem, we are given a set of chains
 with its `Atom` coordinates and we are asked to find the higest overall symmetry that
