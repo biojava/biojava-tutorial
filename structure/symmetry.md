@@ -3,65 +3,61 @@ Protein Symmetry using BioJava
 
 BioJava can be used to detect, analyze, and visualize **symmetry** and
 **pseudo-symmetry** in the **quaternary** (biological assembly) and tertiary
-(**internal**) structural levels.
+(**internal**) structural levels of proteins.
 
 ## Quaternary Symmetry
 
-The **quaternary symmetry** of a structure defines the relations between
-its individual chains or groups of chains. For a more extensive explanation
-about symmetery visit the [PDB help page](http://www.rcsb.org/pdb/staticHelp.do?p=help/viewers/jmol_symmetry_view.html).
+The **quaternary symmetry** of a structure defines the relation and arrangement of the individual chains or groups of chains that are part of a biological assembly. 
+For a more exhaustive explanation about protein quaternary symmetery and the different types visit the [PDB help page](http://www.rcsb.org/pdb/staticHelp.do?p=help/viewers/jmol_symmetry_view.html).
 
-In the **quaternary symmetry** detection problem, we are given a set of chains
-with its `Atom` coordinates and we are asked to find the higest overall symmetry that
-relates them. The solution is divided into the following steps:
+In the **quaternary symmetry** detection problem, we are given a set of chains (subunits) that are part of a biological assembly as input, defined by their atomic coordinates, and we are required to find the higest overall symmetry group that
+relates them as ouptut. 
+The solution is divided into the following steps:
 
 1. First, we need to identify the chains that are identical (or similar
-in the pseudo-symmetry case). For that, we perform a pairwise alignment of all
-chains and determine **clusters of identical chains**.
-2. Next, we reduce the each chains to a single point, its **centroid** (center of mass).
-3. After that, we try different **symmetry relations** to superimpose the chain centroids
-and obtain their RMSD.
-4. At last, based on the parameters (cutoffs), we determine the **overall symmetry** of the
+in the pseudo-symmetry case). For that purpose, we perform a pairwise alignment of all
+chains and identify **clusters of identical or similar subunits**.
+2. Next, we reduce each of the polypeptide chains to a single point, their **centroid** (center of mass).
+3. Afterwards, we try different **symmetry operations** using a grid search to superimpose the chain centroids
+and score them using the RMSD.
+4. Finally, based on the parameters (cutoffs), we determine the **overall symmetry** of the
 structure, with the symmetry relations obtained in the previous step.
 5. In case of asymmetric structure, we discard combinatorially a number of chains and try
-to detect any **local symmetries** present.
+to detect any **local symmetries** present (symmetry that does not involve all subunits of the biological assembly).
 
 The **quaternary symmetry** detection algorithm is implemented in the biojava class
 [QuatSymmetryDetector](http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/core/QuatSymmetryDetector).
 An example of how to use it programatically is shown below:
 
 ```java
-//First download the structure in the biological assembly form
+// First download the structure in the biological assembly form
 Structure s;
 
-//Set some parameters if needed different than DEFAULT - see descriptions
+// Set some parameters if needed different than DEFAULT - see descriptions
 QuatSymmetryParameters parameters = new QuatSymmetryParameters();
 SubunitClustererParameters clusterParams = new SubunitClustererParameters();
 
-//Instantiate the detector
+// Instantiate the detector
 QuatSymmetryDetector detector = QuatSymmetryDetector(s, parameters, clusterParams);
 
-//Static methods in QuatSymmetryDetector perform the calculation
+// Static methods in QuatSymmetryDetector perform the calculation
 QuatSymmetryResults globalResults = QuatSymmetryDetector.getGlobalSymmetry(s, parameters, clusterParams);
 List<QuatSymmetryResults> localResults = QuatSymmetryDetector.getLocalSymmetries(s, parameters, clusterParams);
 
 ```
-See also the demo in the BioJava repo:
+See also the [demo](https://github.com/biojava/biojava/blob/885600670be75b7f6bc5216bff52a93f43fff09e/biojava-structure/src/main/java/demo/DemoSymmetry.java#L37-L59) provided in **BioJava** for a real case working example.
 
-https://github.com/biojava/biojava/blob/885600670be75b7f6bc5216bff52a93f43fff09e/biojava-structure/src/main/java/demo/DemoSymmetry.java#L37-L59
+The returned `QuatSymmetryResults` object contains all the information of the subunit clustering and structural symmetry.
+This object will be used later to obtain axes of symmetry, point group name, stoichiometry or even display the results in Jmol.
+The return object of quaternary symmetry (`QuatSymmetryResults`) contains the 
+In case of asymmetrical structure, the result is a C1 point group.
+The return type of the local symmetry is a `List` because there can be multiple valid options of local symmetry.
+The list will be empty if there exist no local symmetries in the structure.
 
-The return type are `List` because there can be multiple valid options for the
-quaternary symmetry. The local results `List` is empty if there exist no local
-symmetry in the structure, and the global results `List` has always size bigger
-than 1, returning a C1 point group in the case of asymmetric structure.
-
-The `QuatSymmetryResults` object contains all the information of the symmetry.
-This object will be used later to obtain axes of symmetry, point group name,
-stoichiometry or even display the results in Jmol.
 
 ### Global Symmetry
 
-In **global symmetry** all chains have to be part of the symmetry description.
+In the **global symmetry** mode all chains have to be part of the symmetry result.
 
 #### Point Group
 
@@ -79,15 +75,14 @@ components.
 
 ### Local Symmetry
 
-In **local symmetry** a number of chains is left out, so that the symmetry
-only applies to a subset of chains.
+In **local symmetry** a number of chains is left out, so that the symmetry only applies to a subset of chains.
 
 ![PDB ID 4F88](img/symm_local.png)
 
 ### Pseudo-Symmetry
 
 In **pseudo-symmetry** the chains related by the symmetry are not completely
-identical, but they share a sequence similarity above the pseudo-symmetry
+identical, but they share a sequence or structural similarity above the pseudo-symmetry
 similarity threshold.
 
 If we consider hemoglobin, at a 95% sequence identity threshold the alpha and
@@ -122,8 +117,8 @@ create a multiple alignment of the subunits, respecting the symmetry axes.
 
 The **internal symmetry** detection algorithm is implemented in the biojava class
 [CeSymm](http://www.biojava.org/docs/api/org/biojava/nbio/structure/symmetry/internal/CeSymm).
-It returns a MultipleAlignment, see the explanation of the model in [Data Models](alignment-data-model.md),
-that describes the internal subunits multiple alignment. In case of no symmetry detected, the
+It returns a `MultipleAlignment` object, see the explanation of the model in [Data Models](alignment-data-model.md),
+that describes the similarity of the internal repeats. In case of no symmetry detected, the
 returned alignment represents the optimal self-alignment produced by the first step of the **CE-Symm**
 algorithm.
 
@@ -202,22 +197,43 @@ The subunit display highlights the differences and similarities between the symm
 related subunits of the chain, and helps the user to identify conseved and divergent
 regions, with the help of the *Sequence Alignment Panel*.
 
-## Combined Global Symmetry
+## Quaternary + Internal Overall Symmetry
 
-Finally, the internal and quaternary symmetries can be combined to obtain the global
+Finally, the internal and quaternary symmetries can be merged to obtain the
 overall combined symmetry. As we have seen before, the protein 1VYM is a DNA-clamp that
-has three chains relates by C3 symmetry. Each chain is internally C2 symmetric, and each
-part of the C2 internal symmetry is C2 symmetric, so a case of **hierarchical symmetry**
-(C2 + C2). Once we have divided the whole structure into its asymmetric parts, we can
-analyze the global symmetry that related each one of them. The interesting result is that
-in some cases, the internal symmetry **multiplies** the point group of the quaternary symmetry.
-What seemed a C3 + C2 + C2 is combined into a D6 overall symmetry, as we can see in the figure
-below:
+has three chains arranged in a C3 symmetry. 
+Each chain is internally fourfold symmetric with two levels of symmetry. We can analyze the overall symmetry of the structure by considering together the C3 quaternary symmetry and the fourfold internal symmetry. 
+In this case, the internal symmetry **augments** the point group of the quaternary symmetry to a D6 overall symmetry, as we can see in the figure below:
 
 ![PDB ID 1VYM](img/symm_combined.png)
 
-These results can give hints about the function and evolution of proteins and biological
-structures.
+An example of how to toggle the **combined symmetry** (quaternary + internal symmetries) programatically is shown below:
+
+```java
+// First download the structure in the biological assembly form
+Structure s;
+
+// Initialize default parameters
+QuatSymmetryParameters parameters = new QuatSymmetryParameters();
+SubunitClustererParameters clusterParams = new SubunitClustererParameters();
+
+// In SubunitClustererParameters set the clustering method to STRUCTURE and the internal symmetry option to true
+clusterParams.setClustererMethod(SubunitClustererMethod.STRUCTURE);
+clusterParams.setInternalSymmetry(true);
+
+// You can lower the default structural coverage to improve the recall
+clusterParams.setStructureCoverageThreshold(0.75);
+
+// Instantiate the detector
+QuatSymmetryDetector detector = QuatSymmetryDetector(s, parameters, clusterParams);
+
+// Static methods in QuatSymmetryDetector perform the calculation
+QuatSymmetryResults overallResults = QuatSymmetryDetector.getGlobalSymmetry(s, parameters, clusterParams);
+
+```
+
+See also the [test](https://github.com/biocryst/biojava/blob/df22da37a86a0dba3fb35bee7e17300d402ab469/biojava-integrationtest/src/test/java/org/biojava/nbio/structure/test/symmetry/TestQuatSymmetryDetectorExamples.java#L167-L192) provided in **BioJava** for a real case working example.
+
 
 <!--automatically generated footer-->
 
