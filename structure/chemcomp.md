@@ -33,26 +33,12 @@ HOH is a group of type hetatm
 
 As you can see, although MSE is flaged as HETATM in the PDB file, BioJava still represents it correctly as an amino acid. They key is that the [definition file for MSE](http://www.rcsb.org/pdb/files/ligand/MSE.cif) flags it as "L-PEPTIDE LINKING", which is being used by BioJava.
 
-<table>
-    <tr><td>
-
-<img src="img/143px-Selenomethionine-from-xtal-3D-balls.png?raw=true" alt="Selenomethionine is a naturally occurring amino acid containing selenium" />
-
-
-</td>
-    <td>
-
-        Selenomethionine is a naturally occurring amino acid containing selenium. It has the ID <a href="http://www.rcsb.org/pdb/files/ligand/MSE.cif">MSE</a> in the Chemical Component Dictionary. (image source: <a href="http://en.wikipedia.org/wiki/File:Selenomethionine-from-xtal-3D-balls.png">wikipedia</a>)
-
-
-        </td>
-    </tr>
-</table>
+Note: Selenomethionine is a naturally occurring amino acid containing selenium. It has the ID MSE in the Chemical Component Dictionary.
 
 
 ### How to Access Chemical Component Definitions
 
-By default BioJava will retrieve the full chemical component definitions provided by the Protein Data Bank (see http://www.wwpdb.org/data/ccd). That way BioJava makes sure that the user gets a correct representation e.g. distinguish ligands from the polypeptide chain, correctly resolve chemically modified residues, etc.
+By default BioJava will retrieve the full chemical component definitions provided by the PDB. That way BioJava makes sure that the user gets a correct representation e.g. distinguish ligands from the polypeptide chain, correctly resolve chemically modified residues, etc.
 
 The behaviour is configurable by setting a property in the `ChemCompGroupFactory` singleton:
 
@@ -64,7 +50,7 @@ The behaviour is configurable by setting a property in the `ChemCompGroupFactory
 ```java
      ChemCompGroupFactory.setChemCompProvider(new AllChemCompProvider());
 ```
-3. Fetch missing **Chemical Component Definitions** on the fly (small download and parsing delays every time a new chemical compound is found). Default behaviour since 4.2.0.
+3. Fetch missing **Chemical Component Definitions** on the fly (small download and parsing delays every time a new chemical compound is found). Default behaviour since 4.2.0. Note that the chemical component files are cached in the local file system for subsequent uses.
 ```java
      ChemCompGroupFactory.setChemCompProvider(new DownloadChemCompProvider());
 ```
