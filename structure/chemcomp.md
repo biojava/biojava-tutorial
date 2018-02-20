@@ -1,7 +1,7 @@
 The Chemical Component Dictionary
 =================================
 
-The [Chemical Component Dictionary](http://www.wwpdb.org/ccd.html) is an external reference file describing all residue and small molecule components found in PDB entries. This dictionary contains detailed chemical descriptions for standard and modified amino acids/nucleotides, small molecule ligands, and solvent molecules. 
+The [Chemical Component Dictionary](http://www.wwpdb.org/ccd.html) is an external reference file describing all residue and small molecule components found in PDB entries. This dictionary contains detailed chemical descriptions for standard and modified amino acids/nucleotides, small molecule ligands, and solvent molecules.
 
 ### How Does BioJava Decide what Groups Are Amino Acids?
 
@@ -52,36 +52,23 @@ As you can see, although MSE is flaged as HETATM in the PDB file, BioJava still 
 
 ### How to Access Chemical Component Definitions
 
-By default BioJava ships with a minimal representation of standard amino acids, which is useful when you just want to work with atoms and a basic data representation. However if you want to work with a  correct representation (e.g. distinguish ligands from the polypeptide chain, correctly resolve chemically modified residues), it is good to tell the library to either
+By default BioJava will retrieve the full chemical component definitions provided by the Protein Data Bank (see http://www.wwpdb.org/data/ccd). That way BioJava makes sure that the user gets a correct representation e.g. distinguish ligands from the polypeptide chain, correctly resolve chemically modified residues, etc.
 
-1. Fetch missing **Chemical Component Definitions** on the fly (small download and parsing delays every time a new chemical compound is found), or
-2. Load all **Chemical Component Definitions**  at startup (slow startup, but then no further delays later on, requires more memory)
+The behaviour is configurable by setting a property in the `ChemCompGroupFactory` singleton:
 
-You can enable the first behaviour by doing using the [FileParsingParameters](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/FileParsingParameters.html) class:
-
+1. Use a minimal built-in set of **Chemical Component Definitions**. Will only deal with most frequent cases of chemical components. Does not guarantee a correct representation, but it is fast and does not require network access.
 ```java
-            AtomCache cache = new AtomCache();
-            
-            // by default all files are stored at a temporary location.
-            // you can set this either via at startup with -DPDB_DIR=/path/to/files/
-            // or hard code it this way:
-            cache.setPath("/tmp/");
-            
-            FileParsingParameters params = new FileParsingParameters();
-            
-            params.setLoadChemCompInfo(true);
-            cache.setFileParsingParams(params);
-            
-            StructureIO.setAtomCache(cache);
-            
-            Structure structure = StructureIO.getStructure(...);
+     ChemCompGroupFactory.setChemCompProvider(new ReducedChemCompProvider());
 ```
-
-If you want to enable the second behaviour (slow loading of all chem comps at startup, but no further small delays later on) you can use the same code but change the behaviour by switching the [ChemCompProvider](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/ChemCompProvider.html) implementation in the [ChemCompGroupFactory](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/ChemCompGroupFactory.html)
-
+2. Load all **Chemical Component Definitions**  at startup (slow startup, but then no further delays later on, requires more memory)
 ```java
      ChemCompGroupFactory.setChemCompProvider(new AllChemCompProvider());
 ```
+3. Fetch missing **Chemical Component Definitions** on the fly (small download and parsing delays every time a new chemical compound is found). Default behaviour since 4.2.0.
+```java
+     ChemCompGroupFactory.setChemCompProvider(new DownloadChemCompProvider());
+```
+
 
 <!--automatically generated footer-->
 
