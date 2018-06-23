@@ -126,7 +126,7 @@ The detection of the groups works really well in connection with the [Chemical C
 
 ## Entities and Chains
 
-Entities (in the BioJava API called compounds) are the distinct chemical components of structures in the PDB. 
+Entities are the distinct chemical components of structures in the PDB. 
 Unlike chains, entities do not include duplicate copies and each entity is different from every other 
 entity in the structure. There are different types of entities. Polymer entities include Protein, DNA, 
 and RNA. Ligands are smaller chemical components that are not part of a polymer entity. 
@@ -140,15 +140,15 @@ and beta. Each of the entities has two copies (= chains) in the structure. IN 4H
 has the two chains with the IDs A, and C and beta the chains B, and D. In total, hemoglobin is 
 built up out of four chains.
 
-This prints all the compounds/entities in a structure
+This prints all the entities in a structure
 ```java
 			Structure structure = StructureIO.getStructure("4hhb");			
 
 			System.out.println(structure);
 						
-			System.out.println(" # of compounds (entities) " + structure.getCompounds().size());
+			System.out.println(" # of compounds (entities) " + structure.getEntityInfos().size());
 
-			for ( Compound entity: structure.getCompounds()) {
+			for ( EntityInfo entity: structure.getEntityInfos()) {
 				System.out.println("   " + entity);
 			}
 ```
