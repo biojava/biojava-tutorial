@@ -1,7 +1,7 @@
  <img src="logo.png" height="30"/> Tutorial
 ===
 
-A brief introduction into [BioJava](https://github.com/biojava/biojava).
+A brief introduction into [BioJava](https://www.biojava.org).
 -----
 
 The goal of this tutorial is to provide an educational introduction into some of the features that are provided by BioJava.
@@ -12,7 +12,7 @@ The tutorial is intended to work with the most recent version of BioJava, althou
 
 ## Index
 
-Quick [Installation](installation.md)
+[Quick Installation](installation.md)
 
 Book 1: [The Core Module](core/README.md), basic working with sequences.
 
@@ -28,16 +28,14 @@ Book 6: [The ModFinder Module](modfinder/README.md), identifying potein modifica
 
 ## License
 
-The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license.
-
-[view license](license.md)
+The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license, available [here](license.md).
 
 ## Please Cite
 
-**BioJava: an open-source framework for bioinformatics in 2012**<br/>
-*Andreas Prlic; Andrew Yates; Spencer E. Bliven; Peter W. Rose; Julius Jacobsen; Peter V. Troshin; Mark Chapman; Jianjiong Gao; Chuan Hock Koh; Sylvain Foisy; Richard Holland; Gediminas Rimsa; Michael L. Heuer; H. Brandstatter-Muller; Philip E. Bourne; Scooter Willis* <br/>
-[Bioinformatics (2012) 28 (20): 2693-2695.](http://bioinformatics.oxfordjournals.org/content/28/20/2693.abstract) <br/>
-[![doi](http://img.shields.io/badge/doi-10.1093%2Fbioinformatics%2Fbts494-blue.svg?style=flat)](http://bioinformatics.oxfordjournals.org/content/28/20/2693.abstract) [![pubmed](http://img.shields.io/badge/pubmed-22877863-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/22877863)
+**BioJava 5: A community driven open-source bioinformatics library**<br/>
+*Aleix Lafita, Spencer Bliven, Andreas Prlić, Dmytro Guzenko, Peter W. Rose, Anthony Bradley, Paolo Pavan, Douglas Myers-Turnbull, Yana Valasatava, Michael Heuer, Matt Larson, Stephen K. Burley, & Jose M. Duarte* <br/>
+[PLOS Computational Biology (2019) 15 (2):e1006791.](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006791) <br/>
+[![doi](https://img.shields.io/badge/doi-10.1371%2Fjournal.pcbi.1006791-blue.svg?style=flat)](https://doi.org/10.1371/journal.pcbi.1006791) [![pubmed](https://img.shields.io/badge/pubmed-30735498-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/30735498)
 
 
 <!--automatically generated footer-->
