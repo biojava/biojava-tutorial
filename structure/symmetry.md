@@ -235,6 +235,15 @@ QuatSymmetryResults overallResults = QuatSymmetryDetector.getGlobalSymmetry(s, p
 See also the [test](https://github.com/biocryst/biojava/blob/df22da37a86a0dba3fb35bee7e17300d402ab469/biojava-integrationtest/src/test/java/org/biojava/nbio/structure/test/symmetry/TestQuatSymmetryDetectorExamples.java#L167-L192) provided in **BioJava** for a real case working example.
 
 
+## Please Cite
+
+**Analyzing the symmetrical arrangement of structural repeats in proteins with CE-Symm**<br/>
+*Spencer E Bliven, Aleix Lafita, Peter W Rose, Guido Capitani, Andreas Prlić, & Philip E Bourne* <br/>
+[PLOS Computational Biology (2019) 15 (4):e1006842.](https://journals.plos.org/ploscompbiol/article/citation?id=10.1371/journal.pcbi.1006842) <br/>
+[![doi](https://img.shields.io/badge/doi-10.1371%2Fjournal.pcbi.1006842-blue.svg?style=flat)](https://doi.org/10.1371/journal.pcbi.1006842) [![pubmed](https://img.shields.io/badge/pubmed-31009453-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/31009453)
+
+
+
 <!--automatically generated footer-->
 
 ---
