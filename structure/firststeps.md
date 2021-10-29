@@ -6,14 +6,10 @@ First Steps
 The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
 
 ```java
-     public static void main(String[] args){
-        try {
-                Structure structure = StructureIO.getStructure("4HHB");
-                // and let's print out how many atoms are in this structure
-                System.out.println(StructureTools.getNrAtoms(structure));
-            } catch (Exception e){
-                e.printStackTrace();
-        }
+     public static void main(String[] args) throws Exception {
+           Structure structure = StructureIO.getStructure("4HHB");
+           // and let's print out how many atoms are in this structure
+           System.out.println(StructureTools.getNrAtoms(structure));
     }   
 ```
 
@@ -53,23 +49,17 @@ Talking about startup properties, it is also good to mention the fact that many 
 If you have the *biojava-structure-gui* module installed, you can quickly visualise a [Structure](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Structure.html) via this:
 
 ```java
-    public static void main(String[] args){
-        try {
-            
-            Structure struc = StructureIO.getStructure("4hhb");
+    public static void main(String[] args) throws Exception {
+        Structure struc = StructureIO.getStructure("4hhb");
 
-            StructureAlignmentJmol jmolPanel = new StructureAlignmentJmol();
+        StructureAlignmentJmol jmolPanel = new StructureAlignmentJmol();
 
-            jmolPanel.setStructure(struc);
+        jmolPanel.setStructure(struc);
 
-            // send some commands to Jmol
-            jmolPanel.evalString("select * ; color chain;");            
-            jmolPanel.evalString("select *; spacefill off; wireframe off; cartoon on;  ");
-            jmolPanel.evalString("select ligands; cartoon off; wireframe 0.3; spacefill 0.5; color cpk;");
-            
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+        // send some commands to Jmol
+        jmolPanel.evalString("select * ; color chain;");            
+        jmolPanel.evalString("select *; spacefill off; wireframe off; cartoon on;  ");
+        jmolPanel.evalString("select ligands; cartoon off; wireframe 0.3; spacefill 0.5; color cpk;");         
     }
 ```
 
@@ -91,15 +81,10 @@ This will result in the following view:
 By default many people work with the *asymmetric unit* of a protein. However for many studies the correct representation to look at is the *biological assembly* of a protein. You can request it by calling
 
 ```java
-     public static void main(String[] args){
-
-        try {
-                Structure structure = StructureIO.getBiologicalAssembly("1GAV");
-                // and let's print out how many atoms are in this structure
-                System.out.println(StructureTools.getNrAtoms(structure));
-        } catch (Exception e){
-                e.printStackTrace();
-        }
+     public static void main(String[] args) throws Exception {
+        Structure structure = StructureIO.getBiologicalAssembly("1GAV");
+        // and let's print out how many atoms are in this structure
+        System.out.println(StructureTools.getNrAtoms(structure));
     }
 ```
 

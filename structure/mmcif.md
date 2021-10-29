@@ -44,8 +44,8 @@ By default BioJava is using the PDB file format for parsing data. In order to sw
 
 ```java
         AtomCache cache = new AtomCache();
-            
-        cache.setUseMmCif(true);
+
+        cache.setFiletype(StructureFiletype.CIF);
             
         // if you struggled to set the PDB_DIR property correctly in the previous step, 
         // you could set it manually like this:
@@ -67,13 +67,8 @@ StructureIO can also access files via URLs and fetch the data dynamically. E.g. 
 
 ```java
         String u = "http://ftp.wwpdb.org/pub/pdb/data/biounit/mmCIF/divided/nw/4nwr-assembly1.cif.gz";
-        try {
-            Structure s = StructureIO.getStructure(u);
-
-            System.out.println(s);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Structure s = StructureIO.getStructure(u);
+        System.out.println(s);
 ```
 
 ### Local URLs
@@ -86,34 +81,12 @@ BioJava can also access local files, by specifying the URL as
 
 ## Low Level Access
 
-If you want to learn how to use the BioJava mmCIF parser to populate your own data structure, let's first take a look this lower-level code:
+You can load a BioJava `Structure` object using the ciftools-java parser with:
 
 ```java
         InputStream inStream =  new FileInputStream(fileName);
- 
-        MMcifParser parser = new SimpleMMcifParser();
- 
-        SimpleMMcifConsumer consumer = new SimpleMMcifConsumer();
- 
-        // The Consumer builds up the BioJava - structure object.
-        // you could also hook in your own and build up you own data model.          
-        parser.addMMcifConsumer(consumer);
- 
-        try {
-            parser.parse(new BufferedReader(new InputStreamReader(inStream)));
-        } catch (IOException e){
-            e.printStackTrace();
-        }
- 
         // now get the protein structure.
-        Structure cifStructure = consumer.getStructure();
-```
-
-The parser operates similar to a XML parser by triggering "events". The [SimpleMMcifConsumer](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/SimpleMMcifConsumer.html) listens to new categories being read from the file and then builds up the BioJava data model.
-
-To re-use the parser for your own datamodel, just implement the [MMcifConsumer](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/MMcifConsumer.html) interface and add it to the [SimpleMMcifParser](http://www.biojava.org/docs/api/org/biojava/nbio/structure/io/mmcif/SimpleMMcifParser.html).
-```java
-        parser.addMMcifConsumer(myOwnConsumerImplementation);
+        Structure cifStructure = CifStructureConverter.fromInputStream(inStream);
 ```
 
 ## I Loaded a Structure Object, What Now?
