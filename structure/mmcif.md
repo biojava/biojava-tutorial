@@ -12,12 +12,15 @@ The mmCIF file format has been around for some time (see [Westbrook 2000][] and 
 
 ## The Basics
 
-BioJava provides you with both a mmCIF parser and a data model that reads PDB and mmCIF files into a biological and chemically  meaningful data model (BioJava supports the [Chemical Components Dictionary](mmcif.md)). If you don't want to use that data model, you can still use BioJava's file parsers, and more on that later, let's start first with the most basic way of loading a protein structure.
+BioJava uses the [CIFTools-java](https://github.com/rcsb/ciftools-java) library to parse mmCIF. BioJava then has its own data model that reads PDB and mmCIF files 
+into a biological and chemically  meaningful data model (BioJava supports the [Chemical Components Dictionary](mmcif.md)). 
+If you don't want to use that data model, you can still use the CIFTools-java parser, please refer to its documentation. 
+Let's start first with the most basic way of loading a protein structure.
 
 
 ## First Steps
 
-The simplest way to load a PDB file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
+The simplest way to load a PDBx/mmCIF file is by using the [StructureIO](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIO.html) class.
 
 ```java
     Structure structure = StructureIO.getStructure("4HHB");
@@ -25,9 +28,7 @@ The simplest way to load a PDB file is by using the [StructureIO](http://www.bio
     System.out.println(StructureTools.getNrAtoms(structure));
 ```
 
-
-
-BioJava  automatically downloaded the PDB file for hemoglobin [4HHB](http://www.rcsb.org/pdb/explore.do?structureId=4HHB) and copied it into a temporary location. This demonstrates two things:
+BioJava automatically downloaded the PDB file for hemoglobin [4HHB](http://www.rcsb.org/pdb/explore.do?structureId=4HHB) and copied it into a temporary location. This demonstrates two things:
 
 + BioJava can automatically download and install files locally
 + BioJava by default writes those files into a temporary location (The system temp directory "java.io.tempdir"). 
@@ -38,9 +39,11 @@ If you already have a local PDB installation, you can configure where BioJava sh
     -DPDB_DIR=/wherever/you/want/
 </pre>
 
-## From PDB to mmCIF
+## Switching AtomCache to use different file types
 
-By default BioJava is using the PDB file format for parsing data. In order to switch it to use mmCIF, we can take control over the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html) which manages your PDB ([and btw. also SCOP, CATH](externaldb.md)) installations.
+By default BioJava is using the BCIF file format for parsing data. In order to switch it to use mmCIF, we can take control over 
+the underlying [AtomCache](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/util/AtomCache.html) which 
+manages your PDB ([and btw. also SCOP, CATH](externaldb.md)) installations.
 
 ```java
         AtomCache cache = new AtomCache();
@@ -59,7 +62,7 @@ By default BioJava is using the PDB file format for parsing data. In order to sw
         System.out.println(structure.getChains().size());
 ```
 
-As you can see, the AtomCache will again download the missing mmCIF file for 4HHB in the background. 
+See other supported file types in the `StructureFileType` enum.
 
 ## URL based parsing of files
 
