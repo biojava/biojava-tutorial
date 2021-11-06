@@ -94,7 +94,7 @@ Map<FastaSequence, Range[]> ranges = Jronn.getDisorder(sequences);
 
 ## License
 
-The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license, available [here](license.md).
+The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license, available [here](../license.md).
 
 ## Please Cite
 
