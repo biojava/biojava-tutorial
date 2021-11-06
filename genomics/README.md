@@ -41,7 +41,7 @@ Chapter 6 - Reading genomic DNA sequences using UCSC's [.2bit file format](twobi
 
 ## License
 
-The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license, available [here](license.md).
+The content of this tutorial is available under the [CC-BY](http://creativecommons.org/licenses/by/3.0/) license, available [here](../license.md).
 
 ## Please Cite
 
