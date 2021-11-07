@@ -28,7 +28,7 @@ Structure
 All `Structure` objects contain one or more `Models`. That means also X-ray structures contain a "virtual" model which serves as a container for the chains. This allows to represent multi-model X-ray structures, e.g. from time-series analysis. The most common way to access chains is via:
 
 ```java
-        List <Chain> chains = structure.getChains();
+        List<Chain> chains = structure.getChains();
 ```
 
 This works for both NMR and X-ray based structures and by default the first `Model` is getting accessed.
@@ -58,7 +58,7 @@ Here an example that loops over the whole data model and prints out the HEM grou
 
 			for (Chain c : chains) {
 				
-				System.out.println("   Chain: " + c.getChainID() + " # groups with atoms: " + c.getAtomGroups().size());
+				System.out.println("   Chain: " + c.getId() + " # groups with atoms: " + c.getAtomGroups().size());
 
 				for (Group g: c.getAtomGroups()){
 
@@ -87,24 +87,24 @@ The [Group](http://www.biojava.org/docs/api/org/biojava/nbio/structure/Group.htm
 In order to get all amino acids that have been observed in a PDB chain, you can use the following utility method:
 
 ```java
-            Chain chain = s.getChainByPDB("A");
-            List<Group> groups = chain.getAtomGroups("amino");
+            Chain chain = structure.getPolyChainByPDB("A");
+            List<Group> groups = chain.getAtomGroups(GroupType.AMINOACID);
             for (Group group : groups) {
-                AminoAcid aa = (AminoAcid) group;
+                SecStrucInfo secStrucInfo = (SecStrucInfo) group.getProperty(Group.SEC_STRUC);
 
-                // do something amino acid specific, e.g. print the secondary structure assignment
-                System.out.println(aa + " " + aa.getSecStruc());
+                // print the secondary structure assignment
+                System.out.println(group + " -- " + secStrucInfo);
             }
 ```
 
 In a similar way you can access all nucleotide groups by
 ```java
-            chain.getAtomGroups("nucleotide");
+            chain.getAtomGroups(GroupType.NUCLEOTIDE);
 ```
 
 The Hetatom groups are access in a similar fashion:
 ```java
-            chain.getAtomGroups("hetatm");
+            chain.getAtomGroups(GroupType.HETATM);
 ```
 
 
@@ -112,10 +112,10 @@ Since all 3 types of groups are implementing the Group interface, you can also i
 
 ```java
             List<Group> allgroups = chain.getAtomGroups();
-            for (Group group : groups) {
-                if ( group instanceof AminoAcid) {
-                    AminoAcid aa = (AminoAcid) group;
-                    System.out.println(aa.getSecStruc());
+            for (Group group : allgroups) {
+                if (group.isAminoAcid()) {
+                    SecStrucInfo secStrucInfo = (SecStrucInfo) group.getProperty(Group.SEC_STRUC);
+                    System.out.println(group + " -- " + secStrucInfo);
                 }
             }
 ```
