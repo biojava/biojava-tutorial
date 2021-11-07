@@ -63,7 +63,7 @@ An example for how to parse a sequence from a String and using the Translation e
 
                 // define the Ambiguity Compound Sets
                 AmbiguityDNACompoundSet ambiguityDNACompoundSet = AmbiguityDNACompoundSet.getDNACompoundSet();
-                CompoundSet<NucleotideCompound>  nucleotideCompoundSet = AmbiguityRNACompoundSet.getDNACompoundSet();
+                CompoundSet<NucleotideCompound>  nucleotideCompoundSet = AmbiguityRNACompoundSet.getRNACompoundSet();
 
                 FastaReader<DNASequence, NucleotideCompound> proxy =
                         new FastaReader<DNASequence, NucleotideCompound>(
