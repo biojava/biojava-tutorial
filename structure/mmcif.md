@@ -13,7 +13,7 @@ The mmCIF file format has been around for some time (see [Westbrook 2000][] and 
 ## The Basics
 
 BioJava uses the [CIFTools-java](https://github.com/rcsb/ciftools-java) library to parse mmCIF. BioJava then has its own data model that reads PDB and mmCIF files 
-into a biological and chemically  meaningful data model (BioJava supports the [Chemical Components Dictionary](mmcif.md)). 
+into a biological and chemically  meaningful data model (BioJava supports the [Chemical Components Dictionary](chemcomp.md)). 
 If you don't want to use that data model, you can still use the CIFTools-java parser, please refer to its documentation. 
 Let's start first with the most basic way of loading a protein structure.
 

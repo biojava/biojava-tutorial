@@ -20,12 +20,12 @@ acid sequences converge on a common tertiary structure.
 
 A **structural alignment** of other biological polymers can also be made in BioJava.
 For example, nucleic acids can be structurally aligned to find common structural motifs, 
-independent of sequence simililarity. This is specially important for RNAs, because their
+independent of sequence similarity. This is specially important for RNAs, because their
 3D structure arrangement is important for their function.
 
 For more info see the Wikipedia article on [structure alignment](http://en.wikipedia.org/wiki/Structural_alignment).
 
-## Alignment Algorithms supported by BioJava
+## Alignment Algorithms Supported by BioJava
 
 BioJava comes with a number of algorithms for aligning structures. The following
 five options are displayed by default in the graphical user interface (GUI),
@@ -45,9 +45,9 @@ in 3D. See below for descriptions of the algorithms.
 Since BioJava version 4.1.0, multiple structures can be compared at the same time in 
 a **multiple structure alignment**, that can later be visualized in Jmol. 
 The algorithm is described in detail below. As an overview, it uses any pairwise alignment 
-algorithm and a **reference** structure to per perform an alignment of all the structures. 
+algorithm and a **reference** structure to perform an alignment of all the structures.
 Then, it runs a **Monte Carlo** optimization to determine the residue equivalencies among
-all the strucutures, identifying conserved **structural motifs**.
+all the structures, identifying conserved **structural motifs**.
 
 ## Alignment User Interface
 
@@ -91,7 +91,7 @@ This code shows the following user interface:
 ![Multiple Alignment GUI](img/multiple_gui.png)
 
 The input format is a free text field, where the structure identifiers are 
-indidcated, space separated. A **structure identifier** is a String that 
+indicated, space separated. A **structure identifier** is a String that
 uniquely identifies a structure. It is basically composed of the pdbID, the
 chain letters and the ranges of residues of each chain. For the formal description
 visit [StructureIdentifier](http://www.biojava.org/docs/api/org/biojava/nbio/structure/StructureIdentifier.html).
@@ -125,12 +125,12 @@ The Combinatorial Extension (CE) algorithm was originally developed by
 1998](http://peds.oxfordjournals.org/content/11/9/739.short) [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/9796821).
 It works by identifying segments of the two structures with similar local
 structure, and then combining those to try to align the most residues possible
-while keeping the overall RMSD of the superposition low.
+while keeping the overall root-mean-square deviation (RMSD) of the superposition low.
 
 CE is a rigid-body alignment algorithm, which means that the structures being
 compared are kept fixed during superposition. In some cases it may be desirable
 to break large proteins up into domains prior to aligning them (by manually
-inputing a subrange, using the [SCOP or CATH databases](externaldb.md), or by
+inputting a subrange, using the [SCOP or CATH databases](externaldb.md), or by
 decomposing the protein automatically using the [Protein Domain
 Parser](http://www.biojava.org/docs/api/org/biojava/nbio/structure/domain/LocalProteinDomainParser.html)
 algorithm).
@@ -146,10 +146,8 @@ to the C-terminal part of the other, and vice versa. CE-CP allows circularly
 permuted proteins to be compared.  For more information on circular
 permutations, see the
 [Wikipedia](http://en.wikipedia.org/wiki/Circular_permutation_in_proteins) or
-[Molecule of the Month]
-(http://www.pdb.org/pdb/101/motm.do?momID=124&evtc=Suggest&evta=Moleculeof%20the%20Month&evtl=TopBar)
-articles [![pubmed]
-(http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/22496628).
+[Molecule of the Month](https://pdb101.rcsb.org/motm/124)
+articles [![pubmed](http://img.shields.io/badge/in-pubmed-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/22496628).
 
 
 For proteins without a circular permutation, CE-CP results look very similar to
@@ -173,8 +171,7 @@ It performs similarly to CE for most structures. The 'rigid' flavor uses a
 rigid-body superposition and only considers alignments with matching sequence
 order.
 
-BioJava class: [org.biojava.nbio.structure.align.fatcat.FatCatRigid]
-(www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatRigid.html)
+BioJava class: [org.biojava.nbio.structure.align.fatcat.FatCatRigid](https://www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatRigid.html)
 
 ### FATCAT - flexible
 
@@ -186,11 +183,9 @@ calmodulin with and without calcium bound can be much better aligned with
 FATCAT-flexible than with one of the rigid alignment algorithms. The downside of
 this is that it can lead to additional false positives in unrelated structures.
 
-![(Left) Rigid and (Right) flexible alignments of
-calmodulin](img/1cfd_1cll_fatcat.png)
+![(Left) Rigid and (Right) flexible alignments of calmodulin](img/1cfd_1cll_fatcat.png)
 
-BioJava class: [org.biojava.nbio.structure.align.fatcat.FatCatFlexible]
-(www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatFlexible.html)
+BioJava class: [org.biojava.nbio.structure.align.fatcat.FatCatFlexible](https://www.biojava.org/docs/api/org/biojava/nbio/structure/align/fatcat/FatCatFlexible.html)
 
 ### Smith-Waterman
 
@@ -204,8 +199,7 @@ locating gaps can lead to high RMSD in the resulting superposition due to a
 small number of badly aligned residues. However, this method is faster than
 the structure-based methods.
 
-BioJava Class: [org.biojava.nbio.structure.align.ce.CeCPMain]
-(http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
+BioJava Class: [org.biojava.nbio.structure.align.ce.CeCPMain](http://www.biojava.org/docs/api/org/biojava/nbio/structure/align/ce/CeCPMain.html)
 
 ### Other methods
 
@@ -250,43 +244,7 @@ by the pairwise alignment algorithm limitations.
 The algorithm performs similarly to other multiple structure alignment algorithms for most protein families. 
 The parameters both for the pairwise aligner and the MC optimization can have an impact on the final result. There is not a unique set of parameters, because they usually depend on the specific use case. Thus, trying some parameter combinations, keeping in mind the effect they produce in the score function, is a good practice when doing any structure alignment.
 
-BioJava class: [org.biojava.nbio.structure.align.multiple.mc.MultipleMcMain]
-(www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/mc/MultipleMcMain.html)
-
-## PDB-wide Database Searches
-
-The Alignment GUI also provides functionality for PDB-wide structural searches.
-This systematically compares a structure against a non-redundant set of all
-other structures in the PDB at either a chain or a domain level. Representatives
-are selected using the RCSB's clustering of proteins with 40% sequence identity,
-as described
-[here](http://www.rcsb.org/pdb/static.do?p=general_information/cluster/structureAll.jsp).
-Domains are selected using either SCOP (when available) or the
-ProteinDomainParser algorithm.
-
-![Database Search GUI](img/database_search.png)
-
-To perform a database search, select the 'Database Search' tab, then choose a
-query structure based on PDB ID, SCOP domain id, or from a custom file. The
-output directory will be used to store results. These consist of individual
-alignments in compressed XML format, as well as a tab-delimited file of
-similarity scores and statistics. The statistics are displayed in an interactive
-results table, which allows the alignments to be sorted. The 'Align' column
-allows individual alignments to be visualized with the alignment GUI.
-
-![Database Search Results](img/database_search_results.png)
-
-Be aware that this process can be very time consuming. Before
-starting a manual search, it is worth considering whether a pre-computed result
-may be available online, for instance for
-[FATCAT-rigid](http://www.rcsb.org/pdb/static.do?p=general_information/cluster/structureAll.jsp)
-or [DALI](http://ekhidna.biocenter.helsinki.fi/dali/start). For custom files or
-specific domains, a few optimizations can reduce the time for a database search.
-Downloading PDB files is a considerable bottleneck. This can be solved by
-downloading all PDB files from the [FTP
-server](ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/) and setting
-the `PDB_DIR` environmental variable. This operation sped up the search from
-about 30 hours to less than 4 hours.
+BioJava class: [org.biojava.nbio.structure.align.multiple.mc.MultipleMcMain](https://www.biojava.org/docs/api/org/biojava/nbio/structure/align/multiple/mc/MultipleMcMain.html)
 
 
 ## Creating Alignments Programmatically
@@ -363,8 +321,7 @@ MultipleAlignmentJmolDisplay.display(result);
 
 Many of the alignment algorithms are available in the form of command line
 tools. These can be accessed through the main methods of the StructureAlignment
-classes. Tar bundles are also available with scripts for running
-[CE and FATCAT](http://source.rcsb.org/jfatcatserver/download.jsp).
+classes.
 
 Example:
 ```bash
@@ -378,7 +335,7 @@ file in various formats.
 
 ## Alignment Data Model
 
-For details about the structure alignment data models in biojava, see [Structure Alignment Data Model](alignment-data-model.md)
+For details about the structure alignment data models in BioJava, see [Structure Alignment Data Model](alignment-data-model.md)
 
 ## Acknowledgements
 

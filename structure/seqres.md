@@ -5,12 +5,11 @@ How molecular sequences are linked to experimentally observed atoms.
 
 ## Sequences and Atoms
 
-In many experiments not all atoms that are part of the molecule under study can be observed. As such the ATOM records in PDB oftein contain missing atoms or only the part of a molecule that could be experimentally determined. In case of multi-domain proteins the PDB often contains only one of the domains (and in some cases even shorter fragments).
+In many experiments not all atoms that are part of the molecule under study can be observed. As such the ATOM records in PDB often contain missing atoms or only the part of a molecule that could be experimentally determined. In case of multi-domain proteins the PDB often contains only one of the domains (and in some cases even shorter fragments).
 
-Let's take a look at an example. The [Protein Feature View](https://github.com/andreasprlic/proteinfeatureview) provides a graphical summary of how the regions that have been observed in an experiment and are available in the PDB map to UniProt.
+Let's take a look at an example. The [Protein Feature View](https://github.com/andreasprlic/proteinfeatureview) provides a graphical summary of the regions that have been observed in an experiment and are available in the PDB map to UniProt.
 
-![Screenshot of Protein Feature View at RCSB]
-(https://raw.github.com/andreasprlic/proteinfeatureview/master/images/P06213.png "Insulin receptor - P06213 (INSR_HUMAN)")
+![Screenshot of Protein Feature View at RCSB](https://raw.github.com/andreasprlic/proteinfeatureview/master/images/P06213.png "Insulin receptor - P06213 (INSR_HUMAN)")
 
 As you can see, there are three PDB entries (PDB IDs [3LOH](http://www.rcsb.org/pdb/explore.do?structureId=3LOH), [2HR7](http://www.rcsb.org/pdb/explore.do?structureId=2RH7), [3BU3](http://www.rcsb.org/pdb/explore.do?structureId=3BU3)) that cover different regions of the UniProt sequence for the insulin receptor.
 
@@ -18,7 +17,7 @@ The blue-boxes are regions for which atoms records are available. For the grey r
 
 ## Seqres and Atom Records
 
-The sequence that has been used in the experiment is stored in the **Seqres** records in the PDB. It is often not the same sequences as can be found in Uniprot, since it can contain cloning-artefacts and modifications that were necessary in order to crystallize a structure.
+The sequence that has been used in the experiment is stored in the **Seqres** records in the PDB. It is often not the same sequence as can be found in Uniprot, since it can contain cloning-artefacts and modifications that were necessary in order to crystallize a structure.
 
 The **Atom** records provide coordinates where it was possible to observe them.
 
