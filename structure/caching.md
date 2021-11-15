@@ -53,10 +53,8 @@ This example turns on the use of chemical components when loading a `Structure`.
 	AtomCache cache = new AtomCache();
 
 	cache.setPath("/tmp/");
-			
+
 	FileParsingParameters params = cache.getFileParsingParams();
-	
-	params.setLoadChemCompInfo(true);
 
 	StructureIO.setAtomCache(cache);
 
