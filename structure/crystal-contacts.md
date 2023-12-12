@@ -11,7 +11,7 @@ Looking at crystal contacts can also be important in order to assess the quality
 
 ## Getting the set of unique contacts in the crystal lattice
 
-This code snippet will produce a list of all non-redundant interfaces present in the crystal lattice of PDB entry [1SMT](http://www.rcsb.org/pdb/explore.do?structureId=1SMT):
+This code snippet will produce a list of all non-redundant interfaces present in the crystal lattice of PDB entry [1SMT](https://www.rcsb.org/structure/1SMT):
 
 ```java
 		AtomCache cache = new AtomCache();
@@ -42,7 +42,7 @@ The algorithm to find all unique interfaces in the crystal works roughly like th
 + Searches all cells around the original one by applying crystal translations, if any 2 chains in that search is found to contact then the new contact is added to the final list.
 + The search is performend without repeating redundant symmetry operators, making sure that if a contact is found then it is a unique contact.
 
-See [DemoCrystalInterfaces](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoCrystalInterfaces.java) for a fully working demo of the example above.
+See [DemoCrystalInterfaces](https://github.com/biojava/biojava/blob/master/biojava-structure/src/main/java/demo/DemoCrystalInterfaces.java) for a fully working demo of the example above.
 
 ## Clustering the interfaces
 One can also cluster the interfaces based on their similarity. The similarity is measured through contact overlap: number of common contacts over average number of contact in both chains. The clustering can be done as following:

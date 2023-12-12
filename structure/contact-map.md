@@ -9,7 +9,7 @@ Contacts are a useful tool to analyse protein structures. They simplify the 3-Di
 
 ## Getting the contact map of a protein chain
 
-This code snippet will produce the set of contacts between all C alpha atoms for chain A of PDB entry [1SMT](http://www.rcsb.org/pdb/explore.do?structureId=1SMT):
+This code snippet will produce the set of contacts between all C alpha atoms for chain A of PDB entry [1SMT](https://www.rcsb.org/structure/1SMT):
 
 ```java
 		AtomCache cache = new AtomCache();
@@ -51,7 +51,7 @@ One can also find the contacting atoms between two protein chains. For instance 
 ```
 
 
-See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava3-structure/src/main/java/demo/DemoContacts.java) for a fully working demo of the examples above.
+See [DemoContacts](https://github.com/biojava/biojava/blob/master/biojava-structure/src/main/java/demo/DemoContacts.java) for a fully working demo of the examples above.
 
 
 
