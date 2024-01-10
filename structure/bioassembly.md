@@ -153,7 +153,7 @@ List<Structure> bioAssemblies = StructureIO.getBiologicalAssemblies(pdbId);
 
 ## Further Reading
 
-The RCSB PDB web site has a great [tutorial on Biological Assemblies](http://www.rcsb.org/pdb/101/static101.do?p=education_discussion/Looking-at-Structures/bioassembly_tutorial.html).
+The RCSB PDB web site has a great [tutorial on Biological Assemblies](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/biological-assemblies).
 
 <!--automatically generated footer-->
 

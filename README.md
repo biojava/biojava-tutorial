@@ -24,7 +24,7 @@ Book 4: [The Genomics Module](genomics/README.md), working with genomic data.
 
 Book 5: [The Protein-Disorder Module](protein-disorder/README.md), predicting protein-disorder.
 
-Book 6: [The ModFinder Module](modfinder/README.md), identifying potein modifications in 3D structures
+Book 6: [The ModFinder Module](modfinder/README.md), identifying protein modifications in 3D structures
 
 ## License
 
