@@ -79,6 +79,27 @@ BioJava can also be used to parse large FASTA files. The example below can parse
         }
 ```
 
+BioJava can also process large FASTA files using the Java streams API.
+
+```java
+    FastaStreamer
+        .from(path)
+        .stream()
+        .forEach(sequence -> System.out.printf("%s -> %ss\n", sequence.getOriginalHeader(), sequence.getSequenceAsString()));
+```
+
+If you need to specify a header parser other that `GenericFastaHeaderParser` or a sequence creater other than a
+`ProteinSequenceCreator`, these can be specified before streaming the contents as follows:
+
+```java
+    FastaStreamer
+       .from(path)
+       .withHeaderParser(new PlainFastaHeaderParser<>())
+       .withSequenceCreator(new CasePreservingProteinSequenceCreator(AminoAcidCompoundSet.getAminoAcidCompoundSet()))
+       .stream()
+       .forEach(sequence -> System.out.printf("%s -> %ss\n", sequence.getOriginalHeader(), sequence.getSequenceAsString()));
+```
+
 
 
 <!--automatically generated footer-->
